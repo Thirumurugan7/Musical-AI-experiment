@@ -28,6 +28,11 @@ fi
 
 say "fetching ChordMini"
 mkdir -p "$ROOT"
+# ChordMiniApp tracks SongFormer's 1.3GB MuQ weights in LFS, and that repo's LFS
+# budget is exhausted upstream — with git-lfs installed the smudge filter fails
+# and aborts the checkout. Nothing in this pipeline reads those weights, so skip
+# them. The chord checkpoints below are plain git objects and arrive regardless.
+export GIT_LFS_SKIP_SMUDGE=1
 if [ ! -d "$APP/.git" ]; then
   git clone --depth 1 https://github.com/ptnghia-j/ChordMiniApp.git "$APP"
 fi
@@ -38,7 +43,14 @@ git submodule update --init --depth 1 \
 
 CKPT="$BE/models/Chord-CNN-LSTM/cache_data"
 [ -d "$CKPT" ] || { echo "!! chord checkpoints missing at $CKPT"; exit 1; }
-echo "   checkpoints: $(ls "$CKPT" | grep -c best) folds found"
+FOLDS=$(ls "$CKPT" | grep -c best)
+[ "$FOLDS" -gt 0 ] || { echo "!! no checkpoint files in $CKPT"; exit 1; }
+# an LFS pointer is ~130 bytes; a real checkpoint is ~5.7MB
+SMALLEST=$(find "$CKPT" -name '*best*' -exec stat -f%z {} \; 2>/dev/null | sort -n | head -1)
+[ "${SMALLEST:-0}" -gt 100000 ] || {
+  echo "!! checkpoints are LFS pointers, not real weights ($SMALLEST bytes)"
+  echo "   run: git -C $BE/models/Chord-CNN-LSTM lfs pull"; exit 1; }
+echo "   checkpoints: $FOLDS folds found"
 
 say "building python 3.10 environment"
 cd "$BE"
