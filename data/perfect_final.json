@@ -1,0 +1,581 @@
+{
+  "title": "Ed Sheeran \u2014 Perfect",
+  "sounding_key": "Ab",
+  "capo": 1,
+  "shape_key": "G",
+  "capo_ranking": [
+    {
+      "capo": 1,
+      "score": 0.988,
+      "key_shape": "G",
+      "use_flats": false,
+      "chords": [
+        "G",
+        "Em",
+        "D",
+        "C",
+        "Em7",
+        "D7"
+      ]
+    },
+    {
+      "capo": 6,
+      "score": 0.7914,
+      "key_shape": "D",
+      "use_flats": false,
+      "chords": [
+        "D",
+        "Bm",
+        "A",
+        "G",
+        "Bm7",
+        "A7"
+      ]
+    },
+    {
+      "capo": 4,
+      "score": 0.5666,
+      "key_shape": "E",
+      "use_flats": false,
+      "chords": [
+        "E",
+        "C#m",
+        "B",
+        "A",
+        "C#m7",
+        "B7"
+      ]
+    },
+    {
+      "capo": 3,
+      "score": 0.5651,
+      "key_shape": "F",
+      "use_flats": true,
+      "chords": [
+        "F",
+        "Dm",
+        "C",
+        "Bb",
+        "Dm7",
+        "C7"
+      ]
+    }
+  ],
+  "tempo_bpm": 63.2,
+  "beats_per_bar": 4,
+  "subdiv": 3,
+  "metre": "12/8",
+  "subdiv_evidence": {
+    "2": {
+      "occupancy": 0.896,
+      "beat_contrast": 3.734
+    },
+    "3": {
+      "occupancy": 0.956,
+      "beat_contrast": 2.123
+    },
+    "4": {
+      "occupancy": 0.98,
+      "beat_contrast": 3.106
+    }
+  },
+  "stroke_rate_hz": 3.16,
+  "direction_rule": "compound, moderate tempo -> all downstrokes",
+  "chords_shapes": [
+    "G",
+    "Em",
+    "D",
+    "C",
+    "Em7",
+    "D7"
+  ],
+  "chords_sounding": [
+    "Ab",
+    "Fm",
+    "Eb",
+    "Db",
+    "Fm7",
+    "Eb7"
+  ],
+  "canonical_pattern": "D d d D d d D (d) d D d d",
+  "canonical_strength": [
+    3.897,
+    1.802,
+    2.111,
+    5.825,
+    1.919,
+    3.066,
+    4.378,
+    1.578,
+    2.832,
+    6.947,
+    1.908,
+    3.581
+  ],
+  "count_line": "1 . . 2 . . 3 . . 4 . .",
+  "n_bars": 66,
+  "bars": [
+    {
+      "bar": 1,
+      "start": 3.77,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "d (d) d D d d D D d d d D"
+    },
+    {
+      "bar": 2,
+      "start": 7.57,
+      "shape": "Em",
+      "sounding": "Fm",
+      "pattern": "d (d) (d) d d (d) D d d D D D"
+    },
+    {
+      "bar": 3,
+      "start": 11.37,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "D d d d \u00b7 (d) D (d) d D D D"
+    },
+    {
+      "bar": 4,
+      "start": 15.17,
+      "shape": "D",
+      "sounding": "Eb",
+      "pattern": "D d (d) D d D D d d D d d"
+    },
+    {
+      "bar": 5,
+      "start": 18.94,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "d d d D (d) (d) D (d) d D d D"
+    },
+    {
+      "bar": 6,
+      "start": 22.74,
+      "shape": "Em7",
+      "sounding": "Fm7",
+      "pattern": "d (d) D d \u00b7 (d) d (d) (d) D D d"
+    },
+    {
+      "bar": 7,
+      "start": 26.5,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "D d d d d d d d d D d d"
+    },
+    {
+      "bar": 8,
+      "start": 30.32,
+      "shape": "D",
+      "sounding": "Eb",
+      "pattern": "D d d D d d D d D D d (d)"
+    },
+    {
+      "bar": 9,
+      "start": 34.09,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "D d d D (d) d D (d) d D D d"
+    },
+    {
+      "bar": 10,
+      "start": 37.93,
+      "shape": "Em7",
+      "sounding": "Fm7",
+      "pattern": "D d d d d d D (d) d D D d"
+    },
+    {
+      "bar": 11,
+      "start": 41.69,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "D d d D (d) d d d d D (d) D"
+    },
+    {
+      "bar": 12,
+      "start": 45.48,
+      "shape": "D",
+      "sounding": "Eb",
+      "pattern": "D d d D (d) d D \u00b7 d D (d) d"
+    },
+    {
+      "bar": 13,
+      "start": 49.25,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "D d d D d d D (d) d D d (d)"
+    },
+    {
+      "bar": 14,
+      "start": 53.04,
+      "shape": "Em7",
+      "sounding": "Fm7",
+      "pattern": "D (d) (d) d d (d) d \u00b7 D D D d"
+    },
+    {
+      "bar": 15,
+      "start": 56.86,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "D d (d) D (d) d D (d) (d) D D d"
+    },
+    {
+      "bar": 16,
+      "start": 60.63,
+      "shape": "D",
+      "sounding": "Eb",
+      "pattern": "d d (d) D d D D (d) (d) D d D"
+    },
+    {
+      "bar": 17,
+      "start": 64.41,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "d (d) (d) D (d) d D (d) D D d D"
+    },
+    {
+      "bar": 18,
+      "start": 68.2,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "d (d) (d) D (d) d d (d) D D (d) d"
+    },
+    {
+      "bar": 19,
+      "start": 72.01,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "d d (d) D (d) d D d D D (d) D"
+    },
+    {
+      "bar": 20,
+      "start": 75.8,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "d (d) \u00b7 D (d) (d) d d d D (d) D"
+    },
+    {
+      "bar": 21,
+      "start": 79.55,
+      "shape": "Em",
+      "sounding": "Fm",
+      "pattern": "D d d D d d d \u00b7 d d (d) d"
+    },
+    {
+      "bar": 22,
+      "start": 83.38,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "d \u00b7 (d) D d d (d) (d) d D \u00b7 D"
+    },
+    {
+      "bar": 23,
+      "start": 87.15,
+      "shape": "Em",
+      "sounding": "Fm",
+      "pattern": "D d d D (d) d D d (d) D d D"
+    },
+    {
+      "bar": 24,
+      "start": 90.96,
+      "shape": "D",
+      "sounding": "Eb",
+      "pattern": "d d d D (d) d D d (d) D \u00b7 D"
+    },
+    {
+      "bar": 25,
+      "start": 94.72,
+      "shape": "Em",
+      "sounding": "Fm",
+      "pattern": "(d) d d D d d d d d d (d) d"
+    },
+    {
+      "bar": 26,
+      "start": 98.52,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "d d d d (d) D d (d) (d) D D D"
+    },
+    {
+      "bar": 27,
+      "start": 102.31,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "D (d) (d) D \u00b7 d d \u00b7 d D (d) d"
+    },
+    {
+      "bar": 28,
+      "start": 106.1,
+      "shape": "Em7",
+      "sounding": "Fm7",
+      "pattern": "d d d D D d D (d) d D d D"
+    },
+    {
+      "bar": 29,
+      "start": 109.88,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "d (d) d D (d) D d D d D (d) d"
+    },
+    {
+      "bar": 30,
+      "start": 113.67,
+      "shape": "D",
+      "sounding": "Eb",
+      "pattern": "d d (d) D (d) d D d d D d D"
+    },
+    {
+      "bar": 31,
+      "start": 117.45,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "d d (d) D (d) d D (d) d D (d) D"
+    },
+    {
+      "bar": 32,
+      "start": 121.26,
+      "shape": "Em7",
+      "sounding": "Fm7",
+      "pattern": "d (d) (d) D d d D (d) (d) D d D"
+    },
+    {
+      "bar": 33,
+      "start": 125.05,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "d d d D D d d (d) (d) D D d"
+    },
+    {
+      "bar": 34,
+      "start": 128.83,
+      "shape": "D",
+      "sounding": "Eb",
+      "pattern": "d (d) (d) D d d d d d D D d"
+    },
+    {
+      "bar": 35,
+      "start": 132.62,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "D (d) d D (d) d D d D D d d"
+    },
+    {
+      "bar": 36,
+      "start": 136.41,
+      "shape": "Em7",
+      "sounding": "Fm7",
+      "pattern": "D (d) d D (d) d D (d) d D d d"
+    },
+    {
+      "bar": 37,
+      "start": 140.2,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "D d d D (d) d D d d D d d"
+    },
+    {
+      "bar": 38,
+      "start": 143.99,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "d d d D (d) d d d D D d d"
+    },
+    {
+      "bar": 39,
+      "start": 147.78,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "D d d D (d) d D d d D d d"
+    },
+    {
+      "bar": 40,
+      "start": 151.57,
+      "shape": "Em7",
+      "sounding": "Fm7",
+      "pattern": "D d (d) D d d D d d D (d) d"
+    },
+    {
+      "bar": 41,
+      "start": 155.36,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "D d d D d d D d D D d d"
+    },
+    {
+      "bar": 42,
+      "start": 159.15,
+      "shape": "D",
+      "sounding": "Eb",
+      "pattern": "d d d D d d D (d) (d) D D d"
+    },
+    {
+      "bar": 43,
+      "start": 162.94,
+      "shape": "Em",
+      "sounding": "Fm",
+      "pattern": "d (d) (d) D (d) D D (d) d D d D"
+    },
+    {
+      "bar": 44,
+      "start": 166.73,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "d (d) (d) D d d d (d) d d (d) d"
+    },
+    {
+      "bar": 45,
+      "start": 170.52,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "d (d) d D d d D (d) d D (d) d"
+    },
+    {
+      "bar": 46,
+      "start": 174.31,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "d (d) d D d d D d d D d d"
+    },
+    {
+      "bar": 47,
+      "start": 178.09,
+      "shape": "Em",
+      "sounding": "Fm",
+      "pattern": "D d d D d d d (d) d D (d) D"
+    },
+    {
+      "bar": 48,
+      "start": 181.88,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "d (d) d D d D D (d) d D d d"
+    },
+    {
+      "bar": 49,
+      "start": 185.67,
+      "shape": "Em",
+      "sounding": "Fm",
+      "pattern": "D d d D (d) d d d d D (d) D"
+    },
+    {
+      "bar": 50,
+      "start": 189.46,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "D d d D d D D d d D d d"
+    },
+    {
+      "bar": 51,
+      "start": 193.25,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "(d) d d D (d) D D d d D d d"
+    },
+    {
+      "bar": 52,
+      "start": 197.04,
+      "shape": "Em7",
+      "sounding": "Fm7",
+      "pattern": "d d d D (d) d D d d D d d"
+    },
+    {
+      "bar": 53,
+      "start": 200.83,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "D d d D (d) d D d d D d d"
+    },
+    {
+      "bar": 54,
+      "start": 204.62,
+      "shape": "D7",
+      "sounding": "Eb7",
+      "pattern": "D d d D d D D (d) (d) D d d"
+    },
+    {
+      "bar": 55,
+      "start": 208.41,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "d (d) (d) D (d) D D (d) d D (d) D"
+    },
+    {
+      "bar": 56,
+      "start": 212.2,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "d (d) d D (d) d d (d) d D (d) d"
+    },
+    {
+      "bar": 57,
+      "start": 215.99,
+      "shape": "Em",
+      "sounding": "Fm",
+      "pattern": "d (d) (d) D (d) d D \u00b7 d D (d) d"
+    },
+    {
+      "bar": 58,
+      "start": 219.78,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "d (d) (d) D (d) d d d d D (d) d"
+    },
+    {
+      "bar": 59,
+      "start": 223.57,
+      "shape": "Em",
+      "sounding": "Fm",
+      "pattern": "D d d D d d d (d) D D (d) d"
+    },
+    {
+      "bar": 60,
+      "start": 227.36,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "d (d) d D d D D (d) d D (d) d"
+    },
+    {
+      "bar": 61,
+      "start": 231.15,
+      "shape": "Em",
+      "sounding": "Fm",
+      "pattern": "D \u00b7 d D d D D d (d) D d d"
+    },
+    {
+      "bar": 62,
+      "start": 234.93,
+      "shape": "G",
+      "sounding": "Ab",
+      "pattern": "d (d) (d) D d D D (d) d D (d) d"
+    },
+    {
+      "bar": 63,
+      "start": 238.73,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "D d d D d d D (d) d d d d"
+    },
+    {
+      "bar": 64,
+      "start": 242.53,
+      "shape": "D",
+      "sounding": "Eb",
+      "pattern": "D d d D d d D d (d) D d D"
+    },
+    {
+      "bar": 65,
+      "start": 246.32,
+      "shape": "D",
+      "sounding": "Eb",
+      "pattern": "d D d d d d (d) d d (d) d D"
+    },
+    {
+      "bar": 66,
+      "start": 250.09,
+      "shape": "C",
+      "sounding": "Db",
+      "pattern": "d D D d d d d (d) (d) D d D"
+    }
+  ]
+}

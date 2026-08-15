@@ -1,0 +1,85 @@
+Ed Sheeran — Perfect
+====================
+sounds in Ab   |   CAPO 1 — play in G   |   63 BPM   |   12/8
+
+  you play :  G   Em   D   C   Em7   D7
+  it sounds:  Ab   Fm   Eb   Db   Fm7   Eb7
+
+STRUMMING PATTERN  (one bar)
+      1 . . 2 . . 3 . . 4 . .
+      D d d D d d D (d) d D d d
+
+  D = accented stroke    d = lighter stroke
+  (d) = ghost stroke     ·  = no stroke
+  direction: compound, moderate tempo -> all downstrokes
+             — derived from metre and stroke rate, not measured
+
+CHART
+                1 . . 2 . . 3 . . 4 . .
+  ------------------------------------
+    1 G         d (d) d D d d D D d d d D
+    2 Em        d (d) (d) d d (d) D d d D D D
+    3 C         D d d d · (d) D (d) d D D D
+    4 D         D d (d) D d D D d d D d d
+    5 G         d d d D (d) (d) D (d) d D d D
+    6 Em7       d (d) D d · (d) d (d) (d) D D d
+    7 C         D d d d d d d d d D d d
+    8 D         D d d D d d D d D D d (d)
+    9 G         D d d D (d) d D (d) d D D d
+   10 Em7       D d d d d d D (d) d D D d
+   11 C         D d d D (d) d d d d D (d) D
+   12 D         D d d D (d) d D · d D (d) d
+   13 G         D d d D d d D (d) d D d (d)
+   14 Em7       D (d) (d) d d (d) d · D D D d
+   15 C         D d (d) D (d) d D (d) (d) D D d
+   16 D         d d (d) D d D D (d) (d) D d D
+   17 C         d (d) (d) D (d) d D (d) D D d D
+   18 G         d (d) (d) D (d) d d (d) D D (d) d
+   19 C         d d (d) D (d) d D d D D (d) D
+   20 G         d (d) · D (d) (d) d d d D (d) D
+   21 Em        D d d D d d d · d d (d) d
+   22 G         d · (d) D d d (d) (d) d D · D
+   23 Em        D d d D (d) d D d (d) D d D
+   24 D         d d d D (d) d D d (d) D · D
+   25 Em        (d) d d D d d d d d d (d) d
+   26 C         d d d d (d) D d (d) (d) D D D
+   27 G         D (d) (d) D · d d · d D (d) d
+   28 Em7       d d d D D d D (d) d D d D
+   29 C         d (d) d D (d) D d D d D (d) d
+   30 D         d d (d) D (d) d D d d D d D
+   31 G         d d (d) D (d) d D (d) d D (d) D
+   32 Em7       d (d) (d) D d d D (d) (d) D d D
+   33 C         d d d D D d d (d) (d) D D d
+   34 D         d (d) (d) D d d d d d D D d
+   35 G         D (d) d D (d) d D d D D d d
+   36 Em7       D (d) d D (d) d D (d) d D d d
+   37 C         D d d D (d) d D d d D d d
+   38 G         d d d D (d) d d d D D d d
+   39 G         D d d D (d) d D d d D d d
+   40 Em7       D d (d) D d d D d d D (d) d
+   41 C         D d d D d d D d D D d d
+   42 D         d d d D d d D (d) (d) D D d
+   43 Em        d (d) (d) D (d) D D (d) d D d D
+   44 G         d (d) (d) D d d d (d) d d (d) d
+   45 C         d (d) d D d d D (d) d D (d) d
+   46 G         d (d) d D d d D d d D d d
+   47 Em        D d d D d d d (d) d D (d) D
+   48 G         d (d) d D d D D (d) d D d d
+   49 Em        D d d D (d) d d d d D (d) D
+   50 G         D d d D d D D d d D d d
+   51 G         (d) d d D (d) D D d d D d d
+   52 Em7       d d d D (d) d D d d D d d
+   53 C         D d d D (d) d D d d D d d
+   54 D7        D d d D d D D (d) (d) D d d
+   55 C         d (d) (d) D (d) D D (d) d D (d) D
+   56 G         d (d) d D (d) d d (d) d D (d) d
+   57 Em        d (d) (d) D (d) d D · d D (d) d
+   58 G         d (d) (d) D (d) d d d d D (d) d
+   59 Em        D d d D d d d (d) D D (d) d
+   60 G         d (d) d D d D D (d) d D (d) d
+   61 Em        D · d D d D D d (d) D d d
+   62 G         d (d) (d) D d D D (d) d D (d) d
+   63 C         D d d D d d D (d) d d d d
+   64 D         D d d D d d D d (d) D d D
+   65 D         d D d d d d (d) d d (d) d D
+   66 C         d D D d d d d (d) (d) D d D
