@@ -236,7 +236,8 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
     weighted = [(c, e - s) for s, e, c in chords if c != "N"]
     ranked = capo_mod.choose_capo(weighted)
     best = ranked[0]
-    sounding, sounding_flats = capo_mod.sounding_key(weighted)
+    sounding, sounding_flats = capo_mod.sounding_key(
+        weighted, order=[c for _, _, c in chords if c not in ('N', 'X')])
 
     def shape(label):
         p = capo_mod.parse(label)
@@ -275,6 +276,12 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
         s_ref, s_rest = rhythm_mod.thresholds(bars_raw[a:b])
         rhythm_mod.classify_span(bars_raw[a:b], s_ref,
                                  max(s_rest, global_floor))
+
+    # safety net: no bar may leave this stage unclassified, whatever the
+    # section logic decides. A missing mark is a crash three stages later.
+    stray = [b for b in bars_raw if "marks" not in b]
+    if stray:
+        rhythm_mod.classify_span(stray, ref, max(rest_at, global_floor))
 
     med, canon_marks = rhythm_mod.canonical(bars_raw, bpb * subdiv, ref, rest_at)
     canon_dirs, dir_rule = rhythm_mod.directions(canon_marks, subdiv, stroke_rate)

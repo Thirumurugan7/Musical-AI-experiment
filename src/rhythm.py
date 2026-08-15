@@ -194,7 +194,22 @@ def sections(bars, shapes, min_bars=4):
         else:
             i += 1
     cuts.append(n)
-    return [(a, b) for a, b in zip(cuts, cuts[1:]) if b - a >= min_bars]
+
+    # Every bar must land in exactly one span. Dropping short spans instead of
+    # merging them left those bars unclassified, and the next stage died on a
+    # missing key — "I'm Yours" crashed on a four-bar tail.
+    spans = []
+    for a, b in zip(cuts, cuts[1:]):
+        if b <= a:
+            continue
+        if spans and (b - a) < min_bars:
+            spans[-1] = (spans[-1][0], b)
+        else:
+            spans.append((a, b))
+    if len(spans) > 1 and (spans[0][1] - spans[0][0]) < min_bars:
+        spans[1] = (spans[0][0], spans[1][1])
+        spans.pop(0)
+    return spans or [(0, n)]
 
 
 def directions(marks, subdiv, stroke_rate_hz):

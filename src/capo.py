@@ -110,14 +110,88 @@ def choose_capo(weighted_chords, max_capo=7):
     return out
 
 
-def sounding_key(weighted_chords):
-    tally = {}
+# diatonic triad quality at each scale degree of a major key
+MAJOR_DEGREES = {0: "maj", 2: "min", 4: "min", 5: "maj",
+                 7: "maj", 9: "min", 11: "dim"}
+
+
+def sounding_key(weighted_chords, order=None):
+    """
+    The key the recording sounds in.
+
+    This used to return whichever root was held longest, which is wrong often
+    enough to matter: the IV chord frequently occupies more of a pop song than
+    the I. Across a five-song benchmark it named D for A, E for B and F for C —
+    every error a fourth above the true tonic.
+
+    Instead, score all twelve major keys by how well the song's chords fit their
+    diatonic triads, then decide between the winning key and its relative minor
+    using the chords the song opens and closes on. Those two positions carry
+    more tonal weight than duration anywhere else: "Wonderwall" spends little
+    time on F#m but begins and ends there, and every chart calls it F# minor.
+
+    `order` is the chord labels in playing order, used only for that decision.
+    """
+    if not weighted_chords:
+        return None, False
+
+    def fit(tonic):
+        s = 0.0
+        for label, dur in weighted_chords:
+            p = parse(label)
+            if not p:
+                continue
+            deg = (p[0] - tonic) % 12
+            want = MAJOR_DEGREES.get(deg)
+            is_min = p[1].startswith("min")
+            if want is None:
+                s -= dur * 0.5                      # chromatic to this key
+            elif want == "dim" or (want == "min") == is_min:
+                s += dur                            # fits, quality and all
+            else:
+                s += dur * 0.25                     # right root, wrong quality
+        return s
+
+    scale = max(range(12), key=fit)
+
+    # the tonic is either that major key or its relative minor; the chords the
+    # song starts and ends on decide which
+    minor = (scale + 9) % 12
+    edge = 0.0
+    if order:
+        firsts = [c for c in order[:2] if parse(c)]
+        lasts = [c for c in order[-2:] if parse(c)]
+        for label in firsts + lasts:
+            p = parse(label)
+            if p[0] == minor and p[1].startswith("min"):
+                edge += 1
+            elif p[0] == scale:
+                edge -= 1
+
+    total = {}
     for label, dur in weighted_chords:
         p = parse(label)
         if p:
-            tally[p[0]] = tally.get(p[0], 0) + dur
-    if not tally:
-        return None, False
-    tonic = max(tally, key=tally.get)
+            total[(p[0], p[1].startswith("min"))] = \
+                total.get((p[0], p[1].startswith("min")), 0) + dur
+    maj_w = total.get((scale, False), 0)
+    min_w = total.get((minor, True), 0)
+
+    is_minor = edge > 0 or (edge == 0 and min_w > maj_w * 1.3)
+
+    # A song that finishes on the major tonic or its dominant is in the major
+    # key, whatever the durations say. Hallelujah spends more time on Am than
+    # on C and is detected opening on Am, but it closes on G — the V that
+    # resolves to C — and every published chart calls it C major.
+    if order:
+        for label in reversed(order):
+            p = parse(label)
+            if not p:
+                continue
+            if p[0] in (scale, (scale + 7) % 12) and not p[1].startswith("min"):
+                is_minor = False
+            break
+    tonic = minor if is_minor else scale
     use_flats = tonic in FLAT_KEYS
-    return spell(tonic, use_flats), use_flats
+    name = spell(tonic, use_flats) + ("m" if is_minor else "")
+    return name, use_flats
