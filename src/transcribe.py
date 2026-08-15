@@ -76,6 +76,48 @@ def fill_no_chord(labels):
     return out
 
 
+def grid_offset(env, env_times, bt, sr=22050, max_frac=0.25, min_ms=12.0):
+    """
+    How far the tracked beat grid sits from where notes actually land.
+
+    Beat trackers report a perceptual pulse, which is not obliged to coincide
+    with the attacks — mp3 decoder padding, a laid-back performance, or the
+    tracker locking to a smoothed envelope all shift it. On Riptide the offset
+    is -82 ms, 14% of a beat: every attack falls outside the sampling window,
+    so the beats read as rests and the offbeats read as strums. Beat 2 and 4,
+    where the snare is loudest, came back marked as pauses.
+
+    Measured as the median signed distance from each detected onset to its
+    nearest beat. The median resists the onsets that genuinely fall between
+    beats; only a consistent shift of the whole grid survives it.
+    """
+    on = librosa.onset.onset_detect(onset_envelope=env, sr=sr, units="time",
+                                    backtrack=False)
+    if len(on) < 12 or len(bt) < 4:
+        return 0.0, {"applied": False, "reason": "too few onsets or beats"}
+    period = float(np.median(np.diff(bt)))
+    d = []
+    for t in on:
+        i = int(np.argmin(np.abs(bt - t)))
+        frac = (t - bt[i]) / period
+        if abs(frac) < max_frac:
+            d.append(frac)
+    if len(d) < 8:
+        return 0.0, {"applied": False, "reason": "no onsets near the grid"}
+    med = float(np.median(d))
+    shift = med * period
+    spread = float(np.median(np.abs(np.array(d) - med)))
+    info = {"offset_ms": round(shift * 1000, 1),
+            "offset_fraction_of_beat": round(med, 4),
+            "spread": round(spread, 4), "onsets_used": len(d)}
+    # only correct a shift that is both large enough to matter and consistent
+    if abs(shift) * 1000 < min_ms or spread > 0.12:
+        info["applied"] = False
+        return 0.0, info
+    info["applied"] = True
+    return shift, info
+
+
 def detect_subdiv(beats, env, env_times, res=12):
     """
     Compound (3) or simple (2 / 4)? Compare where energy sits *inside* a beat.
@@ -167,6 +209,14 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
 
     act = RNNDownBeatProcessor()(wav)
     beats = DBNDownBeatTrackingProcessor(beats_per_bar=[4], fps=100)(act)
+
+    # Align the grid to where notes actually land before anything samples it.
+    # Everything downstream — slot strengths, metre, bar timestamps, the chord
+    # each bar gets — reads these times, so a shift here corrects all of them.
+    shift, align = grid_offset(env_mix, et_mix, beats[:, 0])
+    if shift:
+        beats = beats.copy()
+        beats[:, 0] = beats[:, 0] + shift
     bt, bpos = beats[:, 0], beats[:, 1].astype(int)
 
     subdiv, subdiv_scores = detect_subdiv(beats, env_mix, et_mix)
@@ -291,6 +341,7 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
         "subdiv": subdiv,
         "metre": f"{bpb*subdiv}/8" if subdiv == 3 else f"{bpb}/4",
         "subdiv_evidence": subdiv_scores,
+        "grid_alignment": align,
         "stroke_rate_hz": round(stroke_rate, 2),
         "direction_rule": dir_rule,
         "chords_shapes": uniq_shapes[:8],

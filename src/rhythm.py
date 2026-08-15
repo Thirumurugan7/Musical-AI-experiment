@@ -42,7 +42,7 @@ def slot_strengths(env, env_times, beats, beat_pos, subdiv):
     return bars, bpb
 
 
-def noise_floor(bars, pct=10, mult=1.8):
+def noise_floor(bars, pct=10, mult=1.25):
     """
     Absolute quiet level for the whole track, from its quietest slots.
 
@@ -55,19 +55,38 @@ def noise_floor(bars, pct=10, mult=1.8):
     return float(np.percentile(allv, pct)) * mult if allv.size else 0.0
 
 
-def thresholds(bars, rest_ratio=0.32, floor_pct=10, floor_mult=1.8):
+def thresholds(bars, floor_pct=10, floor_mult=1.25, rest_ratio=0.32,
+               flat_range=2.5):
     """
     Track-wide reference level and rest threshold.
 
-    Shared by classify() and canonical() so a slot means the same thing in the
-    per-bar rows and in the summary pattern. Deriving it once, from the whole
-    track, is the entire point — see classify() for what per-bar thresholds did.
+    A rest means the player stopped, so it has to be anchored to silence — the
+    quietest material on the track — and not to a fraction of the median.
+
+    An earlier version used `max(noise, median * 0.32)`. That second term
+    invents rests in any song strummed continuously: Riptide's eight slot
+    positions span 3.06 to 4.59, a range of 1.5:1 with no gaps at all, yet a
+    third of the median cut straight through the middle of it and marked beats
+    2 and 4 — the quietest slots, but still plainly played — as pauses.
+
+    So the median term applies only when the track has the dynamic range to
+    justify it. If the loud and quiet slots are within `flat_range` of each
+    other the playing is continuous, and the pattern lives in the accents
+    rather than in any silence.
     """
     allv = np.concatenate([np.asarray(b["strength"], dtype=float) for b in bars])
     pos = allv[allv > 0]
     ref = float(np.median(pos)) if pos.size else 1.0
-    noise = float(np.percentile(allv, floor_pct)) if allv.size else 0.0
-    return ref, max(noise * floor_mult, ref * rest_ratio)
+    if not allv.size:
+        return ref, 0.0
+    lo = float(np.percentile(allv, floor_pct))
+    hi = float(np.percentile(allv, 90))
+    rest_at = lo * floor_mult
+    if lo > 0 and hi / lo > flat_range:
+        # genuinely dynamic: quiet slots really are gaps, so the median-relative
+        # threshold is meaningful and catches them
+        rest_at = max(rest_at, ref * rest_ratio)
+    return ref, rest_at
 
 
 def _mark(v, ref, rest_at, accent_ratio=1.30, ghost_ratio=0.75):
