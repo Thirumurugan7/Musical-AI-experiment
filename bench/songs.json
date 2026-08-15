@@ -1,0 +1,770 @@
+{
+  "_note": "Benchmark reference set. `key` is the sounding key as published charts give it; `chords` are the sounding chords (capo-independent), which is what we score on. `capo` is recorded for reference but NOT scored \u2014 a different capo giving the same sounding chords is equally valid. `metre` is scored only as simple vs compound.",
+  "_sources": "UNVERIFIED except where marked. These rows were written from the assistant's own knowledge of the songs, NOT transcribed from chart sites. Only the five carrying \"verified\": true were checked against published charts (Ultimate Guitar / Chordify / Lauren Bateman / petesguitar / GuitarPlayerBox). Any score computed against the unverified rows measures the reference set as much as the pipeline. Verify a row before treating a mismatch as a pipeline bug.",
+  "songs": [
+    {
+      "id": "wonderwall",
+      "artist": "Oasis",
+      "title": "Wonderwall",
+      "key": "F#m",
+      "capo": 2,
+      "metre": "4/4",
+      "chords": [
+        "F#m",
+        "A",
+        "E",
+        "B",
+        "D"
+      ],
+      "verified": true
+    },
+    {
+      "id": "letitbe",
+      "artist": "The Beatles",
+      "title": "Let It Be",
+      "key": "C",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "C",
+        "G",
+        "Am",
+        "F"
+      ],
+      "verified": true
+    },
+    {
+      "id": "someonelikeyou",
+      "artist": "Adele",
+      "title": "Someone Like You",
+      "key": "A",
+      "capo": 2,
+      "metre": "4/4",
+      "chords": [
+        "A",
+        "E",
+        "F#m",
+        "D"
+      ],
+      "verified": true
+    },
+    {
+      "id": "imyours",
+      "artist": "Jason Mraz",
+      "title": "I'm Yours",
+      "key": "B",
+      "capo": 4,
+      "metre": "4/4",
+      "chords": [
+        "B",
+        "F#",
+        "G#m",
+        "E"
+      ],
+      "verified": true
+    },
+    {
+      "id": "hallelujah",
+      "artist": "Jeff Buckley",
+      "title": "Hallelujah",
+      "key": "C",
+      "capo": 0,
+      "metre": "6/8",
+      "chords": [
+        "C",
+        "Am",
+        "F",
+        "G"
+      ],
+      "verified": true
+    },
+    {
+      "id": "perfect",
+      "artist": "Ed Sheeran",
+      "title": "Perfect",
+      "key": "Ab",
+      "capo": 1,
+      "metre": "12/8",
+      "chords": [
+        "Ab",
+        "Fm",
+        "Db",
+        "Eb"
+      ],
+      "verified": false
+    },
+    {
+      "id": "riptide",
+      "artist": "Vance Joy",
+      "title": "Riptide",
+      "key": "Db",
+      "capo": 1,
+      "metre": "4/4",
+      "chords": [
+        "Bbm",
+        "Ab",
+        "Db"
+      ],
+      "verified": false
+    },
+    {
+      "id": "thinkingoutloud",
+      "artist": "Ed Sheeran",
+      "title": "Thinking Out Loud",
+      "key": "D",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "D",
+        "A",
+        "Bm",
+        "G",
+        "Em"
+      ],
+      "verified": false
+    },
+    {
+      "id": "photograph",
+      "artist": "Ed Sheeran",
+      "title": "Photograph",
+      "key": "E",
+      "capo": 4,
+      "metre": "4/4",
+      "chords": [
+        "E",
+        "B",
+        "C#m",
+        "A"
+      ],
+      "verified": false
+    },
+    {
+      "id": "heytheredelilah",
+      "artist": "Plain White T's",
+      "title": "Hey There Delilah",
+      "key": "D",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "D",
+        "F#m",
+        "Bm",
+        "G",
+        "A",
+        "Em"
+      ],
+      "verified": false
+    },
+    {
+      "id": "wishyouwerehere",
+      "artist": "Pink Floyd",
+      "title": "Wish You Were Here",
+      "key": "G",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "G",
+        "C",
+        "Em",
+        "A",
+        "D"
+      ],
+      "verified": false
+    },
+    {
+      "id": "knockinheaven",
+      "artist": "Bob Dylan",
+      "title": "Knockin' on Heaven's Door",
+      "key": "G",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "G",
+        "D",
+        "Am",
+        "C"
+      ],
+      "verified": false
+    },
+    {
+      "id": "freefallin",
+      "artist": "Tom Petty",
+      "title": "Free Fallin'",
+      "key": "F",
+      "capo": 1,
+      "metre": "4/4",
+      "chords": [
+        "F",
+        "Bb",
+        "C"
+      ],
+      "verified": false
+    },
+    {
+      "id": "herecomesthesun",
+      "artist": "The Beatles",
+      "title": "Here Comes the Sun",
+      "key": "A",
+      "capo": 7,
+      "metre": "4/4",
+      "chords": [
+        "A",
+        "D",
+        "E"
+      ],
+      "verified": false
+    },
+    {
+      "id": "hotelcalifornia",
+      "artist": "Eagles",
+      "title": "Hotel California",
+      "key": "Bm",
+      "capo": 2,
+      "metre": "4/4",
+      "chords": [
+        "Bm",
+        "F#",
+        "A",
+        "E",
+        "G",
+        "D",
+        "Em"
+      ],
+      "verified": false
+    },
+    {
+      "id": "standbyme",
+      "artist": "Ben E. King",
+      "title": "Stand By Me",
+      "key": "A",
+      "capo": 2,
+      "metre": "4/4",
+      "chords": [
+        "A",
+        "F#m",
+        "D",
+        "E"
+      ],
+      "verified": false
+    },
+    {
+      "id": "creep",
+      "artist": "Radiohead",
+      "title": "Creep",
+      "key": "G",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "G",
+        "B",
+        "C",
+        "Cm"
+      ],
+      "verified": false
+    },
+    {
+      "id": "zombie",
+      "artist": "The Cranberries",
+      "title": "Zombie",
+      "key": "Em",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "Em",
+        "C",
+        "G",
+        "D"
+      ],
+      "verified": false
+    },
+    {
+      "id": "withorwithoutyou",
+      "artist": "U2",
+      "title": "With or Without You",
+      "key": "D",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "D",
+        "A",
+        "Bm",
+        "G"
+      ],
+      "verified": false
+    },
+    {
+      "id": "countryroads",
+      "artist": "John Denver",
+      "title": "Take Me Home, Country Roads",
+      "key": "A",
+      "capo": 2,
+      "metre": "4/4",
+      "chords": [
+        "A",
+        "F#m",
+        "E",
+        "D"
+      ],
+      "verified": false
+    },
+    {
+      "id": "sweethomealabama",
+      "artist": "Lynyrd Skynyrd",
+      "title": "Sweet Home Alabama",
+      "key": "D",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "D",
+        "C",
+        "G"
+      ],
+      "verified": false
+    },
+    {
+      "id": "wagonwheel",
+      "artist": "Old Crow Medicine Show",
+      "title": "Wagon Wheel",
+      "key": "A",
+      "capo": 2,
+      "metre": "4/4",
+      "chords": [
+        "A",
+        "E",
+        "F#m",
+        "D"
+      ],
+      "verified": true,
+      "note": "recorded in A; G-D-Em-C shapes at capo 2 (Wikipedia, Heartwood, songnotes)"
+    },
+    {
+      "id": "hohey",
+      "artist": "The Lumineers",
+      "title": "Ho Hey",
+      "key": "C",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "C",
+        "G",
+        "Em",
+        "F"
+      ],
+      "verified": true,
+      "note": "written in the key of C major (Wikipedia)"
+    },
+    {
+      "id": "budapest",
+      "artist": "George Ezra",
+      "title": "Budapest",
+      "key": "F",
+      "capo": 3,
+      "metre": "4/4",
+      "chords": [
+        "F",
+        "Bb",
+        "C"
+      ],
+      "verified": false
+    },
+    {
+      "id": "shapeofyou",
+      "artist": "Ed Sheeran",
+      "title": "Shape of You",
+      "key": "C#m",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "C#m",
+        "F#m",
+        "A",
+        "B"
+      ],
+      "verified": false
+    },
+    {
+      "id": "countingstars",
+      "artist": "OneRepublic",
+      "title": "Counting Stars",
+      "key": "C#m",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "C#m",
+        "E",
+        "B",
+        "A"
+      ],
+      "verified": true,
+      "note": "recorded in C# minor (GetSongKEY, Tunebat, Musicstax); Am is the capo-4 chart transposition"
+    },
+    {
+      "id": "someoneyouloved",
+      "artist": "Lewis Capaldi",
+      "title": "Someone You Loved",
+      "key": "Db",
+      "capo": 1,
+      "metre": "4/4",
+      "chords": [
+        "Db",
+        "Ab",
+        "Bbm",
+        "Gb"
+      ],
+      "verified": false
+    },
+    {
+      "id": "radioactive",
+      "artist": "Imagine Dragons",
+      "title": "Radioactive",
+      "key": "Bm",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "Bm",
+        "D",
+        "A",
+        "E"
+      ],
+      "verified": false
+    },
+    {
+      "id": "wakemeup",
+      "artist": "Avicii",
+      "title": "Wake Me Up",
+      "key": "Bm",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "Bm",
+        "G",
+        "D",
+        "A"
+      ],
+      "verified": false
+    },
+    {
+      "id": "allofme",
+      "artist": "John Legend",
+      "title": "All of Me",
+      "key": "Ab",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "Fm",
+        "Db",
+        "Ab",
+        "Eb"
+      ],
+      "verified": false
+    },
+    {
+      "id": "sayyouwontletgo",
+      "artist": "James Arthur",
+      "title": "Say You Won't Let Go",
+      "key": "Bb",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "A#",
+        "F",
+        "Gm",
+        "D#"
+      ],
+      "verified": true,
+      "note": "chords match ours exactly when transposed -4; chart is written in the capo-friendly key"
+    },
+    {
+      "id": "loveyourself",
+      "artist": "Justin Bieber",
+      "title": "Love Yourself",
+      "key": "E",
+      "capo": 1,
+      "metre": "4/4",
+      "chords": [
+        "E",
+        "B",
+        "C#m",
+        "A"
+      ],
+      "verified": false
+    },
+    {
+      "id": "letgo",
+      "artist": "Passenger",
+      "title": "Let Her Go",
+      "key": "G",
+      "capo": 7,
+      "metre": "4/4",
+      "chords": [
+        "G",
+        "D",
+        "Em",
+        "C"
+      ],
+      "verified": false
+    },
+    {
+      "id": "chasingcars",
+      "artist": "Snow Patrol",
+      "title": "Chasing Cars",
+      "key": "A",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "A",
+        "E",
+        "D"
+      ],
+      "verified": false
+    },
+    {
+      "id": "yellow",
+      "artist": "Coldplay",
+      "title": "Yellow",
+      "key": "B",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "B",
+        "F#",
+        "E"
+      ],
+      "verified": false
+    },
+    {
+      "id": "thescientist",
+      "artist": "Coldplay",
+      "title": "The Scientist",
+      "key": "F",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "Dm",
+        "Bb",
+        "F",
+        "C"
+      ],
+      "verified": false
+    },
+    {
+      "id": "vivalavida",
+      "artist": "Coldplay",
+      "title": "Viva La Vida",
+      "key": "Ab",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "Db",
+        "Eb",
+        "Ab",
+        "Fm"
+      ],
+      "verified": false
+    },
+    {
+      "id": "boulevard",
+      "artist": "Green Day",
+      "title": "Boulevard of Broken Dreams",
+      "key": "Fm",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "Fm",
+        "Ab",
+        "Eb",
+        "Bb"
+      ],
+      "verified": false
+    },
+    {
+      "id": "losingmyreligion",
+      "artist": "R.E.M.",
+      "title": "Losing My Religion",
+      "key": "Am",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "Am",
+        "Em",
+        "Dm",
+        "G",
+        "F"
+      ],
+      "verified": false
+    },
+    {
+      "id": "everybreath",
+      "artist": "The Police",
+      "title": "Every Breath You Take",
+      "key": "Ab",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "Ab",
+        "Fm",
+        "Db",
+        "Eb"
+      ],
+      "verified": false
+    },
+    {
+      "id": "dontstopbelievin",
+      "artist": "Journey",
+      "title": "Don't Stop Believin'",
+      "key": "E",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "E",
+        "B",
+        "C#m",
+        "A"
+      ],
+      "verified": false
+    },
+    {
+      "id": "sweetchild",
+      "artist": "Guns N' Roses",
+      "title": "Sweet Child O' Mine",
+      "key": "Db",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "C#",
+        "B",
+        "F#",
+        "G#"
+      ],
+      "verified": true,
+      "note": "Guns N' Roses recorded in Eb tuning, sounding a semitone below every published chart"
+    },
+    {
+      "id": "nothingelse",
+      "artist": "Metallica",
+      "title": "Nothing Else Matters",
+      "key": "Em",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "Em",
+        "D",
+        "C",
+        "G",
+        "B"
+      ],
+      "verified": false
+    },
+    {
+      "id": "tearsinheaven",
+      "artist": "Eric Clapton",
+      "title": "Tears in Heaven",
+      "key": "A",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "A",
+        "E",
+        "F#m",
+        "D",
+        "Bm"
+      ],
+      "verified": false
+    },
+    {
+      "id": "morethanwords",
+      "artist": "Extreme",
+      "title": "More Than Words",
+      "key": "Gb",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "F#",
+        "B",
+        "C#",
+        "D#m",
+        "G#m"
+      ],
+      "verified": true,
+      "note": "chords match ours exactly when transposed -1"
+    },
+    {
+      "id": "yesterday",
+      "artist": "The Beatles",
+      "title": "Yesterday",
+      "key": "F",
+      "capo": 5,
+      "metre": "4/4",
+      "chords": [
+        "F",
+        "Em",
+        "A",
+        "Dm",
+        "Bb",
+        "C"
+      ],
+      "verified": false
+    },
+    {
+      "id": "imagine",
+      "artist": "John Lennon",
+      "title": "Imagine",
+      "key": "C",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "C",
+        "F",
+        "Am",
+        "G"
+      ],
+      "verified": false
+    },
+    {
+      "id": "hurt",
+      "artist": "Johnny Cash",
+      "title": "Hurt",
+      "key": "Am",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "Am",
+        "C",
+        "D",
+        "G"
+      ],
+      "verified": false
+    },
+    {
+      "id": "fastcar",
+      "artist": "Tracy Chapman",
+      "title": "Fast Car",
+      "key": "A",
+      "capo": 2,
+      "metre": "4/4",
+      "chords": [
+        "A",
+        "E",
+        "F#m",
+        "D"
+      ],
+      "verified": true,
+      "note": "capo 2 with G-shapes; sounds in A (acousticguitar.com, UG)"
+    },
+    {
+      "id": "blowininthewind",
+      "artist": "Bob Dylan",
+      "title": "Blowin' in the Wind",
+      "key": "D",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "D",
+        "G",
+        "A"
+      ],
+      "verified": false
+    }
+  ],
+  "_capo_note": "Different sites publish different capos for the same song and all can be correct \u2014 capo 5 with G shapes and capo 0 with C shapes are the same music. `capo` here is one commonly published choice and is NOT scored. Only the sounding chords are."
+}

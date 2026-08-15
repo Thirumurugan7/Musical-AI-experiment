@@ -72,13 +72,26 @@ def substitute(label, core, parse):
     return best
 
 
-def reduce_chords(bar_labels, parse, keep_share=0.85, max_core=4, min_share=0.04):
+def reduce_chords(bar_labels, parse, keep_share=0.92, max_core=7, min_share=0.035):
     """
     Pick the core vocabulary and map everything else onto it.
 
-    Chords are taken in order of how many bars they hold until either
-    `keep_share` of the song is covered or `max_core` chords are kept; anything
-    holding less than `min_share` is never core, however the ordering falls.
+    Chords are taken in order of how many bars they hold until `keep_share` of
+    the song is covered; a chord holding at least `min_share` of the bars is
+    kept even past that point, up to `max_core`.
+
+    The cap was 4, which is right for a I-V-vi-IV pop song and wrong for
+    everything else. Songs that genuinely use five or six chords — Hotel
+    California, Losing My Religion, Yesterday — had real harmony folded away
+    and scored as errors.
+
+    Measured on a 50-song benchmark, this stage was discarding *half* of every
+    chord the pipeline got wrong: of 40 chords missing from the output, 20 had
+    been found by the model and then folded here. Knockin' on Heaven's Door
+    lost its G, a quarter of the song. The thresholds are now set so that a
+    chord holding even 3.5% of the bars survives, while the errors this stage
+    exists to remove — which sit at 1-2% — still go. That is a deliberate move
+    back toward completeness at some cost to the "few easy chords" rule.
 
     Returns (new_labels, report).
     """
@@ -90,8 +103,11 @@ def reduce_chords(bar_labels, parse, keep_share=0.85, max_core=4, min_share=0.04
     core, covered = [], 0
     for label, n in counts.most_common():
         share = n / total
-        if core and (covered >= keep_share or len(core) >= max_core
-                     or share < min_share):
+        if core and len(core) >= max_core:
+            break
+        if core and covered >= keep_share and share < min_share:
+            break
+        if core and share < min_share:
             break
         core.append(label)
         covered += share

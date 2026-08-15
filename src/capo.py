@@ -135,6 +135,15 @@ def sounding_key(weighted_chords, order=None):
     if not weighted_chords:
         return None, False
 
+    total_dur = sum(d for _, d in weighted_chords) or 1.0
+
+    # chord roots in playing order, for cadence counting
+    seq = []
+    for label in (order or []):
+        p = parse(label)
+        if p and (not seq or seq[-1] != p):
+            seq.append(p)
+
     def fit(tonic):
         s = 0.0
         for label, dur in weighted_chords:
@@ -150,6 +159,23 @@ def sounding_key(weighted_chords, order=None):
                 s += dur                            # fits, quality and all
             else:
                 s += dur * 0.25                     # right root, wrong quality
+        s /= total_dur
+
+        # Scale membership alone cannot separate a key from its IV or its V —
+        # they share six of seven notes, which is why an earlier version called
+        # Creep C instead of G and Sweet Home Alabama G instead of D. What marks
+        # a tonic is arrival: the chord a dominant resolves to, and the chord a
+        # song opens and closes on.
+        if seq:
+            dom = (tonic + 7) % 12
+            sub = (tonic + 5) % 12
+            cad = sum(1 for a, b in zip(seq, seq[1:])
+                      if b[0] == tonic and a[0] in (dom, sub))
+            s += 0.55 * cad / max(len(seq) - 1, 1)
+            if seq[0][0] == tonic:
+                s += 0.22
+            if seq[-1][0] == tonic:
+                s += 0.28
         return s
 
     scale = max(range(12), key=fit)

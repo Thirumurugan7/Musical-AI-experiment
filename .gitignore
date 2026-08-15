@@ -11,3 +11,6 @@ __pycache__/
 # scratch workspace when CHORDSTRUM_ROOT points inside the repo:
 # ChordMini clone, demucs venv, separated stems, per-song audio
 work/
+
+# scratch: benchmark audio and derived artifacts (large, not redistributable)
+bench/audio/
