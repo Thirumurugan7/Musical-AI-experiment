@@ -27,7 +27,12 @@ fi
 
 say "installing demucs (first run only)"
 "$VENV/bin/pip" install -q --upgrade pip
-"$VENV/bin/pip" install -q demucs
+# demucs 4.1.0 gates its numpy requirement behind
+#   numpy<2; sys_platform == 'darwin' and platform_machine == 'x86_64'
+# so on Apple Silicon pip installs no numpy at all, while transformer.py
+# imports it unconditionally — separation dies with ModuleNotFoundError.
+# Install it explicitly, honouring the <2 bound upstream asks for elsewhere.
+"$VENV/bin/pip" install -q demucs "numpy<2"
 
 mkdir -p "$OUT"
 say "separating — first run downloads ~300MB of weights, then several minutes of CPU"
