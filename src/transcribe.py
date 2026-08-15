@@ -63,9 +63,16 @@ def detect_subdiv(beats, env, env_times):
     return best, scores
 
 
-def transcribe(wav, lab, title=None):
+def transcribe(wav, lab, title=None, stem=None):
+    """
+    wav  : the full mix — used for beat/downbeat tracking, which is more
+           reliable with drums present
+    stem : optional isolated guitar track — used for onset detection, so the
+           rhythm reflects the guitar rather than the whole arrangement
+    """
     chords = load_lab(lab)
-    y, sr = librosa.load(wav, sr=22050, mono=True)
+    onset_src = stem or wav
+    y, sr = librosa.load(onset_src, sr=22050, mono=True)
     env = librosa.onset.onset_strength(y=y, sr=sr)
     et = librosa.times_like(env, sr=sr)
 
@@ -124,8 +131,16 @@ def transcribe(wav, lab, title=None):
             uniq_shapes.append(s)
             uniq_sound.append(sound(label))
 
+    # how densely occupied the grid is — on a full mix this is meaningless
+    # (everything has energy); on an isolated stem it is the actual strum rate
+    occupancy = float(np.mean([sum(1 for m in b["marks"] if m != " ") /
+                               len(b["marks"]) for b in bars_raw]))
+
     return {
         "title": title or wav,
+        "onset_source": "isolated stem" if stem else "full mix",
+        "onset_source_file": onset_src,
+        "grid_occupancy": round(occupancy, 3),
         "sounding_key": sounding,
         "capo": best["capo"],
         "shape_key": best["key_shape"],
@@ -181,8 +196,24 @@ def render(r, max_bars=32):
 
 
 if __name__ == "__main__":
-    res = transcribe(sys.argv[1], sys.argv[2],
-                     title=sys.argv[4] if len(sys.argv) > 4 else None)
-    print(render(res))
-    if len(sys.argv) > 3:
-        json.dump(res, open(sys.argv[3], "w"), indent=2)
+    import argparse
+    ap = argparse.ArgumentParser(
+        description="Chord + rhythm chart with capo-relative chord names.")
+    ap.add_argument("audio", help="the full mix (wav/mp3)")
+    ap.add_argument("lab", help=".lab chord file from Chord-CNN-LSTM")
+    ap.add_argument("-o", "--out", help="write full analysis as JSON")
+    ap.add_argument("-t", "--title", help="title for the chart header")
+    ap.add_argument("-s", "--stem",
+                    help="isolated guitar track; onsets are read from this "
+                         "instead of the full mix")
+    ap.add_argument("-n", "--bars", type=int, default=32,
+                    help="how many bars to print (default 32)")
+    a = ap.parse_args()
+
+    res = transcribe(a.audio, a.lab, title=a.title, stem=a.stem)
+    print(render(res, max_bars=a.bars))
+    print(f"\n  onsets read from: {res['onset_source']}"
+          f"   grid occupancy: {res['grid_occupancy']:.0%}")
+    if a.out:
+        json.dump(res, open(a.out, "w"), indent=2)
+        print(f"  wrote {a.out}")
