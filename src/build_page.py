@@ -164,6 +164,29 @@ TEMPLATE = r"""<!doctype html>
     <div class="next" id="next"></div>
   </div>
 
+  <div class="card" id="strumCard">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px;flex-wrap:wrap">
+      <span class="lbl">Strumming pattern</span>
+      <span class="chip" id="strum-meta"></span>
+    </div>
+    <div class="ctl" style="margin-bottom:14px">
+      <span class="seg" id="sect"></span>
+    </div>
+    <div class="cnt" id="s-cnt"></div>
+    <div class="grid" id="s-grid"></div>
+    <div class="ctl" style="margin-top:16px">
+      <button class="play" id="s-play">&#9654; Play pattern</button>
+      <label class="lbl" for="s-tempo">Tempo</label>
+      <input type="range" id="s-tempo" min="40" max="140" value="100" step="1"
+             style="width:150px;accent-color:var(--gold)">
+      <span class="chip" id="s-tempo-v">100%</span>
+      <span class="chip" id="s-chords"></span>
+    </div>
+    <p class="note" style="margin:14px 0 0">Loops one bar. Accents are louder and
+      brighter; ghost strokes are the quiet brushes between them. This is the
+      detected pattern alone &mdash; no recording underneath.</p>
+  </div>
+
   <div class="card" id="lyrCard" style="display:none">
     <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:10px">
       <span class="lbl">Lyrics</span><span class="chip" id="lyr-meta"></span>
@@ -334,8 +357,132 @@ function setSrc(url){
   });
 }
 
+/* ---------- strumming pattern player ---------- */
+/* A strum is a burst of broadband noise shaped by a bandpass — closer to what
+   a pick across six strings actually sounds like than a tone would be. Accent,
+   normal and ghost differ in gain, brightness and decay, which is what makes
+   the pattern legible by ear rather than a flat row of ticks. */
+let sectIdx = 0, loopTimer = null, loopStart = 0, nextSlot = 0, playing = false;
+let noiseBuf = null;
+
+function patterns(){
+  const d = DATA[markKey];
+  const list = (d.sections || []).map((s, i) => ({
+    label: "Section " + (i+1), pattern: s.pattern,
+    chords: (s.chords || []).join(" "), from: s.from_bar, to: s.to_bar
+  }));
+  list.push({ label: "Whole song", pattern: d.canonical_pattern,
+              chords: (d.chords_shapes || []).slice(0,6).join(" "),
+              from: 1, to: d.n_bars });
+  return list;
+}
+
+function ensureNoise(){
+  if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+  if (noiseBuf) return;
+  const n = Math.floor(actx.sampleRate * 0.4);
+  noiseBuf = actx.createBuffer(1, n, actx.sampleRate);
+  const ch = noiseBuf.getChannelData(0);
+  for (let i = 0; i < n; i++) ch[i] = Math.random() * 2 - 1;
+}
+
+function strum(at, k, up){
+  ensureNoise();
+  const gains  = { accent: 0.5,  normal: 0.26, ghost: 0.1 };
+  const cutoff = { accent: 2400, normal: 1700, ghost: 1100 };
+  const decay  = { accent: 0.34, normal: 0.24, ghost: 0.11 };
+  const src = actx.createBufferSource(); src.buffer = noiseBuf;
+  const bp = actx.createBiquadFilter();
+  bp.type = "bandpass"; bp.frequency.value = cutoff[k]; bp.Q.value = 0.7;
+  // an upstroke catches the thin strings first — a touch brighter
+  if (up) bp.frequency.value *= 1.35;
+  const g = actx.createGain();
+  g.gain.setValueAtTime(0.0001, at);
+  g.gain.exponentialRampToValueAtTime(gains[k], at + 0.006);
+  g.gain.exponentialRampToValueAtTime(0.0001, at + decay[k]);
+  src.connect(bp); bp.connect(g); g.connect(actx.destination);
+  src.start(at); src.stop(at + decay[k] + 0.02);
+}
+
+function drawPattern(){
+  const d = DATA[markKey], p = patterns()[sectIdx], n = nSlots(d);
+  const tk = tokens(p.pattern);
+  const cnt = $("s-cnt"), grid = $("s-grid");
+  cnt.innerHTML = ""; grid.innerHTML = "";
+  cnt.style.gridTemplateColumns = `repeat(${n},1fr)`;
+  grid.style.gridTemplateColumns = `repeat(${n},1fr)`;
+  for (let i = 0; i < n; i++){
+    const s = document.createElement("span");
+    const ib = i % d.subdiv;
+    s.textContent = ib === 0 ? String(i / d.subdiv + 1) : (d.subdiv === 3 ? "." : "+");
+    if (ib === 0) s.className = "beat";
+    cnt.appendChild(s);
+    const t = tk[i] || "·";
+    const c = document.createElement("div");
+    c.className = "cell " + kind(t); c.id = "s" + i;
+    c.textContent = t === "·" ? "·" : t.replace(/[()]/g, "");
+    grid.appendChild(c);
+  }
+  $("s-chords").textContent = p.chords ? "chords: " + p.chords : "";
+  $("strum-meta").textContent =
+    `${d.metre} · bars ${p.from}–${p.to} · ${d.tempo_bpm} BPM`;
+}
+
+function slotSeconds(){
+  const d = DATA[markKey];
+  const rate = parseInt($("s-tempo").value, 10) / 100;
+  return (d.bar_len / nSlots(d)) / rate;
+}
+
+function tick(){
+  const d = DATA[markKey], n = nSlots(d);
+  const tk = tokens(patterns()[sectIdx].pattern);
+  const dur = slotSeconds();
+  while (loopStart + nextSlot * dur < actx.currentTime + 0.15){
+    const i = nextSlot % n;
+    const t = tk[i] || "·", k = kind(t);
+    const at = loopStart + nextSlot * dur;
+    if (k !== "rest") strum(at, k, t.replace(/[()]/g,"").toLowerCase() === "u");
+    const delay = Math.max(0, (at - actx.currentTime) * 1000);
+    setTimeout(() => {
+      for (let j = 0; j < n; j++){
+        const el = $("s"+j); if (el) el.classList.toggle("hit", j === i);
+      }
+    }, delay);
+    nextSlot++;
+  }
+}
+
+$("s-play").addEventListener("click", () => {
+  ensureNoise();
+  if (playing){
+    playing = false; clearInterval(loopTimer); loopTimer = null;
+    $("s-play").innerHTML = "&#9654; Play pattern";
+    document.querySelectorAll("#s-grid .cell").forEach(c => c.classList.remove("hit"));
+    return;
+  }
+  if (actx.state === "suspended") actx.resume();
+  playing = true; nextSlot = 0; loopStart = actx.currentTime + 0.1;
+  $("s-play").innerHTML = "&#9632; Stop";
+  tick(); loopTimer = setInterval(tick, 25);
+});
+$("s-tempo").addEventListener("input", e => {
+  $("s-tempo-v").textContent = e.target.value + "%";
+  if (playing){ nextSlot = 0; loopStart = actx.currentTime + 0.05; }
+});
+
 segButtons($("src"), SRCS, setSrc);
-segButtons($("marks"), Object.keys(DATA).map(k => [k, k]), k => { markKey = k; meta(); });
+segButtons($("marks"), Object.keys(DATA).map(k => [k, k]),
+           k => { markKey = k; meta(); buildSections(); });
+
+function buildSections(){
+  const host = $("sect"); host.innerHTML = ""; sectIdx = 0;
+  segButtons(host, patterns().map((p, i) => [p.label, String(i)]), v => {
+    sectIdx = parseInt(v, 10); drawPattern();
+    if (playing){ nextSlot = 0; loopStart = actx.currentTime + 0.05; }
+  });
+  drawPattern();
+}
 
 $("click").addEventListener("click", e => {
   clickOn = !clickOn;
@@ -363,7 +510,7 @@ if (LYRICS.length){
   $("lyrCard").style.display = "";
   $("lyr-meta").textContent = LYRICS.length + " lines · from the vocal stem";
 }
-meta(); if (SRCS.length) setSrc(SRCS[0][1]); frame();
+meta(); buildSections(); if (SRCS.length) setSrc(SRCS[0][1]); frame();
 </script>
 </body>
 </html>
