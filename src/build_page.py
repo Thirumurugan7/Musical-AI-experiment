@@ -367,13 +367,16 @@ let noiseBuf = null;
 
 function patterns(){
   const d = DATA[markKey];
-  const list = (d.sections || []).map((s, i) => ({
+  // whole-song first: it is the pattern the chart prints and the one you play.
+  // Leading with Section 1 opened the page on an intro, whose rests are real
+  // but unrepresentative — it read as though the fix had not applied.
+  const list = [{ label: "Whole song", pattern: d.canonical_pattern,
+                  chords: (d.chords_shapes || []).slice(0,6).join(" "),
+                  from: 1, to: d.n_bars }];
+  (d.sections || []).forEach((s, i) => list.push({
     label: "Section " + (i+1), pattern: s.pattern,
     chords: (s.chords || []).join(" "), from: s.from_bar, to: s.to_bar
   }));
-  list.push({ label: "Whole song", pattern: d.canonical_pattern,
-              chords: (d.chords_shapes || []).slice(0,6).join(" "),
-              from: 1, to: d.n_bars });
   return list;
 }
 
