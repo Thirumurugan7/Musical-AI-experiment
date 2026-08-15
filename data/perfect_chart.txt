@@ -1,0 +1,74 @@
+Ed Sheeran - Perfect  (auto-transcribed)
+
+tempo 63.2 BPM   metre 12/8   bar = 3.8s   65 bars
+onsets 843, 837 landed on grid (median error 39.3 ms)
+
+                1 . . 2 . . 3 . . 4 . .
+      ----------------------------------
+    1 Ab        x · x x x x x x x x x x
+    2 Fm        x x · x x x x x x x x x
+    3 Db        x x x · · x x x x x x x
+    4 Eb        x · · x x x x x x x x x
+    5 Ab        x · x x · · x · x x x x
+    6 Fm7       x · x x · · x x x x x x
+    7 Db        x x x x x x x x x x x x
+    8 Eb        x · · x x x x · x x x x
+    9 Ab        x · · x x · x x x x x x
+   10 Fm7       x x · x x · x x x x x x
+   11 Db        x · · x x x x · x x · x
+   12 Eb        x x · x x x x x x x x x
+   13 Ab        x · · x · x x · x x x ·
+   14 Fm7       x x · x x · x · x x x x
+   15 Db        x x x x · x x · · x x x
+   16 Eb        x · · x x x x · · x x x
+   17 Db        x · · x · · x x x x · x
+   18 Ab        x x · x · x x · x x · x
+   19 Db        x x x x · · x x x x · x
+   20 Ab        x x x x · · x x x x · x
+   21 Fm        x x x x x x x · x x · x
+   22 Ab        x · x x x x x x x x · x
+   23 Fm        x x x x · · x x x x x x
+   24 Eb        x · · x · · x · · x · x
+   25 Fm        x x x x x x x x x x · x
+   26 Db        · · x x · x x · · x x x
+   27 Ab        x x x x · x x · x x x x
+   28 Fm7       x x · x x x x · · x x x
+   29 Db        x · x x · x x x x x x x
+   30 Eb        · · · x · x x x · x x x
+   31 Ab        x x · x · x x · x x x x
+   32 Fm7       x x x x x x x x x x · x
+   33 Db        x · · x x x x x · x x x
+   34 Eb        x · · x x · x · x x x x
+   35 Ab        x · x x · x x x x x · x
+   36 Fm7       x · x x · x x x x x x x
+   37 Db        x · x x x x x x x x x x
+   38 Ab        x x x x · x x x x x x x
+   39 Ab        x x x x x x x x x x x x
+   40 Fm7       x x x x x x x x x x x x
+   41 Db        x · x x · x x x x x x x
+   42 Eb        x x x x x x x · · x x x
+   43 Fm        x · x x x x x x x x x x
+   44 Ab        x x x x x x x · x x · x
+   45 Db        x x x x x x x x x x · x
+   46 Ab        x x x x x x x x x x x x
+   47 Fm        x x x x x x x · x x · x
+   48 Ab        x x x x x x x x x x x x
+   49 Fm        x x x x x x x x x x x x
+   50 Ab        x x x x x x x x x x x x
+   51 Ab        x x x x x x x x x x x x
+   52 Fm7       x x x x x x x x x x x x
+   53 Db        x x x x x x x x x x x x
+   54 Eb7       x x x x x x x · x x x x
+   55 Db        x · · x x x x · x x · x
+   56 Ab        x x x x x x x x x x · x
+   57 Fm        x x x x x x x x x x · x
+   58 Ab        x x x x x x x x x x x x
+   59 Fm        x x x x x x x x x x · x
+   60 Ab        x x x x x x x x x x · x
+   61 Fm        x · x x x x x x x x x x
+   62 Ab        x x x x x x x x x x x x
+   63 Db        x · x x x · x x x x x ·
+   64 Eb        x x x x x x x x · x · x
+   65 Eb/3      x x x x x x · x x x x x
+
+  x = attack   · = silence

@@ -1,0 +1,9 @@
+# audio is not redistributable and is large
+*.wav
+*.mp3
+*.m4a
+*.flac
+
+__pycache__/
+*.py[cod]
+.venv/

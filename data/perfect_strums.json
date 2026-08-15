@@ -1,0 +1,8327 @@
+{
+  "duration": 263.42,
+  "tempo": 95.7,
+  "subdivision": "8th",
+  "beats_per_bar": 4,
+  "events": [
+    {
+      "time": 1.4396371882086167,
+      "grid_idx": 4,
+      "strength": 1.7616143226623535,
+      "brightness": 837.8995599698429,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 3.0,
+      "bar": 1,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 2.809614512471655,
+      "grid_idx": 8,
+      "strength": 3.9198224544525146,
+      "brightness": 1810.5862193465518,
+      "direction": "D",
+      "confidence": 0.886,
+      "beat": 5.0,
+      "bar": 2,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 3.2275736961451247,
+      "grid_idx": 9,
+      "strength": 4.554288387298584,
+      "brightness": 2962.012081602364,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 5.5,
+      "bar": 2,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 3.5062131519274375,
+      "grid_idx": 10,
+      "strength": 2.2362122535705566,
+      "brightness": 2194.4686120881183,
+      "direction": "D",
+      "confidence": 0.756,
+      "beat": 6.0,
+      "bar": 2,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 3.6919727891156464,
+      "grid_idx": 11,
+      "strength": 3.083352565765381,
+      "brightness": 2471.9178671876516,
+      "direction": "U",
+      "confidence": 0.839,
+      "beat": 6.5,
+      "bar": 2,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 4.458231292517007,
+      "grid_idx": 13,
+      "strength": 2.1581532955169678,
+      "brightness": 900.7767665257592,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 7.5,
+      "bar": 2,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 4.760090702947846,
+      "grid_idx": 14,
+      "strength": 3.838002920150757,
+      "brightness": 957.7519469773164,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 8.0,
+      "bar": 2,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 5.085170068027211,
+      "grid_idx": 15,
+      "strength": 1.527665615081787,
+      "brightness": 715.0093462989049,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 8.5,
+      "bar": 2,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 5.38702947845805,
+      "grid_idx": 16,
+      "strength": 2.320268154144287,
+      "brightness": 739.0252096987306,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 9.0,
+      "bar": 3,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 5.712108843537415,
+      "grid_idx": 17,
+      "strength": 5.381407260894775,
+      "brightness": 1059.2099710893197,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 9.5,
+      "bar": 3,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 6.106848072562358,
+      "grid_idx": 18,
+      "strength": 2.833394765853882,
+      "brightness": 2563.7194438244396,
+      "direction": "D",
+      "confidence": 0.63,
+      "beat": 10.0,
+      "bar": 3,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 6.431927437641724,
+      "grid_idx": 19,
+      "strength": 2.947913408279419,
+      "brightness": 2534.6858414287467,
+      "direction": "U",
+      "confidence": 0.86,
+      "beat": 10.5,
+      "bar": 3,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 6.640907029478458,
+      "grid_idx": 20,
+      "strength": 2.489253282546997,
+      "brightness": 2504.8459885591865,
+      "direction": "D",
+      "confidence": 0.65,
+      "beat": 11.0,
+      "bar": 3,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 6.8034467120181406,
+      "grid_idx": 21,
+      "strength": 2.1428873538970947,
+      "brightness": 2302.434971760922,
+      "direction": "U",
+      "confidence": 0.781,
+      "beat": 11.5,
+      "bar": 3,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 7.22140589569161,
+      "grid_idx": 22,
+      "strength": 3.4057466983795166,
+      "brightness": 3132.030071131959,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 12.0,
+      "bar": 3,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 7.616145124716553,
+      "grid_idx": 23,
+      "strength": 2.6056575775146484,
+      "brightness": 2947.1928247479864,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 12.5,
+      "bar": 3,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 7.75546485260771,
+      "grid_idx": 24,
+      "strength": 1.9641659259796143,
+      "brightness": 3472.6215605904144,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 13.0,
+      "bar": 4,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 8.568163265306122,
+      "grid_idx": 26,
+      "strength": 2.3500876426696777,
+      "brightness": 819.0196270631805,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 14.0,
+      "bar": 4,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 8.893242630385487,
+      "grid_idx": 27,
+      "strength": 1.6497740745544434,
+      "brightness": 676.8782252407719,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 14.5,
+      "bar": 4,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 9.195102040816327,
+      "grid_idx": 28,
+      "strength": 1.4174089431762695,
+      "brightness": 617.034043536437,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 15.0,
+      "bar": 4,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 9.520181405895691,
+      "grid_idx": 29,
+      "strength": 4.450308799743652,
+      "brightness": 886.0523629985777,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 15.5,
+      "bar": 4,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 9.822040816326531,
+      "grid_idx": 30,
+      "strength": 1.797825813293457,
+      "brightness": 838.88811406008,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 16.0,
+      "bar": 4,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 10.12390022675737,
+      "grid_idx": 31,
+      "strength": 2.6351120471954346,
+      "brightness": 795.931526367354,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 16.5,
+      "bar": 4,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 10.425759637188209,
+      "grid_idx": 32,
+      "strength": 9.256908416748047,
+      "brightness": 2593.4190012033155,
+      "direction": "D",
+      "confidence": 0.62,
+      "beat": 17.0,
+      "bar": 5,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 10.797278911564625,
+      "grid_idx": 33,
+      "strength": 3.350252628326416,
+      "brightness": 2616.4095330921614,
+      "direction": "U",
+      "confidence": 0.888,
+      "beat": 17.5,
+      "bar": 5,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 11.075918367346938,
+      "grid_idx": 34,
+      "strength": 5.403201580047607,
+      "brightness": 2968.900335152923,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 18.0,
+      "bar": 5,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 11.400997732426303,
+      "grid_idx": 35,
+      "strength": 5.301348686218262,
+      "brightness": 2298.690045703777,
+      "direction": "U",
+      "confidence": 0.78,
+      "beat": 18.5,
+      "bar": 5,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 11.749297052154194,
+      "grid_idx": 36,
+      "strength": 2.970855236053467,
+      "brightness": 2268.3760806161317,
+      "direction": "D",
+      "confidence": 0.73,
+      "beat": 19.0,
+      "bar": 5,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 12.051156462585034,
+      "grid_idx": 37,
+      "strength": 2.6096668243408203,
+      "brightness": 1954.0307290266983,
+      "direction": "U",
+      "confidence": 0.663,
+      "beat": 19.5,
+      "bar": 5,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 12.979954648526077,
+      "grid_idx": 40,
+      "strength": 1.55758535861969,
+      "brightness": 607.2475107980576,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 21.0,
+      "bar": 6,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 13.305034013605443,
+      "grid_idx": 41,
+      "strength": 4.928055286407471,
+      "brightness": 868.4399049974945,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 21.5,
+      "bar": 6,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 13.630113378684808,
+      "grid_idx": 42,
+      "strength": 1.7055028676986694,
+      "brightness": 661.9859332845707,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 22.0,
+      "bar": 6,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 13.931972789115646,
+      "grid_idx": 43,
+      "strength": 2.9732909202575684,
+      "brightness": 892.4558378850971,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 22.5,
+      "bar": 6,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 14.257052154195012,
+      "grid_idx": 44,
+      "strength": 5.023806095123291,
+      "brightness": 2151.132933980545,
+      "direction": "D",
+      "confidence": 0.77,
+      "beat": 23.0,
+      "bar": 6,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 14.535691609977324,
+      "grid_idx": 45,
+      "strength": 3.2683002948760986,
+      "brightness": 2331.816160273062,
+      "direction": "U",
+      "confidence": 0.791,
+      "beat": 23.5,
+      "bar": 6,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 14.86077097505669,
+      "grid_idx": 46,
+      "strength": 5.910044193267822,
+      "brightness": 2421.1544834387264,
+      "direction": "D",
+      "confidence": 0.679,
+      "beat": 24.0,
+      "bar": 6,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 15.209070294784581,
+      "grid_idx": 47,
+      "strength": 5.862893104553223,
+      "brightness": 3049.9456837857215,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 24.5,
+      "bar": 6,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 16.137868480725622,
+      "grid_idx": 50,
+      "strength": 3.7056076526641846,
+      "brightness": 858.2062300604213,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 26.0,
+      "bar": 7,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 16.46294784580499,
+      "grid_idx": 51,
+      "strength": 2.553058624267578,
+      "brightness": 702.2462382284597,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 26.5,
+      "bar": 7,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 16.788027210884355,
+      "grid_idx": 52,
+      "strength": 3.9997682571411133,
+      "brightness": 946.3265649057879,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 27.0,
+      "bar": 7,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 17.08988662131519,
+      "grid_idx": 53,
+      "strength": 6.445623397827148,
+      "brightness": 1110.7832715652246,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 27.5,
+      "bar": 7,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 17.345306122448978,
+      "grid_idx": 54,
+      "strength": 1.7189751863479614,
+      "brightness": 978.9777844939617,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 28.0,
+      "bar": 7,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 17.716825396825396,
+      "grid_idx": 55,
+      "strength": 2.0965523719787598,
+      "brightness": 814.0341685425506,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 28.5,
+      "bar": 7,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 18.018684807256236,
+      "grid_idx": 56,
+      "strength": 11.041929244995117,
+      "brightness": 2509.680911939369,
+      "direction": "D",
+      "confidence": 0.649,
+      "beat": 29.0,
+      "bar": 8,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 18.413424036281178,
+      "grid_idx": 57,
+      "strength": 3.197979688644409,
+      "brightness": 2291.395230028063,
+      "direction": "U",
+      "confidence": 0.777,
+      "beat": 29.5,
+      "bar": 8,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 18.575963718820862,
+      "grid_idx": 58,
+      "strength": 3.7899482250213623,
+      "brightness": 2662.409031628366,
+      "direction": "D",
+      "confidence": 0.597,
+      "beat": 30.0,
+      "bar": 8,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 18.854603174603174,
+      "grid_idx": 59,
+      "strength": 6.121957778930664,
+      "brightness": 2682.304202781769,
+      "direction": "U",
+      "confidence": 0.91,
+      "beat": 30.5,
+      "bar": 8,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 19.06358276643991,
+      "grid_idx": 60,
+      "strength": 3.329723834991455,
+      "brightness": 2644.151668177919,
+      "direction": "D",
+      "confidence": 0.603,
+      "beat": 31.0,
+      "bar": 8,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 19.458321995464853,
+      "grid_idx": 61,
+      "strength": 2.896611213684082,
+      "brightness": 2224.2658370101185,
+      "direction": "U",
+      "confidence": 0.755,
+      "beat": 31.5,
+      "bar": 8,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 19.9459410430839,
+      "grid_idx": 63,
+      "strength": 3.835684299468994,
+      "brightness": 1021.2631066820255,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 32.5,
+      "bar": 8,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 20.874739229024943,
+      "grid_idx": 66,
+      "strength": 3.2260587215423584,
+      "brightness": 1055.3312054213118,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 34.0,
+      "bar": 9,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 21.640997732426303,
+      "grid_idx": 68,
+      "strength": 3.44160795211792,
+      "brightness": 2762.5234865128346,
+      "direction": "D",
+      "confidence": 0.563,
+      "beat": 35.0,
+      "bar": 9,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 21.78031746031746,
+      "grid_idx": 69,
+      "strength": 3.289477586746216,
+      "brightness": 3210.733631910447,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 35.5,
+      "bar": 9,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 22.407256235827663,
+      "grid_idx": 71,
+      "strength": 2.3096611499786377,
+      "brightness": 2834.171215614299,
+      "direction": "U",
+      "confidence": 0.961,
+      "beat": 36.5,
+      "bar": 9,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 22.732335600907028,
+      "grid_idx": 72,
+      "strength": 2.5220847129821777,
+      "brightness": 2204.9476401455954,
+      "direction": "D",
+      "confidence": 0.752,
+      "beat": 37.0,
+      "bar": 10,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 23.2431746031746,
+      "grid_idx": 73,
+      "strength": 1.9896786212921143,
+      "brightness": 2280.107378770182,
+      "direction": "U",
+      "confidence": 0.774,
+      "beat": 37.5,
+      "bar": 10,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 23.405714285714286,
+      "grid_idx": 74,
+      "strength": 5.165828227996826,
+      "brightness": 6123.35575563422,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 38.0,
+      "bar": 10,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 23.707573696145126,
+      "grid_idx": 75,
+      "strength": 3.647620439529419,
+      "brightness": 2374.0299690630795,
+      "direction": "U",
+      "confidence": 0.805,
+      "beat": 38.5,
+      "bar": 10,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 24.659591836734695,
+      "grid_idx": 78,
+      "strength": 4.382039546966553,
+      "brightness": 788.2427613542533,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 40.0,
+      "bar": 10,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 24.98467120181406,
+      "grid_idx": 79,
+      "strength": 1.3831013441085815,
+      "brightness": 670.8400958437452,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 40.5,
+      "bar": 10,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 25.425850340136055,
+      "grid_idx": 80,
+      "strength": 2.4803497791290283,
+      "brightness": 1122.4964849821542,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 41.0,
+      "bar": 11,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 25.56517006802721,
+      "grid_idx": 81,
+      "strength": 5.517299652099609,
+      "brightness": 2020.7086700266257,
+      "direction": "U",
+      "confidence": 0.686,
+      "beat": 41.5,
+      "bar": 11,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 25.890249433106575,
+      "grid_idx": 82,
+      "strength": 5.714053630828857,
+      "brightness": 2569.80582270852,
+      "direction": "D",
+      "confidence": 0.628,
+      "beat": 42.0,
+      "bar": 11,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 26.21532879818594,
+      "grid_idx": 83,
+      "strength": 4.183479309082031,
+      "brightness": 2586.161626960031,
+      "direction": "U",
+      "confidence": 0.877,
+      "beat": 42.5,
+      "bar": 11,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 26.51718820861678,
+      "grid_idx": 84,
+      "strength": 2.683185577392578,
+      "brightness": 3036.943477731115,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 43.0,
+      "bar": 11,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 26.888707482993198,
+      "grid_idx": 85,
+      "strength": 2.4193828105926514,
+      "brightness": 3442.8158075437827,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 43.5,
+      "bar": 11,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 27.144126984126984,
+      "grid_idx": 86,
+      "strength": 2.257657289505005,
+      "brightness": 3612.2042028037213,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 44.0,
+      "bar": 11,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 27.515646258503402,
+      "grid_idx": 87,
+      "strength": 3.1589667797088623,
+      "brightness": 2167.2874514145897,
+      "direction": "U",
+      "confidence": 0.735,
+      "beat": 44.5,
+      "bar": 11,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 27.86394557823129,
+      "grid_idx": 88,
+      "strength": 3.0393571853637695,
+      "brightness": 2115.939305350978,
+      "direction": "D",
+      "confidence": 0.782,
+      "beat": 45.0,
+      "bar": 12,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 28.142585034013607,
+      "grid_idx": 89,
+      "strength": 3.090862989425659,
+      "brightness": 4800.6806083486035,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 45.5,
+      "bar": 12,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 28.421224489795918,
+      "grid_idx": 90,
+      "strength": 3.1753034591674805,
+      "brightness": 2528.066388146743,
+      "direction": "D",
+      "confidence": 0.642,
+      "beat": 46.0,
+      "bar": 12,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 28.746303854875283,
+      "grid_idx": 91,
+      "strength": 2.2013633251190186,
+      "brightness": 2308.130946690299,
+      "direction": "U",
+      "confidence": 0.783,
+      "beat": 46.5,
+      "bar": 12,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 29.00172335600907,
+      "grid_idx": 92,
+      "strength": 1.8467448949813843,
+      "brightness": 1984.6257857546498,
+      "direction": "D",
+      "confidence": 0.827,
+      "beat": 47.0,
+      "bar": 12,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 29.373242630385487,
+      "grid_idx": 93,
+      "strength": 3.5932564735412598,
+      "brightness": 1773.4846084877445,
+      "direction": "U",
+      "confidence": 0.602,
+      "beat": 47.5,
+      "bar": 12,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 29.698321995464852,
+      "grid_idx": 94,
+      "strength": 2.0746207237243652,
+      "brightness": 2430.434291038818,
+      "direction": "D",
+      "confidence": 0.676,
+      "beat": 48.0,
+      "bar": 12,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 30.139501133786847,
+      "grid_idx": 95,
+      "strength": 2.632458209991455,
+      "brightness": 2013.132441628538,
+      "direction": "U",
+      "confidence": 0.683,
+      "beat": 48.5,
+      "bar": 12,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 30.34848072562358,
+      "grid_idx": 96,
+      "strength": 4.262081146240234,
+      "brightness": 2834.378236301994,
+      "direction": "D",
+      "confidence": 0.538,
+      "beat": 49.0,
+      "bar": 13,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 31.30049886621315,
+      "grid_idx": 99,
+      "strength": 4.236814975738525,
+      "brightness": 3154.674428767756,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 50.5,
+      "bar": 13,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 31.60235827664399,
+      "grid_idx": 100,
+      "strength": 1.8711163997650146,
+      "brightness": 3214.831308590179,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 51.0,
+      "bar": 13,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 32.066757369614514,
+      "grid_idx": 101,
+      "strength": 2.1861796379089355,
+      "brightness": 5564.821448468556,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 51.5,
+      "bar": 13,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 32.25251700680272,
+      "grid_idx": 102,
+      "strength": 6.108628749847412,
+      "brightness": 3519.3574402968748,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 52.0,
+      "bar": 13,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 32.8562358276644,
+      "grid_idx": 104,
+      "strength": 6.5617170333862305,
+      "brightness": 3799.7110700341386,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 53.0,
+      "bar": 14,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 33.158095238095235,
+      "grid_idx": 105,
+      "strength": 7.333347797393799,
+      "brightness": 4402.745743473064,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 53.5,
+      "bar": 14,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 33.62249433106576,
+      "grid_idx": 106,
+      "strength": 4.157934188842773,
+      "brightness": 2360.830198167361,
+      "direction": "D",
+      "confidence": 0.699,
+      "beat": 54.0,
+      "bar": 14,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 34.11011337868481,
+      "grid_idx": 108,
+      "strength": 4.974490165710449,
+      "brightness": 1630.4071009950446,
+      "direction": "D",
+      "confidence": 0.947,
+      "beat": 55.0,
+      "bar": 14,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 35.085351473922906,
+      "grid_idx": 111,
+      "strength": 3.9788427352905273,
+      "brightness": 2122.683520154936,
+      "direction": "U",
+      "confidence": 0.72,
+      "beat": 56.5,
+      "bar": 14,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 35.87482993197279,
+      "grid_idx": 113,
+      "strength": 2.2910754680633545,
+      "brightness": 2060.9812522900243,
+      "direction": "U",
+      "confidence": 0.699,
+      "beat": 57.5,
+      "bar": 15,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 36.03736961451247,
+      "grid_idx": 114,
+      "strength": 4.0641560554504395,
+      "brightness": 1976.8140794552382,
+      "direction": "D",
+      "confidence": 0.829,
+      "beat": 58.0,
+      "bar": 15,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 36.432108843537414,
+      "grid_idx": 115,
+      "strength": 1.622192621231079,
+      "brightness": 599.9924118462104,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 58.5,
+      "bar": 15,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 36.64108843537415,
+      "grid_idx": 116,
+      "strength": 3.4486472606658936,
+      "brightness": 2213.0873403454966,
+      "direction": "D",
+      "confidence": 0.749,
+      "beat": 59.0,
+      "bar": 15,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 36.96616780045351,
+      "grid_idx": 117,
+      "strength": 5.902899265289307,
+      "brightness": 2219.3273981162874,
+      "direction": "U",
+      "confidence": 0.753,
+      "beat": 59.5,
+      "bar": 15,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 37.314467120181405,
+      "grid_idx": 118,
+      "strength": 5.453353404998779,
+      "brightness": 2381.907811560006,
+      "direction": "D",
+      "confidence": 0.692,
+      "beat": 60.0,
+      "bar": 15,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 37.6627664399093,
+      "grid_idx": 119,
+      "strength": 2.164844274520874,
+      "brightness": 2981.3348142219716,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 60.5,
+      "bar": 15,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 37.964625850340134,
+      "grid_idx": 120,
+      "strength": 3.3306736946105957,
+      "brightness": 1891.7479907152683,
+      "direction": "D",
+      "confidence": 0.858,
+      "beat": 61.0,
+      "bar": 16,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 38.26648526077098,
+      "grid_idx": 121,
+      "strength": 2.120330572128296,
+      "brightness": 1915.4553659636429,
+      "direction": "U",
+      "confidence": 0.65,
+      "beat": 61.5,
+      "bar": 16,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 38.75410430839002,
+      "grid_idx": 122,
+      "strength": 3.94735050201416,
+      "brightness": 2090.45122645923,
+      "direction": "D",
+      "confidence": 0.791,
+      "beat": 62.0,
+      "bar": 16,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 39.05596371882086,
+      "grid_idx": 123,
+      "strength": 2.1999528408050537,
+      "brightness": 2332.64491348131,
+      "direction": "U",
+      "confidence": 0.791,
+      "beat": 62.5,
+      "bar": 16,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 39.84544217687075,
+      "grid_idx": 125,
+      "strength": 4.3812255859375,
+      "brightness": 1651.3071443311685,
+      "direction": "U",
+      "confidence": 0.56,
+      "beat": 63.5,
+      "bar": 16,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 39.96154195011338,
+      "grid_idx": 126,
+      "strength": 3.6539783477783203,
+      "brightness": 2400.2108043297308,
+      "direction": "D",
+      "confidence": 0.686,
+      "beat": 64.0,
+      "bar": 16,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 40.49560090702948,
+      "grid_idx": 127,
+      "strength": 2.225041389465332,
+      "brightness": 2250.775483632504,
+      "direction": "U",
+      "confidence": 0.764,
+      "beat": 64.5,
+      "bar": 16,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 40.751020408163264,
+      "grid_idx": 128,
+      "strength": 8.486583709716797,
+      "brightness": 1868.5167568963873,
+      "direction": "D",
+      "confidence": 0.866,
+      "beat": 65.0,
+      "bar": 17,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 41.09931972789116,
+      "grid_idx": 129,
+      "strength": 3.020418167114258,
+      "brightness": 2267.569218434554,
+      "direction": "U",
+      "confidence": 0.769,
+      "beat": 65.5,
+      "bar": 17,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 41.44761904761905,
+      "grid_idx": 130,
+      "strength": 2.197880744934082,
+      "brightness": 1991.8818041018303,
+      "direction": "D",
+      "confidence": 0.824,
+      "beat": 66.0,
+      "bar": 17,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 41.703038548752836,
+      "grid_idx": 131,
+      "strength": 4.638835430145264,
+      "brightness": 2653.0660436395415,
+      "direction": "U",
+      "confidence": 0.9,
+      "beat": 66.5,
+      "bar": 17,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 42.6550566893424,
+      "grid_idx": 134,
+      "strength": 6.461864471435547,
+      "brightness": 2828.1545223785656,
+      "direction": "D",
+      "confidence": 0.541,
+      "beat": 68.0,
+      "bar": 17,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 42.81759637188209,
+      "grid_idx": 135,
+      "strength": 1.8831204175949097,
+      "brightness": 3027.636212313207,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 68.5,
+      "bar": 17,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 43.165895691609975,
+      "grid_idx": 136,
+      "strength": 2.4352409839630127,
+      "brightness": 3075.4205854419174,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 69.0,
+      "bar": 18,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 43.607074829931975,
+      "grid_idx": 137,
+      "strength": 2.8510420322418213,
+      "brightness": 2143.812600380939,
+      "direction": "U",
+      "confidence": 0.727,
+      "beat": 69.5,
+      "bar": 18,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 44.23401360544218,
+      "grid_idx": 139,
+      "strength": 2.112187623977661,
+      "brightness": 965.2006814353784,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 70.5,
+      "bar": 18,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 44.535873015873015,
+      "grid_idx": 140,
+      "strength": 9.372851371765137,
+      "brightness": 1864.7882315430272,
+      "direction": "D",
+      "confidence": 0.867,
+      "beat": 71.0,
+      "bar": 18,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 45.186031746031745,
+      "grid_idx": 142,
+      "strength": 2.940661907196045,
+      "brightness": 4934.562266740726,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 72.0,
+      "bar": 18,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 45.44145124716553,
+      "grid_idx": 143,
+      "strength": 5.075664043426514,
+      "brightness": 2682.3446513421572,
+      "direction": "U",
+      "confidence": 0.91,
+      "beat": 72.5,
+      "bar": 18,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 46.46312925170068,
+      "grid_idx": 146,
+      "strength": 3.6521828174591064,
+      "brightness": 2228.7220783821504,
+      "direction": "D",
+      "confidence": 0.744,
+      "beat": 74.0,
+      "bar": 19,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 46.85786848072562,
+      "grid_idx": 147,
+      "strength": 2.457836627960205,
+      "brightness": 2823.95748009037,
+      "direction": "U",
+      "confidence": 0.958,
+      "beat": 74.5,
+      "bar": 19,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 47.06684807256236,
+      "grid_idx": 148,
+      "strength": 2.991084575653076,
+      "brightness": 1972.7662612647966,
+      "direction": "D",
+      "confidence": 0.831,
+      "beat": 75.0,
+      "bar": 19,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 47.391927437641726,
+      "grid_idx": 149,
+      "strength": 3.611356496810913,
+      "brightness": 2458.133231715225,
+      "direction": "U",
+      "confidence": 0.834,
+      "beat": 75.5,
+      "bar": 19,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 47.600907029478456,
+      "grid_idx": 150,
+      "strength": 1.745546579360962,
+      "brightness": 2170.910672638624,
+      "direction": "D",
+      "confidence": 0.764,
+      "beat": 76.0,
+      "bar": 19,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 48.042086167800456,
+      "grid_idx": 151,
+      "strength": 2.5075511932373047,
+      "brightness": 1787.6693100087314,
+      "direction": "U",
+      "confidence": 0.606,
+      "beat": 76.5,
+      "bar": 19,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 48.32072562358277,
+      "grid_idx": 152,
+      "strength": 13.32368278503418,
+      "brightness": 2576.385277007456,
+      "direction": "D",
+      "confidence": 0.626,
+      "beat": 77.0,
+      "bar": 20,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 48.692244897959185,
+      "grid_idx": 153,
+      "strength": 2.185652017593384,
+      "brightness": 2983.6062530943077,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 77.5,
+      "bar": 20,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 48.99410430839002,
+      "grid_idx": 154,
+      "strength": 2.638655185699463,
+      "brightness": 3255.6436370713077,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 78.0,
+      "bar": 20,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 49.22630385487528,
+      "grid_idx": 155,
+      "strength": 3.7401208877563477,
+      "brightness": 3899.437495359903,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 78.5,
+      "bar": 20,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 50.062222222222225,
+      "grid_idx": 157,
+      "strength": 2.815215587615967,
+      "brightness": 1402.7494392268218,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 79.5,
+      "bar": 20,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 50.24798185941043,
+      "grid_idx": 158,
+      "strength": 7.00026273727417,
+      "brightness": 2485.569942968125,
+      "direction": "D",
+      "confidence": 0.657,
+      "beat": 80.0,
+      "bar": 20,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 50.991020408163266,
+      "grid_idx": 160,
+      "strength": 2.8017921447753906,
+      "brightness": 2310.5705228215097,
+      "direction": "D",
+      "confidence": 0.716,
+      "beat": 81.0,
+      "bar": 21,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 51.17678004535147,
+      "grid_idx": 161,
+      "strength": 2.7762060165405273,
+      "brightness": 2188.736259242466,
+      "direction": "U",
+      "confidence": 0.743,
+      "beat": 81.5,
+      "bar": 21,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 51.803718820861675,
+      "grid_idx": 163,
+      "strength": 2.1764097213745117,
+      "brightness": 2021.2939817330591,
+      "direction": "U",
+      "confidence": 0.686,
+      "beat": 82.5,
+      "bar": 21,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 52.05913832199546,
+      "grid_idx": 164,
+      "strength": 3.3896331787109375,
+      "brightness": 2735.3881332130245,
+      "direction": "D",
+      "confidence": 0.572,
+      "beat": 83.0,
+      "bar": 21,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 52.38421768707483,
+      "grid_idx": 165,
+      "strength": 2.5681962966918945,
+      "brightness": 1690.036210357839,
+      "direction": "U",
+      "confidence": 0.573,
+      "beat": 83.5,
+      "bar": 21,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 53.08081632653061,
+      "grid_idx": 167,
+      "strength": 3.4311184883117676,
+      "brightness": 2334.4546033808265,
+      "direction": "U",
+      "confidence": 0.792,
+      "beat": 84.5,
+      "bar": 21,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 53.823854875283445,
+      "grid_idx": 169,
+      "strength": 2.7623696327209473,
+      "brightness": 1893.8318219021894,
+      "direction": "U",
+      "confidence": 0.642,
+      "beat": 85.5,
+      "bar": 22,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 54.00961451247166,
+      "grid_idx": 170,
+      "strength": 2.8508543968200684,
+      "brightness": 2017.0569142957709,
+      "direction": "D",
+      "confidence": 0.816,
+      "beat": 86.0,
+      "bar": 22,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 54.28825396825397,
+      "grid_idx": 171,
+      "strength": 2.029458522796631,
+      "brightness": 2334.1135596593635,
+      "direction": "U",
+      "confidence": 0.792,
+      "beat": 86.5,
+      "bar": 22,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 54.79909297052154,
+      "grid_idx": 172,
+      "strength": 2.4889278411865234,
+      "brightness": 2826.355133771585,
+      "direction": "D",
+      "confidence": 0.541,
+      "beat": 87.0,
+      "bar": 22,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 54.98485260770975,
+      "grid_idx": 173,
+      "strength": 2.3186819553375244,
+      "brightness": 1626.3397753854222,
+      "direction": "U",
+      "confidence": 0.552,
+      "beat": 87.5,
+      "bar": 22,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 55.58857142857143,
+      "grid_idx": 175,
+      "strength": 3.489870071411133,
+      "brightness": 2125.0258885647318,
+      "direction": "U",
+      "confidence": 0.721,
+      "beat": 88.5,
+      "bar": 22,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 55.913650793650795,
+      "grid_idx": 176,
+      "strength": 12.872262001037598,
+      "brightness": 2347.023974043886,
+      "direction": "D",
+      "confidence": 0.704,
+      "beat": 89.0,
+      "bar": 23,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 56.26195011337869,
+      "grid_idx": 177,
+      "strength": 5.771404266357422,
+      "brightness": 2716.09353629065,
+      "direction": "U",
+      "confidence": 0.921,
+      "beat": 89.5,
+      "bar": 23,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 56.58702947845805,
+      "grid_idx": 178,
+      "strength": 2.733806848526001,
+      "brightness": 2466.8307644747024,
+      "direction": "D",
+      "confidence": 0.663,
+      "beat": 90.0,
+      "bar": 23,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 56.888888888888886,
+      "grid_idx": 179,
+      "strength": 3.70272159576416,
+      "brightness": 2421.6091203263495,
+      "direction": "U",
+      "confidence": 0.822,
+      "beat": 90.5,
+      "bar": 23,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 57.05142857142857,
+      "grid_idx": 180,
+      "strength": 2.5874409675598145,
+      "brightness": 2047.897236474462,
+      "direction": "D",
+      "confidence": 0.805,
+      "beat": 91.0,
+      "bar": 23,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 57.817687074829934,
+      "grid_idx": 182,
+      "strength": 4.310791492462158,
+      "brightness": 2358.5569224367378,
+      "direction": "D",
+      "confidence": 0.7,
+      "beat": 92.0,
+      "bar": 23,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 58.30530612244898,
+      "grid_idx": 184,
+      "strength": 2.4378414154052734,
+      "brightness": 2087.67515867887,
+      "direction": "D",
+      "confidence": 0.792,
+      "beat": 93.0,
+      "bar": 24,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 58.7697052154195,
+      "grid_idx": 185,
+      "strength": 2.448668956756592,
+      "brightness": 2080.448540651438,
+      "direction": "U",
+      "confidence": 0.706,
+      "beat": 93.5,
+      "bar": 24,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 59.65206349206349,
+      "grid_idx": 188,
+      "strength": 4.003772735595703,
+      "brightness": 1760.6296844467236,
+      "direction": "D",
+      "confidence": 0.903,
+      "beat": 95.0,
+      "bar": 24,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 60.02358276643991,
+      "grid_idx": 189,
+      "strength": 4.567023277282715,
+      "brightness": 2121.3008116322376,
+      "direction": "U",
+      "confidence": 0.72,
+      "beat": 95.5,
+      "bar": 24,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 60.32544217687075,
+      "grid_idx": 190,
+      "strength": 2.1496005058288574,
+      "brightness": 2145.944437825547,
+      "direction": "D",
+      "confidence": 0.772,
+      "beat": 96.0,
+      "bar": 24,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 60.53442176870748,
+      "grid_idx": 191,
+      "strength": 2.6410555839538574,
+      "brightness": 2232.8875188903735,
+      "direction": "U",
+      "confidence": 0.757,
+      "beat": 96.5,
+      "bar": 24,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 61.602539682539685,
+      "grid_idx": 194,
+      "strength": 6.681578636169434,
+      "brightness": 1076.4532039639914,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 98.0,
+      "bar": 25,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 61.92761904761905,
+      "grid_idx": 195,
+      "strength": 1.9578275680541992,
+      "brightness": 803.9703176573252,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 98.5,
+      "bar": 25,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 62.252698412698415,
+      "grid_idx": 196,
+      "strength": 3.4228262901306152,
+      "brightness": 1040.6913533655827,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 99.0,
+      "bar": 25,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 62.531337868480726,
+      "grid_idx": 197,
+      "strength": 8.154125213623047,
+      "brightness": 2208.3363993199587,
+      "direction": "U",
+      "confidence": 0.749,
+      "beat": 99.5,
+      "bar": 25,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 63.506575963718824,
+      "grid_idx": 200,
+      "strength": 12.452396392822266,
+      "brightness": 3501.4405952654874,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 101.0,
+      "bar": 26,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 63.669115646258504,
+      "grid_idx": 201,
+      "strength": 3.0984244346618652,
+      "brightness": 3800.9236800145786,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 101.5,
+      "bar": 26,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 64.08707482993198,
+      "grid_idx": 202,
+      "strength": 4.117957592010498,
+      "brightness": 3635.930945540846,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 102.0,
+      "bar": 26,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 64.34249433106577,
+      "grid_idx": 203,
+      "strength": 3.021900177001953,
+      "brightness": 2894.3298572423105,
+      "direction": "U",
+      "confidence": 0.982,
+      "beat": 102.5,
+      "bar": 26,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 65.38739229024944,
+      "grid_idx": 206,
+      "strength": 6.222992420196533,
+      "brightness": 1799.662713450601,
+      "direction": "D",
+      "confidence": 0.889,
+      "beat": 104.0,
+      "bar": 26,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 66.31619047619047,
+      "grid_idx": 209,
+      "strength": 4.669866561889648,
+      "brightness": 2723.9672897398664,
+      "direction": "U",
+      "confidence": 0.924,
+      "beat": 105.5,
+      "bar": 27,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 66.780589569161,
+      "grid_idx": 210,
+      "strength": 2.3577961921691895,
+      "brightness": 4935.853525266405,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 106.0,
+      "bar": 27,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 66.96634920634921,
+      "grid_idx": 211,
+      "strength": 3.2923495769500732,
+      "brightness": 2737.2532777900615,
+      "direction": "U",
+      "confidence": 0.929,
+      "beat": 106.5,
+      "bar": 27,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 67.29142857142857,
+      "grid_idx": 212,
+      "strength": 5.81231689453125,
+      "brightness": 2679.654358613817,
+      "direction": "D",
+      "confidence": 0.591,
+      "beat": 107.0,
+      "bar": 27,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 67.91836734693878,
+      "grid_idx": 214,
+      "strength": 5.909255027770996,
+      "brightness": 2788.6311781580966,
+      "direction": "D",
+      "confidence": 0.554,
+      "beat": 108.0,
+      "bar": 27,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 68.17378684807257,
+      "grid_idx": 215,
+      "strength": 3.3437366485595703,
+      "brightness": 3744.6612571479122,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 108.5,
+      "bar": 27,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 69.17224489795919,
+      "grid_idx": 218,
+      "strength": 5.125190734863281,
+      "brightness": 1638.3802141689468,
+      "direction": "D",
+      "confidence": 0.944,
+      "beat": 110.0,
+      "bar": 28,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 69.84562358276644,
+      "grid_idx": 220,
+      "strength": 2.631434917449951,
+      "brightness": 1947.8266357062996,
+      "direction": "D",
+      "confidence": 0.839,
+      "beat": 111.0,
+      "bar": 28,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 70.10104308390022,
+      "grid_idx": 221,
+      "strength": 3.4685919284820557,
+      "brightness": 3074.28801960384,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 111.5,
+      "bar": 28,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 70.91374149659863,
+      "grid_idx": 223,
+      "strength": 5.090625762939453,
+      "brightness": 5639.096697139844,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 112.5,
+      "bar": 28,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 71.07628117913832,
+      "grid_idx": 224,
+      "strength": 4.775895118713379,
+      "brightness": 2388.731591476318,
+      "direction": "D",
+      "confidence": 0.69,
+      "beat": 113.0,
+      "bar": 29,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 71.72643990929706,
+      "grid_idx": 226,
+      "strength": 2.653348922729492,
+      "brightness": 2209.5356778973464,
+      "direction": "D",
+      "confidence": 0.75,
+      "beat": 114.0,
+      "bar": 29,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 72.05151927437642,
+      "grid_idx": 227,
+      "strength": 2.0409765243530273,
+      "brightness": 2126.58757172693,
+      "direction": "U",
+      "confidence": 0.721,
+      "beat": 114.5,
+      "bar": 29,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 72.33015873015873,
+      "grid_idx": 228,
+      "strength": 1.8680312633514404,
+      "brightness": 1927.9535573148703,
+      "direction": "D",
+      "confidence": 0.846,
+      "beat": 115.0,
+      "bar": 29,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 72.72489795918368,
+      "grid_idx": 229,
+      "strength": 2.8246660232543945,
+      "brightness": 3110.9650880532995,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 115.5,
+      "bar": 29,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 72.95709750566894,
+      "grid_idx": 230,
+      "strength": 3.592381238937378,
+      "brightness": 1885.2571849193093,
+      "direction": "D",
+      "confidence": 0.86,
+      "beat": 116.0,
+      "bar": 29,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 73.9091156462585,
+      "grid_idx": 233,
+      "strength": 6.695703983306885,
+      "brightness": 2638.291348974118,
+      "direction": "U",
+      "confidence": 0.895,
+      "beat": 117.5,
+      "bar": 30,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 74.11809523809524,
+      "grid_idx": 234,
+      "strength": 2.049504041671753,
+      "brightness": 2168.735187539592,
+      "direction": "D",
+      "confidence": 0.764,
+      "beat": 118.0,
+      "bar": 30,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 74.69859410430838,
+      "grid_idx": 235,
+      "strength": 3.588320255279541,
+      "brightness": 2801.398726422866,
+      "direction": "U",
+      "confidence": 0.95,
+      "beat": 118.5,
+      "bar": 30,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 74.86113378684807,
+      "grid_idx": 236,
+      "strength": 4.070756435394287,
+      "brightness": 2372.8090916489205,
+      "direction": "D",
+      "confidence": 0.695,
+      "beat": 119.0,
+      "bar": 30,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 75.51129251700681,
+      "grid_idx": 238,
+      "strength": 4.564267635345459,
+      "brightness": 1847.4650410997217,
+      "direction": "D",
+      "confidence": 0.873,
+      "beat": 120.0,
+      "bar": 30,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 75.7667120181406,
+      "grid_idx": 239,
+      "strength": 3.3929336071014404,
+      "brightness": 1801.7739417274734,
+      "direction": "U",
+      "confidence": 0.611,
+      "beat": 120.5,
+      "bar": 30,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 76.2311111111111,
+      "grid_idx": 240,
+      "strength": 3.1298587322235107,
+      "brightness": 1898.4948004714006,
+      "direction": "D",
+      "confidence": 0.856,
+      "beat": 121.0,
+      "bar": 31,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 76.50975056689343,
+      "grid_idx": 241,
+      "strength": 2.967381000518799,
+      "brightness": 3971.64200650449,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 121.5,
+      "bar": 31,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 76.76517006802722,
+      "grid_idx": 242,
+      "strength": 5.115322113037109,
+      "brightness": 1607.6658995734167,
+      "direction": "D",
+      "confidence": 0.955,
+      "beat": 122.0,
+      "bar": 31,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 77.69396825396825,
+      "grid_idx": 245,
+      "strength": 4.20059061050415,
+      "brightness": 3351.2157450936047,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 123.5,
+      "bar": 31,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 77.99582766439909,
+      "grid_idx": 246,
+      "strength": 2.8654534816741943,
+      "brightness": 2689.672969874868,
+      "direction": "D",
+      "confidence": 0.588,
+      "beat": 124.0,
+      "bar": 31,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 78.29768707482994,
+      "grid_idx": 247,
+      "strength": 2.5391311645507812,
+      "brightness": 2767.145526272119,
+      "direction": "U",
+      "confidence": 0.939,
+      "beat": 124.5,
+      "bar": 31,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 78.64598639455782,
+      "grid_idx": 248,
+      "strength": 5.303905487060547,
+      "brightness": 2913.5454836528193,
+      "direction": "D",
+      "confidence": 0.512,
+      "beat": 125.0,
+      "bar": 32,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 79.22648526077097,
+      "grid_idx": 250,
+      "strength": 4.293642044067383,
+      "brightness": 2260.214118772319,
+      "direction": "D",
+      "confidence": 0.733,
+      "beat": 126.0,
+      "bar": 32,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 79.57478458049887,
+      "grid_idx": 251,
+      "strength": 3.578497886657715,
+      "brightness": 2203.0828590886695,
+      "direction": "U",
+      "confidence": 0.747,
+      "beat": 126.5,
+      "bar": 32,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 80.06240362811792,
+      "grid_idx": 252,
+      "strength": 3.435041666030884,
+      "brightness": 4827.215328791153,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 127.0,
+      "bar": 32,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 80.24816326530612,
+      "grid_idx": 253,
+      "strength": 2.4561517238616943,
+      "brightness": 1867.6604488743399,
+      "direction": "U",
+      "confidence": 0.634,
+      "beat": 127.5,
+      "bar": 32,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 80.55002267573695,
+      "grid_idx": 254,
+      "strength": 6.231917381286621,
+      "brightness": 2178.075460239666,
+      "direction": "D",
+      "confidence": 0.761,
+      "beat": 128.0,
+      "bar": 32,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 80.89832199546485,
+      "grid_idx": 255,
+      "strength": 3.4796929359436035,
+      "brightness": 2378.2647311075784,
+      "direction": "U",
+      "confidence": 0.807,
+      "beat": 128.5,
+      "bar": 32,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 81.13052154195012,
+      "grid_idx": 256,
+      "strength": 2.7005114555358887,
+      "brightness": 3143.933815021572,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 129.0,
+      "bar": 33,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 81.478820861678,
+      "grid_idx": 257,
+      "strength": 2.891592264175415,
+      "brightness": 2305.495273473915,
+      "direction": "U",
+      "confidence": 0.782,
+      "beat": 129.5,
+      "bar": 33,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 82.0128798185941,
+      "grid_idx": 259,
+      "strength": 4.462347030639648,
+      "brightness": 4014.7766114340798,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 130.5,
+      "bar": 33,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 82.43083900226758,
+      "grid_idx": 260,
+      "strength": 3.2852327823638916,
+      "brightness": 2753.057181708702,
+      "direction": "D",
+      "confidence": 0.566,
+      "beat": 131.0,
+      "bar": 33,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 83.01133786848072,
+      "grid_idx": 262,
+      "strength": 3.698864459991455,
+      "brightness": 4277.805459627196,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 132.0,
+      "bar": 33,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 83.40607709750567,
+      "grid_idx": 263,
+      "strength": 3.643888235092163,
+      "brightness": 2250.829589146096,
+      "direction": "U",
+      "confidence": 0.764,
+      "beat": 132.5,
+      "bar": 33,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 84.10267573696144,
+      "grid_idx": 265,
+      "strength": 2.1156246662139893,
+      "brightness": 3182.133954919494,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 133.5,
+      "bar": 34,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 84.3348752834467,
+      "grid_idx": 266,
+      "strength": 3.1499245166778564,
+      "brightness": 1955.902193100762,
+      "direction": "D",
+      "confidence": 0.836,
+      "beat": 134.0,
+      "bar": 34,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 84.65995464852608,
+      "grid_idx": 267,
+      "strength": 2.7797770500183105,
+      "brightness": 2746.275393244357,
+      "direction": "U",
+      "confidence": 0.932,
+      "beat": 134.5,
+      "bar": 34,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 84.96181405895692,
+      "grid_idx": 268,
+      "strength": 2.7489359378814697,
+      "brightness": 2228.6520099431714,
+      "direction": "D",
+      "confidence": 0.744,
+      "beat": 135.0,
+      "bar": 34,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 85.26367346938775,
+      "grid_idx": 269,
+      "strength": 2.3270962238311768,
+      "brightness": 2338.8005643340875,
+      "direction": "U",
+      "confidence": 0.793,
+      "beat": 135.5,
+      "bar": 34,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 85.86739229024943,
+      "grid_idx": 271,
+      "strength": 4.5240278244018555,
+      "brightness": 3414.9460786008385,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 136.5,
+      "bar": 34,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 86.21569160997733,
+      "grid_idx": 272,
+      "strength": 3.29609751701355,
+      "brightness": 2483.561040799936,
+      "direction": "D",
+      "confidence": 0.657,
+      "beat": 137.0,
+      "bar": 35,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 86.86585034013605,
+      "grid_idx": 274,
+      "strength": 5.741150856018066,
+      "brightness": 2172.270055103281,
+      "direction": "D",
+      "confidence": 0.763,
+      "beat": 138.0,
+      "bar": 35,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 87.12126984126984,
+      "grid_idx": 275,
+      "strength": 3.675722360610962,
+      "brightness": 2248.8513967457625,
+      "direction": "U",
+      "confidence": 0.763,
+      "beat": 138.5,
+      "bar": 35,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 87.49278911564626,
+      "grid_idx": 276,
+      "strength": 2.2078957557678223,
+      "brightness": 2040.3321897219773,
+      "direction": "D",
+      "confidence": 0.808,
+      "beat": 139.0,
+      "bar": 35,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 87.81786848072562,
+      "grid_idx": 277,
+      "strength": 2.1252901554107666,
+      "brightness": 902.0958461511163,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 139.5,
+      "bar": 35,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 88.11972789115646,
+      "grid_idx": 278,
+      "strength": 3.713005781173706,
+      "brightness": 2234.677008774894,
+      "direction": "D",
+      "confidence": 0.742,
+      "beat": 140.0,
+      "bar": 35,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 89.09496598639456,
+      "grid_idx": 281,
+      "strength": 4.410045146942139,
+      "brightness": 2409.264804746139,
+      "direction": "U",
+      "confidence": 0.817,
+      "beat": 141.5,
+      "bar": 36,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 89.35038548752834,
+      "grid_idx": 282,
+      "strength": 2.2368152141571045,
+      "brightness": 2786.6535025015746,
+      "direction": "D",
+      "confidence": 0.555,
+      "beat": 142.0,
+      "bar": 36,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 89.79156462585034,
+      "grid_idx": 283,
+      "strength": 2.363231897354126,
+      "brightness": 2474.6244754881996,
+      "direction": "U",
+      "confidence": 0.839,
+      "beat": 142.5,
+      "bar": 36,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 90.0237641723356,
+      "grid_idx": 284,
+      "strength": 4.188868999481201,
+      "brightness": 2681.8474979606162,
+      "direction": "D",
+      "confidence": 0.59,
+      "beat": 143.0,
+      "bar": 36,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 90.34884353741496,
+      "grid_idx": 285,
+      "strength": 1.5802680253982544,
+      "brightness": 933.9094841555856,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 143.5,
+      "bar": 36,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 90.6507029478458,
+      "grid_idx": 286,
+      "strength": 4.33693790435791,
+      "brightness": 1700.7517753618658,
+      "direction": "D",
+      "confidence": 0.923,
+      "beat": 144.0,
+      "bar": 36,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 91.0918820861678,
+      "grid_idx": 287,
+      "strength": 2.7915687561035156,
+      "brightness": 2919.3119242195776,
+      "direction": "U",
+      "confidence": 0.99,
+      "beat": 144.5,
+      "bar": 36,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 91.90458049886621,
+      "grid_idx": 290,
+      "strength": 5.300969123840332,
+      "brightness": 1607.4606646236232,
+      "direction": "D",
+      "confidence": 0.955,
+      "beat": 146.0,
+      "bar": 37,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 92.81015873015873,
+      "grid_idx": 293,
+      "strength": 2.887329578399658,
+      "brightness": 1758.431272392371,
+      "direction": "U",
+      "confidence": 0.597,
+      "beat": 147.5,
+      "bar": 37,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 93.83183673469388,
+      "grid_idx": 296,
+      "strength": 4.084441661834717,
+      "brightness": 2270.5595985790706,
+      "direction": "D",
+      "confidence": 0.73,
+      "beat": 149.0,
+      "bar": 38,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 94.3891156462585,
+      "grid_idx": 298,
+      "strength": 6.005404949188232,
+      "brightness": 2308.8394013247193,
+      "direction": "D",
+      "confidence": 0.717,
+      "beat": 150.0,
+      "bar": 38,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 94.62131519274377,
+      "grid_idx": 299,
+      "strength": 3.9241199493408203,
+      "brightness": 1944.2467148136693,
+      "direction": "U",
+      "confidence": 0.66,
+      "beat": 150.5,
+      "bar": 38,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 95.06249433106576,
+      "grid_idx": 300,
+      "strength": 3.488936185836792,
+      "brightness": 990.2323097240768,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 151.0,
+      "bar": 38,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 95.3643537414966,
+      "grid_idx": 301,
+      "strength": 2.323883056640625,
+      "brightness": 1175.4421718184662,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 151.5,
+      "bar": 38,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 95.68943310657596,
+      "grid_idx": 302,
+      "strength": 3.7838852405548096,
+      "brightness": 1102.3169565176468,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 152.0,
+      "bar": 38,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 96.01451247165532,
+      "grid_idx": 303,
+      "strength": 1.9381684064865112,
+      "brightness": 1289.4272389353534,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 152.5,
+      "bar": 38,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 96.31637188208617,
+      "grid_idx": 304,
+      "strength": 3.0536911487579346,
+      "brightness": 1301.2722871036683,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 153.0,
+      "bar": 39,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 96.5253514739229,
+      "grid_idx": 305,
+      "strength": 2.4012415409088135,
+      "brightness": 1991.503127720968,
+      "direction": "U",
+      "confidence": 0.676,
+      "beat": 153.5,
+      "bar": 39,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 96.94331065759637,
+      "grid_idx": 306,
+      "strength": 2.378058910369873,
+      "brightness": 1235.9413511084101,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 154.0,
+      "bar": 39,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 97.26839002267573,
+      "grid_idx": 307,
+      "strength": 3.1196706295013428,
+      "brightness": 1236.5762483562412,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 154.5,
+      "bar": 39,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 97.47736961451247,
+      "grid_idx": 308,
+      "strength": 3.0396053791046143,
+      "brightness": 2006.8191501545095,
+      "direction": "D",
+      "confidence": 0.819,
+      "beat": 155.0,
+      "bar": 39,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 98.2204081632653,
+      "grid_idx": 310,
+      "strength": 1.9395382404327393,
+      "brightness": 1150.7072208177356,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 156.0,
+      "bar": 39,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 99.14920634920635,
+      "grid_idx": 313,
+      "strength": 2.656491994857788,
+      "brightness": 1319.437128572741,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 157.5,
+      "bar": 40,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 99.54394557823129,
+      "grid_idx": 314,
+      "strength": 1.733895182609558,
+      "brightness": 1210.9077922796644,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 158.0,
+      "bar": 40,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 100.10122448979592,
+      "grid_idx": 316,
+      "strength": 2.3511698246002197,
+      "brightness": 1229.5956700704946,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 159.0,
+      "bar": 40,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 100.28698412698412,
+      "grid_idx": 317,
+      "strength": 3.3144917488098145,
+      "brightness": 1853.190101567996,
+      "direction": "U",
+      "confidence": 0.629,
+      "beat": 159.5,
+      "bar": 40,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 101.26222222222222,
+      "grid_idx": 320,
+      "strength": 5.7508111000061035,
+      "brightness": 2039.145881646419,
+      "direction": "D",
+      "confidence": 0.808,
+      "beat": 161.0,
+      "bar": 41,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 101.6801814058957,
+      "grid_idx": 321,
+      "strength": 3.972787380218506,
+      "brightness": 2420.0961678751933,
+      "direction": "U",
+      "confidence": 0.821,
+      "beat": 161.5,
+      "bar": 41,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 102.02848072562358,
+      "grid_idx": 322,
+      "strength": 2.9147708415985107,
+      "brightness": 2461.236916898249,
+      "direction": "D",
+      "confidence": 0.665,
+      "beat": 162.0,
+      "bar": 41,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 102.35356009070294,
+      "grid_idx": 323,
+      "strength": 4.961660385131836,
+      "brightness": 1614.3729032021195,
+      "direction": "U",
+      "confidence": 0.548,
+      "beat": 162.5,
+      "bar": 41,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 103.0269387755102,
+      "grid_idx": 325,
+      "strength": 2.5358963012695312,
+      "brightness": 2235.6141800734235,
+      "direction": "U",
+      "confidence": 0.758,
+      "beat": 163.5,
+      "bar": 41,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 103.28235827664399,
+      "grid_idx": 326,
+      "strength": 6.179399490356445,
+      "brightness": 2099.314592430361,
+      "direction": "D",
+      "confidence": 0.788,
+      "beat": 164.0,
+      "bar": 41,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 103.9092970521542,
+      "grid_idx": 328,
+      "strength": 1.9836050271987915,
+      "brightness": 633.7967907521046,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 165.0,
+      "bar": 42,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 104.23437641723356,
+      "grid_idx": 329,
+      "strength": 2.7157280445098877,
+      "brightness": 823.6073633925376,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 165.5,
+      "bar": 42,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 104.86131519274376,
+      "grid_idx": 331,
+      "strength": 3.4003214836120605,
+      "brightness": 4071.398270595955,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 166.5,
+      "bar": 42,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 105.18639455782314,
+      "grid_idx": 332,
+      "strength": 8.851699829101562,
+      "brightness": 2050.9104468496657,
+      "direction": "D",
+      "confidence": 0.804,
+      "beat": 167.0,
+      "bar": 42,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 105.53469387755102,
+      "grid_idx": 333,
+      "strength": 1.9504082202911377,
+      "brightness": 1504.6086312876469,
+      "direction": "U",
+      "confidence": 0.51,
+      "beat": 167.5,
+      "bar": 42,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 105.83655328798186,
+      "grid_idx": 334,
+      "strength": 3.808885335922241,
+      "brightness": 1777.1578692516296,
+      "direction": "D",
+      "confidence": 0.897,
+      "beat": 168.0,
+      "bar": 42,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 106.55637188208617,
+      "grid_idx": 336,
+      "strength": 2.602033853530884,
+      "brightness": 2210.829328521267,
+      "direction": "D",
+      "confidence": 0.75,
+      "beat": 169.0,
+      "bar": 43,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 107.06721088435374,
+      "grid_idx": 338,
+      "strength": 2.5766658782958984,
+      "brightness": 2179.793337226253,
+      "direction": "D",
+      "confidence": 0.761,
+      "beat": 170.0,
+      "bar": 43,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 107.3922902494331,
+      "grid_idx": 339,
+      "strength": 3.141691207885742,
+      "brightness": 2651.552047741567,
+      "direction": "U",
+      "confidence": 0.9,
+      "beat": 170.5,
+      "bar": 43,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 107.71736961451248,
+      "grid_idx": 340,
+      "strength": 2.9704039096832275,
+      "brightness": 583.0900546826148,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 171.0,
+      "bar": 43,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 108.01922902494331,
+      "grid_idx": 341,
+      "strength": 2.2202792167663574,
+      "brightness": 793.0188856983897,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 171.5,
+      "bar": 43,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 108.8087074829932,
+      "grid_idx": 343,
+      "strength": 3.9403929710388184,
+      "brightness": 4050.7173815191295,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 172.5,
+      "bar": 43,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 108.97124716553287,
+      "grid_idx": 344,
+      "strength": 5.092899322509766,
+      "brightness": 2674.0397339482156,
+      "direction": "D",
+      "confidence": 0.593,
+      "beat": 173.0,
+      "bar": 44,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 109.59818594104308,
+      "grid_idx": 346,
+      "strength": 3.1291146278381348,
+      "brightness": 2071.4793663252854,
+      "direction": "D",
+      "confidence": 0.797,
+      "beat": 174.0,
+      "bar": 44,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 109.80716553287982,
+      "grid_idx": 347,
+      "strength": 4.274923324584961,
+      "brightness": 3863.8682977752906,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 174.5,
+      "bar": 44,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 110.48054421768707,
+      "grid_idx": 349,
+      "strength": 3.189356803894043,
+      "brightness": 3701.646271762293,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 175.5,
+      "bar": 44,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 110.8520634920635,
+      "grid_idx": 350,
+      "strength": 3.4758400917053223,
+      "brightness": 2173.284279785929,
+      "direction": "D",
+      "confidence": 0.763,
+      "beat": 176.0,
+      "bar": 44,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 111.47900226757369,
+      "grid_idx": 352,
+      "strength": 3.8986189365386963,
+      "brightness": 1085.627388420837,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 177.0,
+      "bar": 45,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 111.80408163265307,
+      "grid_idx": 353,
+      "strength": 2.5745553970336914,
+      "brightness": 1306.6946868173197,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 177.5,
+      "bar": 45,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 112.1059410430839,
+      "grid_idx": 354,
+      "strength": 2.169113874435425,
+      "brightness": 2104.67185173056,
+      "direction": "D",
+      "confidence": 0.786,
+      "beat": 178.0,
+      "bar": 45,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 112.38458049886621,
+      "grid_idx": 355,
+      "strength": 2.1787257194519043,
+      "brightness": 2455.956142629869,
+      "direction": "U",
+      "confidence": 0.833,
+      "beat": 178.5,
+      "bar": 45,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 112.70965986394557,
+      "grid_idx": 356,
+      "strength": 3.2835159301757812,
+      "brightness": 2287.1750944151513,
+      "direction": "D",
+      "confidence": 0.724,
+      "beat": 179.0,
+      "bar": 45,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 113.10439909297052,
+      "grid_idx": 357,
+      "strength": 2.1947052478790283,
+      "brightness": 2210.3953541221167,
+      "direction": "U",
+      "confidence": 0.75,
+      "beat": 179.5,
+      "bar": 45,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 113.35981859410431,
+      "grid_idx": 358,
+      "strength": 2.7933402061462402,
+      "brightness": 2370.9646474920646,
+      "direction": "D",
+      "confidence": 0.696,
+      "beat": 180.0,
+      "bar": 45,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 114.66013605442177,
+      "grid_idx": 362,
+      "strength": 5.166251182556152,
+      "brightness": 2153.9871377718277,
+      "direction": "D",
+      "confidence": 0.769,
+      "beat": 182.0,
+      "bar": 46,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 115.28707482993197,
+      "grid_idx": 364,
+      "strength": 2.6272895336151123,
+      "brightness": 1137.571844088019,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 183.0,
+      "bar": 46,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 115.61215419501134,
+      "grid_idx": 365,
+      "strength": 3.2458419799804688,
+      "brightness": 1160.8634389490487,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 183.5,
+      "bar": 46,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 115.9372335600907,
+      "grid_idx": 366,
+      "strength": 1.7165690660476685,
+      "brightness": 1335.8621405494318,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 184.0,
+      "bar": 46,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 116.42485260770975,
+      "grid_idx": 368,
+      "strength": 4.7662129402160645,
+      "brightness": 3279.6736900863907,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 185.0,
+      "bar": 47,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 116.81959183673469,
+      "grid_idx": 369,
+      "strength": 2.9202194213867188,
+      "brightness": 2560.484860718579,
+      "direction": "U",
+      "confidence": 0.869,
+      "beat": 185.5,
+      "bar": 47,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 117.14467120181406,
+      "grid_idx": 370,
+      "strength": 4.784449100494385,
+      "brightness": 2467.584986958366,
+      "direction": "D",
+      "confidence": 0.663,
+      "beat": 186.0,
+      "bar": 47,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 117.46975056689342,
+      "grid_idx": 371,
+      "strength": 3.070735454559326,
+      "brightness": 1532.7935760307134,
+      "direction": "U",
+      "confidence": 0.52,
+      "beat": 186.5,
+      "bar": 47,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 117.77160997732426,
+      "grid_idx": 372,
+      "strength": 2.292376756668091,
+      "brightness": 2092.605171062318,
+      "direction": "D",
+      "confidence": 0.79,
+      "beat": 187.0,
+      "bar": 47,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 118.44498866213152,
+      "grid_idx": 374,
+      "strength": 6.810972690582275,
+      "brightness": 2027.479293599495,
+      "direction": "D",
+      "confidence": 0.812,
+      "beat": 188.0,
+      "bar": 47,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 119.07192743764172,
+      "grid_idx": 376,
+      "strength": 2.993741035461426,
+      "brightness": 825.586636893703,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 189.0,
+      "bar": 48,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 119.3970068027211,
+      "grid_idx": 377,
+      "strength": 3.567882776260376,
+      "brightness": 953.5885371599626,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 189.5,
+      "bar": 48,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 120.02394557823129,
+      "grid_idx": 379,
+      "strength": 2.181209087371826,
+      "brightness": 1390.7653362585609,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 190.5,
+      "bar": 48,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 120.32580498866213,
+      "grid_idx": 380,
+      "strength": 3.891857624053955,
+      "brightness": 2245.920718141883,
+      "direction": "D",
+      "confidence": 0.738,
+      "beat": 191.0,
+      "bar": 48,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 120.76698412698413,
+      "grid_idx": 381,
+      "strength": 3.99125337600708,
+      "brightness": 3292.360787686899,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 191.5,
+      "bar": 48,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 120.90630385487529,
+      "grid_idx": 382,
+      "strength": 4.4789533615112305,
+      "brightness": 3296.314993863045,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 192.0,
+      "bar": 48,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 121.30104308390023,
+      "grid_idx": 383,
+      "strength": 2.596350908279419,
+      "brightness": 1131.3681696321635,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 192.5,
+      "bar": 48,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 121.97442176870749,
+      "grid_idx": 385,
+      "strength": 2.6034817695617676,
+      "brightness": 2217.9397493695783,
+      "direction": "U",
+      "confidence": 0.752,
+      "beat": 193.5,
+      "bar": 49,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 122.22984126984127,
+      "grid_idx": 386,
+      "strength": 4.26607084274292,
+      "brightness": 3167.6331753239283,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 194.0,
+      "bar": 49,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 122.62458049886621,
+      "grid_idx": 387,
+      "strength": 2.0397286415100098,
+      "brightness": 5027.670601198498,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 194.5,
+      "bar": 49,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 122.88,
+      "grid_idx": 388,
+      "strength": 2.6811060905456543,
+      "brightness": 1645.455151108139,
+      "direction": "D",
+      "confidence": 0.942,
+      "beat": 195.0,
+      "bar": 49,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 123.18185941043085,
+      "grid_idx": 389,
+      "strength": 2.2589023113250732,
+      "brightness": 1912.5818503030112,
+      "direction": "U",
+      "confidence": 0.649,
+      "beat": 195.5,
+      "bar": 49,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 123.39083900226757,
+      "grid_idx": 390,
+      "strength": 2.434154987335205,
+      "brightness": 1819.2701649460769,
+      "direction": "D",
+      "confidence": 0.883,
+      "beat": 196.0,
+      "bar": 49,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 123.69269841269842,
+      "grid_idx": 391,
+      "strength": 3.3855721950531006,
+      "brightness": 4013.2099535168495,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 196.5,
+      "bar": 49,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 124.11065759637188,
+      "grid_idx": 392,
+      "strength": 2.8015072345733643,
+      "brightness": 2512.0939741998295,
+      "direction": "D",
+      "confidence": 0.648,
+      "beat": 197.0,
+      "bar": 50,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 124.5750566893424,
+      "grid_idx": 393,
+      "strength": 3.029788017272949,
+      "brightness": 3133.96665864733,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 197.5,
+      "bar": 50,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 124.73759637188209,
+      "grid_idx": 394,
+      "strength": 5.119073867797852,
+      "brightness": 2843.378675980411,
+      "direction": "D",
+      "confidence": 0.535,
+      "beat": 198.0,
+      "bar": 50,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 124.99301587301588,
+      "grid_idx": 395,
+      "strength": 2.5449817180633545,
+      "brightness": 2320.1341772224905,
+      "direction": "U",
+      "confidence": 0.787,
+      "beat": 198.5,
+      "bar": 50,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 126.01469387755103,
+      "grid_idx": 398,
+      "strength": 4.954409122467041,
+      "brightness": 2281.1401282130114,
+      "direction": "D",
+      "confidence": 0.726,
+      "beat": 200.0,
+      "bar": 50,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 126.29333333333334,
+      "grid_idx": 399,
+      "strength": 5.818631649017334,
+      "brightness": 2968.8544332086835,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 200.5,
+      "bar": 50,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 126.54875283446712,
+      "grid_idx": 400,
+      "strength": 2.537461757659912,
+      "brightness": 3494.7902697570876,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 201.0,
+      "bar": 51,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 126.98993197278912,
+      "grid_idx": 401,
+      "strength": 2.1588521003723145,
+      "brightness": 2224.0117539575117,
+      "direction": "U",
+      "confidence": 0.754,
+      "beat": 201.5,
+      "bar": 51,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 127.38467120181406,
+      "grid_idx": 402,
+      "strength": 2.588869094848633,
+      "brightness": 1999.5751025735765,
+      "direction": "D",
+      "confidence": 0.822,
+      "beat": 202.0,
+      "bar": 51,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 127.91873015873016,
+      "grid_idx": 404,
+      "strength": 7.895643711090088,
+      "brightness": 2203.3536020183924,
+      "direction": "D",
+      "confidence": 0.753,
+      "beat": 203.0,
+      "bar": 51,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 128.220589569161,
+      "grid_idx": 405,
+      "strength": 3.1891281604766846,
+      "brightness": 2032.045095215534,
+      "direction": "U",
+      "confidence": 0.689,
+      "beat": 203.5,
+      "bar": 51,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 128.52244897959184,
+      "grid_idx": 406,
+      "strength": 2.382272481918335,
+      "brightness": 1813.4867929483905,
+      "direction": "D",
+      "confidence": 0.885,
+      "beat": 204.0,
+      "bar": 51,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 128.87074829931973,
+      "grid_idx": 407,
+      "strength": 2.5348055362701416,
+      "brightness": 1317.0146331859353,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 204.5,
+      "bar": 51,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 129.79954648526078,
+      "grid_idx": 410,
+      "strength": 3.238662004470825,
+      "brightness": 2203.7314752081534,
+      "direction": "D",
+      "confidence": 0.752,
+      "beat": 206.0,
+      "bar": 52,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 130.14784580498866,
+      "grid_idx": 411,
+      "strength": 1.9158308506011963,
+      "brightness": 2121.1092606013535,
+      "direction": "U",
+      "confidence": 0.72,
+      "beat": 206.5,
+      "bar": 52,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 130.75156462585034,
+      "grid_idx": 413,
+      "strength": 2.251668930053711,
+      "brightness": 2422.067783560713,
+      "direction": "U",
+      "confidence": 0.822,
+      "beat": 207.5,
+      "bar": 52,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 131.37850340136055,
+      "grid_idx": 415,
+      "strength": 2.808547019958496,
+      "brightness": 3351.349707741742,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 208.5,
+      "bar": 52,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 131.63392290249433,
+      "grid_idx": 416,
+      "strength": 6.0257439613342285,
+      "brightness": 3378.7425568703857,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 209.0,
+      "bar": 53,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 132.02866213151927,
+      "grid_idx": 417,
+      "strength": 4.448498725891113,
+      "brightness": 2614.6234480654225,
+      "direction": "U",
+      "confidence": 0.887,
+      "beat": 209.5,
+      "bar": 53,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 132.3305215419501,
+      "grid_idx": 418,
+      "strength": 2.6284070014953613,
+      "brightness": 2939.7056416822975,
+      "direction": "D",
+      "confidence": 0.503,
+      "beat": 210.0,
+      "bar": 53,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 132.65560090702948,
+      "grid_idx": 419,
+      "strength": 4.383626461029053,
+      "brightness": 1744.3059660400368,
+      "direction": "U",
+      "confidence": 0.592,
+      "beat": 210.5,
+      "bar": 53,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 133.3057596371882,
+      "grid_idx": 421,
+      "strength": 2.137924909591675,
+      "brightness": 2163.677137131186,
+      "direction": "U",
+      "confidence": 0.734,
+      "beat": 211.5,
+      "bar": 53,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 133.60761904761904,
+      "grid_idx": 422,
+      "strength": 6.871841907501221,
+      "brightness": 3584.9659002928533,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 212.0,
+      "bar": 53,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 134.23455782312925,
+      "grid_idx": 424,
+      "strength": 3.490365505218506,
+      "brightness": 1925.6878992111458,
+      "direction": "D",
+      "confidence": 0.847,
+      "beat": 213.0,
+      "bar": 54,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 134.55963718820863,
+      "grid_idx": 425,
+      "strength": 4.236425399780273,
+      "brightness": 2006.1345407692545,
+      "direction": "U",
+      "confidence": 0.681,
+      "beat": 213.5,
+      "bar": 54,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 134.88471655328797,
+      "grid_idx": 426,
+      "strength": 2.203256607055664,
+      "brightness": 1441.3693549354712,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 214.0,
+      "bar": 54,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 135.1865759637188,
+      "grid_idx": 427,
+      "strength": 4.55068826675415,
+      "brightness": 2168.507056805591,
+      "direction": "U",
+      "confidence": 0.736,
+      "beat": 214.5,
+      "bar": 54,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 135.48843537414967,
+      "grid_idx": 428,
+      "strength": 4.390352249145508,
+      "brightness": 3605.9653242355107,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 215.0,
+      "bar": 54,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 136.1385941043084,
+      "grid_idx": 430,
+      "strength": 2.0296692848205566,
+      "brightness": 2302.3866051449754,
+      "direction": "D",
+      "confidence": 0.719,
+      "beat": 216.0,
+      "bar": 54,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 136.39401360544218,
+      "grid_idx": 431,
+      "strength": 4.888716697692871,
+      "brightness": 1851.0698672228511,
+      "direction": "U",
+      "confidence": 0.628,
+      "beat": 216.5,
+      "bar": 54,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 137.09061224489795,
+      "grid_idx": 433,
+      "strength": 2.6148974895477295,
+      "brightness": 4394.535202451757,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 217.5,
+      "bar": 55,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 137.3924716553288,
+      "grid_idx": 434,
+      "strength": 6.657233715057373,
+      "brightness": 3535.019474244471,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 218.0,
+      "bar": 55,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 138.019410430839,
+      "grid_idx": 436,
+      "strength": 2.7076029777526855,
+      "brightness": 1679.5302615356447,
+      "direction": "D",
+      "confidence": 0.93,
+      "beat": 219.0,
+      "bar": 55,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 138.34448979591838,
+      "grid_idx": 437,
+      "strength": 4.498767375946045,
+      "brightness": 1625.8962863178651,
+      "direction": "U",
+      "confidence": 0.552,
+      "beat": 219.5,
+      "bar": 55,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 138.78566893424036,
+      "grid_idx": 438,
+      "strength": 2.7076809406280518,
+      "brightness": 3228.015871838403,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 220.0,
+      "bar": 55,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 138.97142857142856,
+      "grid_idx": 439,
+      "strength": 3.6792397499084473,
+      "brightness": 2139.5254128888087,
+      "direction": "U",
+      "confidence": 0.726,
+      "beat": 220.5,
+      "bar": 55,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 139.2732879818594,
+      "grid_idx": 440,
+      "strength": 5.008537769317627,
+      "brightness": 3549.283879005332,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 221.0,
+      "bar": 56,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 139.6215873015873,
+      "grid_idx": 441,
+      "strength": 2.9242453575134277,
+      "brightness": 2113.835559678314,
+      "direction": "U",
+      "confidence": 0.717,
+      "beat": 221.5,
+      "bar": 56,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 139.92344671201815,
+      "grid_idx": 442,
+      "strength": 2.2354931831359863,
+      "brightness": 1935.3855497090065,
+      "direction": "D",
+      "confidence": 0.843,
+      "beat": 222.0,
+      "bar": 56,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 140.22530612244898,
+      "grid_idx": 443,
+      "strength": 7.075064182281494,
+      "brightness": 1948.4587780167758,
+      "direction": "U",
+      "confidence": 0.661,
+      "beat": 222.5,
+      "bar": 56,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 140.8754648526077,
+      "grid_idx": 445,
+      "strength": 2.2267870903015137,
+      "brightness": 3053.0856467853505,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 223.5,
+      "bar": 56,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 141.17732426303854,
+      "grid_idx": 446,
+      "strength": 4.155531406402588,
+      "brightness": 3604.969686349883,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 224.0,
+      "bar": 56,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 141.52562358276643,
+      "grid_idx": 447,
+      "strength": 1.5901850461959839,
+      "brightness": 2334.292564485988,
+      "direction": "U",
+      "confidence": 0.792,
+      "beat": 224.5,
+      "bar": 56,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 141.82748299319726,
+      "grid_idx": 448,
+      "strength": 3.015596628189087,
+      "brightness": 1335.6018704985051,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 225.0,
+      "bar": 57,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 142.12934240362813,
+      "grid_idx": 449,
+      "strength": 4.2172112464904785,
+      "brightness": 1641.6247320350965,
+      "direction": "U",
+      "confidence": 0.557,
+      "beat": 225.5,
+      "bar": 57,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 142.45442176870748,
+      "grid_idx": 450,
+      "strength": 2.4492199420928955,
+      "brightness": 1857.1635255584652,
+      "direction": "D",
+      "confidence": 0.87,
+      "beat": 226.0,
+      "bar": 57,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 142.7562811791383,
+      "grid_idx": 451,
+      "strength": 3.0989582538604736,
+      "brightness": 2449.9275855811925,
+      "direction": "U",
+      "confidence": 0.831,
+      "beat": 226.5,
+      "bar": 57,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 143.0813605442177,
+      "grid_idx": 452,
+      "strength": 10.430947303771973,
+      "brightness": 3862.9520942137115,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 227.0,
+      "bar": 57,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 143.40643990929706,
+      "grid_idx": 453,
+      "strength": 2.647763967514038,
+      "brightness": 2134.668520219818,
+      "direction": "U",
+      "confidence": 0.724,
+      "beat": 227.5,
+      "bar": 57,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 143.7082993197279,
+      "grid_idx": 454,
+      "strength": 2.7605323791503906,
+      "brightness": 4503.676261025969,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 228.0,
+      "bar": 57,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 143.9637188208617,
+      "grid_idx": 455,
+      "strength": 3.0286591053009033,
+      "brightness": 2499.9117001823256,
+      "direction": "U",
+      "confidence": 0.848,
+      "beat": 228.5,
+      "bar": 57,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 144.35845804988662,
+      "grid_idx": 456,
+      "strength": 2.5328516960144043,
+      "brightness": 2230.012612416081,
+      "direction": "D",
+      "confidence": 0.743,
+      "beat": 229.0,
+      "bar": 58,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 144.66031746031746,
+      "grid_idx": 457,
+      "strength": 2.8046305179595947,
+      "brightness": 2406.9797396972585,
+      "direction": "U",
+      "confidence": 0.817,
+      "beat": 229.5,
+      "bar": 58,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 144.9621768707483,
+      "grid_idx": 458,
+      "strength": 3.5100231170654297,
+      "brightness": 3700.858640293576,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 230.0,
+      "bar": 58,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 145.61233560090702,
+      "grid_idx": 460,
+      "strength": 3.3842034339904785,
+      "brightness": 1599.7702493249046,
+      "direction": "D",
+      "confidence": 0.957,
+      "beat": 231.0,
+      "bar": 58,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 145.91419501133788,
+      "grid_idx": 461,
+      "strength": 4.2063679695129395,
+      "brightness": 2034.8017932439325,
+      "direction": "U",
+      "confidence": 0.69,
+      "beat": 231.5,
+      "bar": 58,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 146.23927437641723,
+      "grid_idx": 462,
+      "strength": 2.2750322818756104,
+      "brightness": 2003.360831354849,
+      "direction": "D",
+      "confidence": 0.82,
+      "beat": 232.0,
+      "bar": 58,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 146.54113378684806,
+      "grid_idx": 463,
+      "strength": 2.726109027862549,
+      "brightness": 2624.98086200961,
+      "direction": "U",
+      "confidence": 0.89,
+      "beat": 232.5,
+      "bar": 58,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 146.8429931972789,
+      "grid_idx": 464,
+      "strength": 4.829948425292969,
+      "brightness": 3755.470941321224,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 233.0,
+      "bar": 59,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 147.19129251700681,
+      "grid_idx": 465,
+      "strength": 2.633776903152466,
+      "brightness": 2646.641843719848,
+      "direction": "U",
+      "confidence": 0.898,
+      "beat": 233.5,
+      "bar": 59,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 147.49315192743765,
+      "grid_idx": 466,
+      "strength": 2.507263660430908,
+      "brightness": 3310.7436116047206,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 234.0,
+      "bar": 59,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 147.7950113378685,
+      "grid_idx": 467,
+      "strength": 2.4803106784820557,
+      "brightness": 1533.8474899490345,
+      "direction": "U",
+      "confidence": 0.52,
+      "beat": 234.5,
+      "bar": 59,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 148.14331065759637,
+      "grid_idx": 468,
+      "strength": 3.230804443359375,
+      "brightness": 2004.3442379784917,
+      "direction": "D",
+      "confidence": 0.82,
+      "beat": 235.0,
+      "bar": 59,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 148.4451700680272,
+      "grid_idx": 469,
+      "strength": 2.209864377975464,
+      "brightness": 2015.6188509543317,
+      "direction": "U",
+      "confidence": 0.684,
+      "beat": 235.5,
+      "bar": 59,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 148.74702947845805,
+      "grid_idx": 470,
+      "strength": 3.498344898223877,
+      "brightness": 3617.87890380558,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 236.0,
+      "bar": 59,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 149.39718820861677,
+      "grid_idx": 472,
+      "strength": 4.551451683044434,
+      "brightness": 1657.2623137517548,
+      "direction": "D",
+      "confidence": 0.938,
+      "beat": 237.0,
+      "bar": 60,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 149.69904761904763,
+      "grid_idx": 473,
+      "strength": 3.450397491455078,
+      "brightness": 1825.1059448390379,
+      "direction": "U",
+      "confidence": 0.619,
+      "beat": 237.5,
+      "bar": 60,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 150.02412698412698,
+      "grid_idx": 474,
+      "strength": 2.1582963466644287,
+      "brightness": 2222.779200091563,
+      "direction": "D",
+      "confidence": 0.746,
+      "beat": 238.0,
+      "bar": 60,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 150.34920634920636,
+      "grid_idx": 475,
+      "strength": 4.001094818115234,
+      "brightness": 2559.6841088253445,
+      "direction": "U",
+      "confidence": 0.868,
+      "beat": 238.5,
+      "bar": 60,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 150.6510657596372,
+      "grid_idx": 476,
+      "strength": 7.87725830078125,
+      "brightness": 3591.2649298259275,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 239.0,
+      "bar": 60,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 150.99936507936508,
+      "grid_idx": 477,
+      "strength": 3.4239611625671387,
+      "brightness": 2261.7126869416697,
+      "direction": "U",
+      "confidence": 0.767,
+      "beat": 239.5,
+      "bar": 60,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 151.3012244897959,
+      "grid_idx": 478,
+      "strength": 2.566748857498169,
+      "brightness": 2414.2744144012836,
+      "direction": "D",
+      "confidence": 0.681,
+      "beat": 240.0,
+      "bar": 60,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 151.60308390022675,
+      "grid_idx": 479,
+      "strength": 5.839227199554443,
+      "brightness": 2003.2052930817374,
+      "direction": "U",
+      "confidence": 0.68,
+      "beat": 240.5,
+      "bar": 60,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 151.92816326530613,
+      "grid_idx": 480,
+      "strength": 2.4869861602783203,
+      "brightness": 2966.654789564567,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 241.0,
+      "bar": 61,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 152.2532426303855,
+      "grid_idx": 481,
+      "strength": 1.7519316673278809,
+      "brightness": 2973.334775501515,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 241.5,
+      "bar": 61,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 152.55510204081634,
+      "grid_idx": 482,
+      "strength": 5.712690830230713,
+      "brightness": 3586.7405018466256,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 242.0,
+      "bar": 61,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 152.88018140589568,
+      "grid_idx": 483,
+      "strength": 2.039137601852417,
+      "brightness": 2449.4978295394762,
+      "direction": "U",
+      "confidence": 0.831,
+      "beat": 242.5,
+      "bar": 61,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 153.18204081632652,
+      "grid_idx": 484,
+      "strength": 3.600020408630371,
+      "brightness": 1637.8041378581,
+      "direction": "D",
+      "confidence": 0.944,
+      "beat": 243.0,
+      "bar": 61,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 153.48390022675736,
+      "grid_idx": 485,
+      "strength": 3.0137581825256348,
+      "brightness": 2130.926677934163,
+      "direction": "U",
+      "confidence": 0.723,
+      "beat": 243.5,
+      "bar": 61,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 153.83219954648527,
+      "grid_idx": 486,
+      "strength": 2.7526674270629883,
+      "brightness": 1707.4207362969603,
+      "direction": "D",
+      "confidence": 0.921,
+      "beat": 244.0,
+      "bar": 61,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 154.1340589569161,
+      "grid_idx": 487,
+      "strength": 3.2860069274902344,
+      "brightness": 2324.445171492978,
+      "direction": "U",
+      "confidence": 0.789,
+      "beat": 244.5,
+      "bar": 61,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 154.43591836734694,
+      "grid_idx": 488,
+      "strength": 7.441347599029541,
+      "brightness": 3429.2968736476814,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 245.0,
+      "bar": 62,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 154.80743764172337,
+      "grid_idx": 489,
+      "strength": 2.2185192108154297,
+      "brightness": 2604.6480594617396,
+      "direction": "U",
+      "confidence": 0.884,
+      "beat": 245.5,
+      "bar": 62,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 155.08607709750567,
+      "grid_idx": 490,
+      "strength": 2.8304378986358643,
+      "brightness": 2102.1313851206883,
+      "direction": "D",
+      "confidence": 0.787,
+      "beat": 246.0,
+      "bar": 62,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 155.3879365079365,
+      "grid_idx": 491,
+      "strength": 4.655762672424316,
+      "brightness": 2256.864412668606,
+      "direction": "U",
+      "confidence": 0.766,
+      "beat": 246.5,
+      "bar": 62,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 156.03809523809525,
+      "grid_idx": 493,
+      "strength": 2.096555233001709,
+      "brightness": 2942.3723238929283,
+      "direction": "U",
+      "confidence": 0.998,
+      "beat": 247.5,
+      "bar": 62,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 156.3399546485261,
+      "grid_idx": 494,
+      "strength": 4.027274131774902,
+      "brightness": 3605.9951892815334,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 248.0,
+      "bar": 62,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 156.96689342403627,
+      "grid_idx": 496,
+      "strength": 2.2253613471984863,
+      "brightness": 1493.101612254608,
+      "direction": "D",
+      "confidence": 0.993,
+      "beat": 249.0,
+      "bar": 63,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 157.29197278911565,
+      "grid_idx": 497,
+      "strength": 4.194212436676025,
+      "brightness": 1859.8802021559466,
+      "direction": "U",
+      "confidence": 0.631,
+      "beat": 249.5,
+      "bar": 63,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 157.61705215419502,
+      "grid_idx": 498,
+      "strength": 2.292006492614746,
+      "brightness": 2527.747847354177,
+      "direction": "D",
+      "confidence": 0.642,
+      "beat": 250.0,
+      "bar": 63,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 157.91891156462586,
+      "grid_idx": 499,
+      "strength": 3.4257900714874268,
+      "brightness": 2093.02660691826,
+      "direction": "U",
+      "confidence": 0.71,
+      "beat": 250.5,
+      "bar": 63,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 158.2207709750567,
+      "grid_idx": 500,
+      "strength": 3.0832486152648926,
+      "brightness": 3817.9352191447797,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 251.0,
+      "bar": 63,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 158.56907029478458,
+      "grid_idx": 501,
+      "strength": 2.1424076557159424,
+      "brightness": 1964.1785271999645,
+      "direction": "U",
+      "confidence": 0.666,
+      "beat": 251.5,
+      "bar": 63,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 158.87092970521542,
+      "grid_idx": 502,
+      "strength": 2.214061975479126,
+      "brightness": 2121.116130910283,
+      "direction": "D",
+      "confidence": 0.78,
+      "beat": 252.0,
+      "bar": 63,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 159.1960090702948,
+      "grid_idx": 503,
+      "strength": 3.066869020462036,
+      "brightness": 1672.6606075975951,
+      "direction": "U",
+      "confidence": 0.567,
+      "beat": 252.5,
+      "bar": 63,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 159.49786848072563,
+      "grid_idx": 504,
+      "strength": 2.4244112968444824,
+      "brightness": 2350.388368287732,
+      "direction": "D",
+      "confidence": 0.703,
+      "beat": 253.0,
+      "bar": 64,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 159.82294784580498,
+      "grid_idx": 505,
+      "strength": 3.1482577323913574,
+      "brightness": 2369.292265690056,
+      "direction": "U",
+      "confidence": 0.804,
+      "beat": 253.5,
+      "bar": 64,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 160.12480725623584,
+      "grid_idx": 506,
+      "strength": 7.35793399810791,
+      "brightness": 3783.283074753011,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 254.0,
+      "bar": 64,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 160.4498866213152,
+      "grid_idx": 507,
+      "strength": 2.2697134017944336,
+      "brightness": 2315.1929125857396,
+      "direction": "U",
+      "confidence": 0.785,
+      "beat": 254.5,
+      "bar": 64,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 160.77496598639456,
+      "grid_idx": 508,
+      "strength": 3.659813165664673,
+      "brightness": 1168.9608163131807,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 255.0,
+      "bar": 64,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 161.05360544217686,
+      "grid_idx": 509,
+      "strength": 4.462226867675781,
+      "brightness": 1932.071997787208,
+      "direction": "U",
+      "confidence": 0.655,
+      "beat": 255.5,
+      "bar": 64,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 162.00562358276645,
+      "grid_idx": 512,
+      "strength": 5.013960361480713,
+      "brightness": 3325.399407203315,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 257.0,
+      "bar": 65,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 162.3307029478458,
+      "grid_idx": 513,
+      "strength": 2.984720468521118,
+      "brightness": 2920.9089424267545,
+      "direction": "U",
+      "confidence": 0.991,
+      "beat": 257.5,
+      "bar": 65,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 162.65578231292517,
+      "grid_idx": 514,
+      "strength": 2.336733341217041,
+      "brightness": 2846.8936708013807,
+      "direction": "D",
+      "confidence": 0.534,
+      "beat": 258.0,
+      "bar": 65,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 162.957641723356,
+      "grid_idx": 515,
+      "strength": 2.220597267150879,
+      "brightness": 1720.9026598652679,
+      "direction": "U",
+      "confidence": 0.584,
+      "beat": 258.5,
+      "bar": 65,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 163.60780045351473,
+      "grid_idx": 517,
+      "strength": 1.8656057119369507,
+      "brightness": 2074.123849812598,
+      "direction": "U",
+      "confidence": 0.704,
+      "beat": 259.5,
+      "bar": 65,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 163.9096598639456,
+      "grid_idx": 518,
+      "strength": 4.325070858001709,
+      "brightness": 3593.3640231826007,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 260.0,
+      "bar": 65,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 164.23473922902494,
+      "grid_idx": 519,
+      "strength": 1.555336594581604,
+      "brightness": 1998.7552779788705,
+      "direction": "U",
+      "confidence": 0.678,
+      "beat": 260.5,
+      "bar": 65,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 164.53659863945578,
+      "grid_idx": 520,
+      "strength": 1.9304141998291016,
+      "brightness": 1322.4870892492884,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 261.0,
+      "bar": 66,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 164.8384580498866,
+      "grid_idx": 521,
+      "strength": 4.93338680267334,
+      "brightness": 2622.2836659246345,
+      "direction": "U",
+      "confidence": 0.89,
+      "beat": 261.5,
+      "bar": 66,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 165.20997732426304,
+      "grid_idx": 522,
+      "strength": 1.5084186792373657,
+      "brightness": 1932.6008482683299,
+      "direction": "D",
+      "confidence": 0.844,
+      "beat": 262.0,
+      "bar": 66,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 165.51183673469387,
+      "grid_idx": 523,
+      "strength": 2.966041088104248,
+      "brightness": 2971.265934567988,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 262.5,
+      "bar": 66,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 165.8136961451247,
+      "grid_idx": 524,
+      "strength": 7.503940582275391,
+      "brightness": 3726.035408656457,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 263.0,
+      "bar": 66,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 166.13877551020408,
+      "grid_idx": 525,
+      "strength": 2.683396100997925,
+      "brightness": 2640.318927518779,
+      "direction": "U",
+      "confidence": 0.896,
+      "beat": 263.5,
+      "bar": 66,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 166.44063492063492,
+      "grid_idx": 526,
+      "strength": 2.9780256748199463,
+      "brightness": 2835.4064374382197,
+      "direction": "D",
+      "confidence": 0.538,
+      "beat": 264.0,
+      "bar": 66,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 166.71927437641725,
+      "grid_idx": 527,
+      "strength": 4.106057167053223,
+      "brightness": 2577.074313783793,
+      "direction": "U",
+      "confidence": 0.874,
+      "beat": 264.5,
+      "bar": 66,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 167.09079365079364,
+      "grid_idx": 528,
+      "strength": 1.9174447059631348,
+      "brightness": 2170.2749447583888,
+      "direction": "D",
+      "confidence": 0.764,
+      "beat": 265.0,
+      "bar": 67,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 167.39265306122448,
+      "grid_idx": 529,
+      "strength": 2.428687334060669,
+      "brightness": 1705.7220860397183,
+      "direction": "U",
+      "confidence": 0.579,
+      "beat": 265.5,
+      "bar": 67,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 167.69451247165532,
+      "grid_idx": 530,
+      "strength": 4.069596767425537,
+      "brightness": 3711.9886816324015,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 266.0,
+      "bar": 67,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 168.04281179138323,
+      "grid_idx": 531,
+      "strength": 2.585843324661255,
+      "brightness": 1885.4830378934537,
+      "direction": "U",
+      "confidence": 0.64,
+      "beat": 266.5,
+      "bar": 67,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 168.34467120181407,
+      "grid_idx": 532,
+      "strength": 4.538681507110596,
+      "brightness": 1059.5144790281918,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 267.0,
+      "bar": 67,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 168.62331065759636,
+      "grid_idx": 533,
+      "strength": 3.5104832649230957,
+      "brightness": 2619.6068389755333,
+      "direction": "U",
+      "confidence": 0.889,
+      "beat": 267.5,
+      "bar": 67,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 169.43600907029477,
+      "grid_idx": 535,
+      "strength": 2.8313305377960205,
+      "brightness": 5019.757548654455,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 268.5,
+      "bar": 67,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 169.59854875283446,
+      "grid_idx": 536,
+      "strength": 5.163784503936768,
+      "brightness": 3537.2038546624667,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 269.0,
+      "bar": 68,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 170.22548752834467,
+      "grid_idx": 538,
+      "strength": 4.34281063079834,
+      "brightness": 2425.8502088476853,
+      "direction": "D",
+      "confidence": 0.677,
+      "beat": 270.0,
+      "bar": 68,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 170.55056689342405,
+      "grid_idx": 539,
+      "strength": 2.8603322505950928,
+      "brightness": 1916.4554957155815,
+      "direction": "U",
+      "confidence": 0.65,
+      "beat": 270.5,
+      "bar": 68,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 170.8756462585034,
+      "grid_idx": 540,
+      "strength": 1.8266420364379883,
+      "brightness": 1820.3776704433883,
+      "direction": "D",
+      "confidence": 0.882,
+      "beat": 271.0,
+      "bar": 68,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 171.17750566893423,
+      "grid_idx": 541,
+      "strength": 2.7762105464935303,
+      "brightness": 2918.409719003403,
+      "direction": "U",
+      "confidence": 0.99,
+      "beat": 271.5,
+      "bar": 68,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 171.5025850340136,
+      "grid_idx": 542,
+      "strength": 9.838772773742676,
+      "brightness": 3759.3872776244366,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 272.0,
+      "bar": 68,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 171.82766439909298,
+      "grid_idx": 543,
+      "strength": 2.514484405517578,
+      "brightness": 1605.6944105835962,
+      "direction": "U",
+      "confidence": 0.545,
+      "beat": 272.5,
+      "bar": 68,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 172.12952380952382,
+      "grid_idx": 544,
+      "strength": 4.586755275726318,
+      "brightness": 1020.5835066864769,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 273.0,
+      "bar": 69,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 172.40816326530611,
+      "grid_idx": 545,
+      "strength": 3.178830146789551,
+      "brightness": 2266.3020655004507,
+      "direction": "U",
+      "confidence": 0.769,
+      "beat": 273.5,
+      "bar": 69,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 172.61714285714285,
+      "grid_idx": 546,
+      "strength": 2.6448936462402344,
+      "brightness": 2255.3284991571013,
+      "direction": "D",
+      "confidence": 0.735,
+      "beat": 274.0,
+      "bar": 69,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 173.05832199546487,
+      "grid_idx": 547,
+      "strength": 2.340040445327759,
+      "brightness": 2934.3115220274353,
+      "direction": "U",
+      "confidence": 0.995,
+      "beat": 274.5,
+      "bar": 69,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 173.3834013605442,
+      "grid_idx": 548,
+      "strength": 3.530304193496704,
+      "brightness": 3743.2816376232495,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 275.0,
+      "bar": 69,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 174.01034013605442,
+      "grid_idx": 550,
+      "strength": 2.5411243438720703,
+      "brightness": 2357.941029380282,
+      "direction": "D",
+      "confidence": 0.7,
+      "beat": 276.0,
+      "bar": 69,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 174.28897959183672,
+      "grid_idx": 551,
+      "strength": 2.9594221115112305,
+      "brightness": 1759.1271845257477,
+      "direction": "U",
+      "confidence": 0.597,
+      "beat": 276.5,
+      "bar": 69,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 174.66049886621315,
+      "grid_idx": 552,
+      "strength": 2.0122103691101074,
+      "brightness": 2145.7129280701706,
+      "direction": "D",
+      "confidence": 0.772,
+      "beat": 277.0,
+      "bar": 70,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 174.98557823129252,
+      "grid_idx": 553,
+      "strength": 3.1847314834594727,
+      "brightness": 3649.011934978167,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 277.5,
+      "bar": 70,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 175.28743764172336,
+      "grid_idx": 554,
+      "strength": 10.100871086120605,
+      "brightness": 3861.4281028480195,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 278.0,
+      "bar": 70,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 175.61251700680273,
+      "grid_idx": 555,
+      "strength": 2.4999356269836426,
+      "brightness": 1864.2141153733153,
+      "direction": "U",
+      "confidence": 0.632,
+      "beat": 278.5,
+      "bar": 70,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 175.91437641723357,
+      "grid_idx": 556,
+      "strength": 4.222784996032715,
+      "brightness": 1001.8923508648862,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 279.0,
+      "bar": 70,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 176.07691609977323,
+      "grid_idx": 557,
+      "strength": 2.7112889289855957,
+      "brightness": 1199.1871183915268,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 279.5,
+      "bar": 70,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 176.54131519274375,
+      "grid_idx": 558,
+      "strength": 2.337393283843994,
+      "brightness": 2501.653621773228,
+      "direction": "D",
+      "confidence": 0.651,
+      "beat": 280.0,
+      "bar": 70,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 176.84317460317462,
+      "grid_idx": 559,
+      "strength": 3.5642173290252686,
+      "brightness": 2747.63174929468,
+      "direction": "U",
+      "confidence": 0.932,
+      "beat": 280.5,
+      "bar": 70,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 177.16825396825396,
+      "grid_idx": 560,
+      "strength": 3.901982307434082,
+      "brightness": 3842.970255174843,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 281.0,
+      "bar": 71,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 177.51655328798185,
+      "grid_idx": 561,
+      "strength": 2.0993967056274414,
+      "brightness": 2417.671056356155,
+      "direction": "U",
+      "confidence": 0.82,
+      "beat": 281.5,
+      "bar": 71,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 177.77197278911564,
+      "grid_idx": 562,
+      "strength": 2.8390181064605713,
+      "brightness": 2601.516100231184,
+      "direction": "D",
+      "confidence": 0.617,
+      "beat": 282.0,
+      "bar": 71,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 178.12027210884355,
+      "grid_idx": 563,
+      "strength": 5.871713638305664,
+      "brightness": 1971.0938894076587,
+      "direction": "U",
+      "confidence": 0.669,
+      "beat": 282.5,
+      "bar": 71,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 178.56145124716554,
+      "grid_idx": 564,
+      "strength": 3.4123148918151855,
+      "brightness": 5191.712683402998,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 283.0,
+      "bar": 71,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 178.77043083900227,
+      "grid_idx": 565,
+      "strength": 2.2726991176605225,
+      "brightness": 1797.619923106474,
+      "direction": "U",
+      "confidence": 0.61,
+      "beat": 283.5,
+      "bar": 71,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 179.0722902494331,
+      "grid_idx": 566,
+      "strength": 9.043458938598633,
+      "brightness": 3737.6156830047935,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 284.0,
+      "bar": 71,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 179.39736961451248,
+      "grid_idx": 567,
+      "strength": 3.5347084999084473,
+      "brightness": 2259.393656523684,
+      "direction": "U",
+      "confidence": 0.766,
+      "beat": 284.5,
+      "bar": 71,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 179.67600907029478,
+      "grid_idx": 568,
+      "strength": 4.421067714691162,
+      "brightness": 1746.9922550037666,
+      "direction": "D",
+      "confidence": 0.907,
+      "beat": 285.0,
+      "bar": 72,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 180.02430839002267,
+      "grid_idx": 569,
+      "strength": 3.3281662464141846,
+      "brightness": 2205.79202928707,
+      "direction": "U",
+      "confidence": 0.748,
+      "beat": 285.5,
+      "bar": 72,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 180.60480725623583,
+      "grid_idx": 571,
+      "strength": 2.352065086364746,
+      "brightness": 2942.218699644051,
+      "direction": "U",
+      "confidence": 0.998,
+      "beat": 286.5,
+      "bar": 72,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 180.97632653061225,
+      "grid_idx": 572,
+      "strength": 6.593145847320557,
+      "brightness": 3601.248952055193,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 287.0,
+      "bar": 72,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 181.58004535147393,
+      "grid_idx": 574,
+      "strength": 4.810205459594727,
+      "brightness": 2222.4632944194736,
+      "direction": "D",
+      "confidence": 0.746,
+      "beat": 288.0,
+      "bar": 72,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 181.8354648526077,
+      "grid_idx": 575,
+      "strength": 3.421492576599121,
+      "brightness": 3457.6560329540966,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 288.5,
+      "bar": 72,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 182.55528344671202,
+      "grid_idx": 577,
+      "strength": 1.8019554615020752,
+      "brightness": 1887.2954470038985,
+      "direction": "U",
+      "confidence": 0.64,
+      "beat": 289.5,
+      "bar": 73,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 182.85714285714286,
+      "grid_idx": 578,
+      "strength": 6.9453253746032715,
+      "brightness": 3741.8438851653304,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 290.0,
+      "bar": 73,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 183.13578231292516,
+      "grid_idx": 579,
+      "strength": 2.851576328277588,
+      "brightness": 3210.8295155827495,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 290.5,
+      "bar": 73,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 183.50730158730158,
+      "grid_idx": 580,
+      "strength": 4.35911226272583,
+      "brightness": 1639.1893655815402,
+      "direction": "D",
+      "confidence": 0.944,
+      "beat": 291.0,
+      "bar": 73,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 183.7859410430839,
+      "grid_idx": 581,
+      "strength": 4.618714809417725,
+      "brightness": 2246.0727214754293,
+      "direction": "U",
+      "confidence": 0.762,
+      "beat": 291.5,
+      "bar": 73,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 184.45931972789117,
+      "grid_idx": 583,
+      "strength": 2.5297164916992188,
+      "brightness": 2978.5384786671875,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 292.5,
+      "bar": 73,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 184.73795918367347,
+      "grid_idx": 584,
+      "strength": 3.410207986831665,
+      "brightness": 3701.3153121096184,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 293.0,
+      "bar": 74,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 185.08625850340135,
+      "grid_idx": 585,
+      "strength": 1.8928929567337036,
+      "brightness": 2190.1765438774864,
+      "direction": "U",
+      "confidence": 0.743,
+      "beat": 293.5,
+      "bar": 74,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 185.3881179138322,
+      "grid_idx": 586,
+      "strength": 2.7412216663360596,
+      "brightness": 2192.189183944201,
+      "direction": "D",
+      "confidence": 0.756,
+      "beat": 294.0,
+      "bar": 74,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 185.68997732426303,
+      "grid_idx": 587,
+      "strength": 2.6891350746154785,
+      "brightness": 2979.2688269272817,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 294.5,
+      "bar": 74,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 186.03827664399094,
+      "grid_idx": 588,
+      "strength": 2.5517539978027344,
+      "brightness": 1744.8525242195876,
+      "direction": "D",
+      "confidence": 0.908,
+      "beat": 295.0,
+      "bar": 74,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 186.34013605442178,
+      "grid_idx": 589,
+      "strength": 4.445461750030518,
+      "brightness": 1736.9871302949168,
+      "direction": "U",
+      "confidence": 0.589,
+      "beat": 295.5,
+      "bar": 74,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 186.6419954648526,
+      "grid_idx": 590,
+      "strength": 6.53840970993042,
+      "brightness": 3802.2940018420195,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 296.0,
+      "bar": 74,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 186.9902947845805,
+      "grid_idx": 591,
+      "strength": 2.4035415649414062,
+      "brightness": 2378.2292862158733,
+      "direction": "U",
+      "confidence": 0.807,
+      "beat": 296.5,
+      "bar": 74,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 187.29215419501134,
+      "grid_idx": 592,
+      "strength": 3.8414297103881836,
+      "brightness": 1513.5918698980015,
+      "direction": "D",
+      "confidence": 0.987,
+      "beat": 297.0,
+      "bar": 75,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 187.59401360544217,
+      "grid_idx": 593,
+      "strength": 3.8750851154327393,
+      "brightness": 1785.9954202429324,
+      "direction": "U",
+      "confidence": 0.606,
+      "beat": 297.5,
+      "bar": 75,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 187.91909297052155,
+      "grid_idx": 594,
+      "strength": 2.520277738571167,
+      "brightness": 1783.3285974322134,
+      "direction": "D",
+      "confidence": 0.895,
+      "beat": 298.0,
+      "bar": 75,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 188.2441723356009,
+      "grid_idx": 595,
+      "strength": 3.857194662094116,
+      "brightness": 1591.6023790253582,
+      "direction": "U",
+      "confidence": 0.54,
+      "beat": 298.5,
+      "bar": 75,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 188.54603174603176,
+      "grid_idx": 596,
+      "strength": 11.32025146484375,
+      "brightness": 3672.8999965507305,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 299.0,
+      "bar": 75,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 188.778231292517,
+      "grid_idx": 597,
+      "strength": 2.0610649585723877,
+      "brightness": 3777.458345172717,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 299.5,
+      "bar": 75,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 189.19619047619048,
+      "grid_idx": 598,
+      "strength": 5.66369104385376,
+      "brightness": 1918.0627430435227,
+      "direction": "D",
+      "confidence": 0.849,
+      "beat": 300.0,
+      "bar": 75,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 189.49804988662132,
+      "grid_idx": 599,
+      "strength": 6.4285383224487305,
+      "brightness": 1194.090986729151,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 300.5,
+      "bar": 75,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 189.79990929705215,
+      "grid_idx": 600,
+      "strength": 1.884713888168335,
+      "brightness": 2536.859100966351,
+      "direction": "D",
+      "confidence": 0.639,
+      "beat": 301.0,
+      "bar": 76,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 190.12498866213153,
+      "grid_idx": 601,
+      "strength": 1.9853464365005493,
+      "brightness": 2293.7297803625256,
+      "direction": "U",
+      "confidence": 0.778,
+      "beat": 301.5,
+      "bar": 76,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 190.42684807256236,
+      "grid_idx": 602,
+      "strength": 3.1775572299957275,
+      "brightness": 3636.1902287574608,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 302.0,
+      "bar": 76,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 190.77514739229025,
+      "grid_idx": 603,
+      "strength": 2.4901859760284424,
+      "brightness": 1892.4310530652049,
+      "direction": "U",
+      "confidence": 0.642,
+      "beat": 302.5,
+      "bar": 76,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 191.0770068027211,
+      "grid_idx": 604,
+      "strength": 6.090822219848633,
+      "brightness": 1488.2786132596063,
+      "direction": "D",
+      "confidence": 0.995,
+      "beat": 303.0,
+      "bar": 76,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 191.37886621315192,
+      "grid_idx": 605,
+      "strength": 4.585792064666748,
+      "brightness": 1566.8898924132525,
+      "direction": "U",
+      "confidence": 0.532,
+      "beat": 303.5,
+      "bar": 76,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 191.7271655328798,
+      "grid_idx": 606,
+      "strength": 2.4428160190582275,
+      "brightness": 1904.104781657672,
+      "direction": "D",
+      "confidence": 0.854,
+      "beat": 304.0,
+      "bar": 76,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 192.02902494331065,
+      "grid_idx": 607,
+      "strength": 2.7668919563293457,
+      "brightness": 2141.2191478598215,
+      "direction": "U",
+      "confidence": 0.726,
+      "beat": 304.5,
+      "bar": 76,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 192.3308843537415,
+      "grid_idx": 608,
+      "strength": 6.909585952758789,
+      "brightness": 3544.464379609685,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 305.0,
+      "bar": 77,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 192.65596371882086,
+      "grid_idx": 609,
+      "strength": 2.590672254562378,
+      "brightness": 1952.5584619829044,
+      "direction": "U",
+      "confidence": 0.662,
+      "beat": 305.5,
+      "bar": 77,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 192.91138321995464,
+      "grid_idx": 610,
+      "strength": 4.327898979187012,
+      "brightness": 2908.039866312722,
+      "direction": "D",
+      "confidence": 0.513,
+      "beat": 306.0,
+      "bar": 77,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 193.44544217687076,
+      "grid_idx": 611,
+      "strength": 3.759917736053467,
+      "brightness": 1178.0921207631327,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 306.5,
+      "bar": 77,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 193.60798185941044,
+      "grid_idx": 612,
+      "strength": 4.258909225463867,
+      "brightness": 1352.7797481643795,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 307.0,
+      "bar": 77,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 193.90984126984128,
+      "grid_idx": 613,
+      "strength": 4.3727827072143555,
+      "brightness": 1953.991100051282,
+      "direction": "U",
+      "confidence": 0.663,
+      "beat": 307.5,
+      "bar": 77,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 194.23492063492063,
+      "grid_idx": 614,
+      "strength": 15.001360893249512,
+      "brightness": 3958.961003665778,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 308.0,
+      "bar": 77,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 194.56,
+      "grid_idx": 615,
+      "strength": 3.0462310314178467,
+      "brightness": 2146.731955781542,
+      "direction": "U",
+      "confidence": 0.728,
+      "beat": 308.5,
+      "bar": 77,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 194.86185941043084,
+      "grid_idx": 616,
+      "strength": 9.481171607971191,
+      "brightness": 992.9991289367425,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 309.0,
+      "bar": 78,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 195.16371882086167,
+      "grid_idx": 617,
+      "strength": 3.5337975025177,
+      "brightness": 1327.820225522895,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 309.5,
+      "bar": 78,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 195.48879818594105,
+      "grid_idx": 618,
+      "strength": 3.000225782394409,
+      "brightness": 1877.649767218566,
+      "direction": "D",
+      "confidence": 0.863,
+      "beat": 310.0,
+      "bar": 78,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 195.8138775510204,
+      "grid_idx": 619,
+      "strength": 6.438438415527344,
+      "brightness": 2112.2409032811083,
+      "direction": "U",
+      "confidence": 0.717,
+      "beat": 310.5,
+      "bar": 78,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 196.11573696145123,
+      "grid_idx": 620,
+      "strength": 7.896848678588867,
+      "brightness": 3648.626955547288,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 311.0,
+      "bar": 78,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 196.4408163265306,
+      "grid_idx": 621,
+      "strength": 4.319845676422119,
+      "brightness": 1996.6342274665767,
+      "direction": "U",
+      "confidence": 0.677,
+      "beat": 311.5,
+      "bar": 78,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 196.76589569160998,
+      "grid_idx": 622,
+      "strength": 5.480283260345459,
+      "brightness": 1464.6367671903417,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 312.0,
+      "bar": 78,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 197.04453514739228,
+      "grid_idx": 623,
+      "strength": 3.2045536041259766,
+      "brightness": 1394.9823414790123,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 312.5,
+      "bar": 78,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 197.3928344671202,
+      "grid_idx": 624,
+      "strength": 4.985121250152588,
+      "brightness": 1423.6128305056484,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 313.0,
+      "bar": 79,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 197.5785941043084,
+      "grid_idx": 625,
+      "strength": 4.4840264320373535,
+      "brightness": 1661.8895587748545,
+      "direction": "U",
+      "confidence": 0.564,
+      "beat": 313.5,
+      "bar": 79,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 198.01977324263038,
+      "grid_idx": 626,
+      "strength": 12.629785537719727,
+      "brightness": 3909.0372178146667,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 314.0,
+      "bar": 79,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 198.34485260770975,
+      "grid_idx": 627,
+      "strength": 2.827380895614624,
+      "brightness": 2070.8135569156298,
+      "direction": "U",
+      "confidence": 0.703,
+      "beat": 314.5,
+      "bar": 79,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 198.6467120181406,
+      "grid_idx": 628,
+      "strength": 6.973265171051025,
+      "brightness": 990.9182352609782,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 315.0,
+      "bar": 79,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 198.97179138321997,
+      "grid_idx": 629,
+      "strength": 10.711268424987793,
+      "brightness": 1078.0778692389963,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 315.5,
+      "bar": 79,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 199.2736507936508,
+      "grid_idx": 630,
+      "strength": 2.413994789123535,
+      "brightness": 1941.5465564798506,
+      "direction": "D",
+      "confidence": 0.841,
+      "beat": 316.0,
+      "bar": 79,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 199.50585034013605,
+      "grid_idx": 631,
+      "strength": 4.1238203048706055,
+      "brightness": 1545.607626934195,
+      "direction": "U",
+      "confidence": 0.524,
+      "beat": 316.5,
+      "bar": 79,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 199.92380952380952,
+      "grid_idx": 632,
+      "strength": 10.281108856201172,
+      "brightness": 3508.0045504686955,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 317.0,
+      "bar": 80,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 200.22566893424036,
+      "grid_idx": 633,
+      "strength": 2.0362348556518555,
+      "brightness": 1879.496292589998,
+      "direction": "U",
+      "confidence": 0.638,
+      "beat": 317.5,
+      "bar": 80,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 200.55074829931974,
+      "grid_idx": 634,
+      "strength": 3.3753042221069336,
+      "brightness": 1535.8317387653606,
+      "direction": "D",
+      "confidence": 0.979,
+      "beat": 318.0,
+      "bar": 80,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 200.85260770975057,
+      "grid_idx": 635,
+      "strength": 4.499927520751953,
+      "brightness": 1291.691283210058,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 318.5,
+      "bar": 80,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 201.17768707482992,
+      "grid_idx": 636,
+      "strength": 3.5756654739379883,
+      "brightness": 1614.9285968038987,
+      "direction": "D",
+      "confidence": 0.952,
+      "beat": 319.0,
+      "bar": 80,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 201.5027664399093,
+      "grid_idx": 637,
+      "strength": 6.225642681121826,
+      "brightness": 1770.5377400551054,
+      "direction": "U",
+      "confidence": 0.601,
+      "beat": 319.5,
+      "bar": 80,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 201.80462585034013,
+      "grid_idx": 638,
+      "strength": 11.014395713806152,
+      "brightness": 3625.764067136744,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 320.0,
+      "bar": 80,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 202.1297052154195,
+      "grid_idx": 639,
+      "strength": 2.3063113689422607,
+      "brightness": 1895.554986456829,
+      "direction": "U",
+      "confidence": 0.643,
+      "beat": 320.5,
+      "bar": 80,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 202.43156462585034,
+      "grid_idx": 640,
+      "strength": 2.836092472076416,
+      "brightness": 1320.324178875604,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 321.0,
+      "bar": 81,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 202.75664399092972,
+      "grid_idx": 641,
+      "strength": 9.425638198852539,
+      "brightness": 1345.0675767640303,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 321.5,
+      "bar": 81,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 203.08172335600906,
+      "grid_idx": 642,
+      "strength": 4.057772636413574,
+      "brightness": 1485.7923518602292,
+      "direction": "D",
+      "confidence": 0.996,
+      "beat": 322.0,
+      "bar": 81,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 203.3835827664399,
+      "grid_idx": 643,
+      "strength": 2.9598312377929688,
+      "brightness": 2154.719290863451,
+      "direction": "U",
+      "confidence": 0.731,
+      "beat": 322.5,
+      "bar": 81,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 203.70866213151928,
+      "grid_idx": 644,
+      "strength": 12.36323356628418,
+      "brightness": 3664.940820642347,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 323.0,
+      "bar": 81,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 204.03374149659865,
+      "grid_idx": 645,
+      "strength": 5.507483959197998,
+      "brightness": 1857.91492295856,
+      "direction": "U",
+      "confidence": 0.63,
+      "beat": 323.5,
+      "bar": 81,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 204.3356009070295,
+      "grid_idx": 646,
+      "strength": 3.615649700164795,
+      "brightness": 1623.2871701955194,
+      "direction": "D",
+      "confidence": 0.949,
+      "beat": 324.0,
+      "bar": 81,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 204.63746031746032,
+      "grid_idx": 647,
+      "strength": 2.8531031608581543,
+      "brightness": 1413.0108548164665,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 324.5,
+      "bar": 81,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 204.96253968253967,
+      "grid_idx": 648,
+      "strength": 2.036954879760742,
+      "brightness": 2088.0359971688763,
+      "direction": "D",
+      "confidence": 0.792,
+      "beat": 325.0,
+      "bar": 82,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 205.28761904761905,
+      "grid_idx": 649,
+      "strength": 4.655038356781006,
+      "brightness": 2169.092753074608,
+      "direction": "U",
+      "confidence": 0.736,
+      "beat": 325.5,
+      "bar": 82,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 205.58947845804988,
+      "grid_idx": 650,
+      "strength": 4.844290256500244,
+      "brightness": 3734.9148640473686,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 326.0,
+      "bar": 82,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 205.91455782312926,
+      "grid_idx": 651,
+      "strength": 1.9900500774383545,
+      "brightness": 2314.797313495416,
+      "direction": "U",
+      "confidence": 0.785,
+      "beat": 326.5,
+      "bar": 82,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 206.2396371882086,
+      "grid_idx": 652,
+      "strength": 9.95374870300293,
+      "brightness": 1070.6646464555174,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 327.0,
+      "bar": 82,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 206.54149659863947,
+      "grid_idx": 653,
+      "strength": 7.08625602722168,
+      "brightness": 1691.967227566788,
+      "direction": "U",
+      "confidence": 0.574,
+      "beat": 327.5,
+      "bar": 82,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 207.00589569160996,
+      "grid_idx": 654,
+      "strength": 2.2006893157958984,
+      "brightness": 3422.598029187739,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 328.0,
+      "bar": 82,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 207.1916553287982,
+      "grid_idx": 655,
+      "strength": 2.0894668102264404,
+      "brightness": 4077.3010040979184,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 328.5,
+      "bar": 82,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 207.4702947845805,
+      "grid_idx": 656,
+      "strength": 6.243432521820068,
+      "brightness": 3424.328270658792,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 329.0,
+      "bar": 83,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 207.8185941043084,
+      "grid_idx": 657,
+      "strength": 4.872544765472412,
+      "brightness": 3313.9683000830937,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 329.5,
+      "bar": 83,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 208.12045351473924,
+      "grid_idx": 658,
+      "strength": 3.2487246990203857,
+      "brightness": 3543.9700499758324,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 330.0,
+      "bar": 83,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 208.4455328798186,
+      "grid_idx": 659,
+      "strength": 3.0869979858398438,
+      "brightness": 1901.7564009173584,
+      "direction": "U",
+      "confidence": 0.645,
+      "beat": 330.5,
+      "bar": 83,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 209.21179138321995,
+      "grid_idx": 661,
+      "strength": 1.933176875114441,
+      "brightness": 2452.709801060415,
+      "direction": "U",
+      "confidence": 0.832,
+      "beat": 331.5,
+      "bar": 83,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 209.39755102040817,
+      "grid_idx": 662,
+      "strength": 4.293178081512451,
+      "brightness": 3380.899833926394,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 332.0,
+      "bar": 83,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 209.6065306122449,
+      "grid_idx": 663,
+      "strength": 1.5543407201766968,
+      "brightness": 2582.648633771693,
+      "direction": "U",
+      "confidence": 0.876,
+      "beat": 332.5,
+      "bar": 83,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 210.02448979591836,
+      "grid_idx": 664,
+      "strength": 4.250321865081787,
+      "brightness": 1503.1960864882742,
+      "direction": "D",
+      "confidence": 0.99,
+      "beat": 333.0,
+      "bar": 84,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 210.30312925170068,
+      "grid_idx": 665,
+      "strength": 3.6989240646362305,
+      "brightness": 2550.184148335525,
+      "direction": "U",
+      "confidence": 0.865,
+      "beat": 333.5,
+      "bar": 84,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 210.81396825396826,
+      "grid_idx": 666,
+      "strength": 2.0776188373565674,
+      "brightness": 5176.038107966728,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 334.0,
+      "bar": 84,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 210.9532879818594,
+      "grid_idx": 667,
+      "strength": 2.304330348968506,
+      "brightness": 2937.501496915544,
+      "direction": "U",
+      "confidence": 0.997,
+      "beat": 334.5,
+      "bar": 84,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 211.27836734693878,
+      "grid_idx": 668,
+      "strength": 3.3354952335357666,
+      "brightness": 3633.738721669071,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 335.0,
+      "bar": 84,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 211.9285260770975,
+      "grid_idx": 670,
+      "strength": 4.56816291809082,
+      "brightness": 2794.789715908501,
+      "direction": "D",
+      "confidence": 0.552,
+      "beat": 336.0,
+      "bar": 84,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 212.1839455782313,
+      "grid_idx": 671,
+      "strength": 2.992802619934082,
+      "brightness": 2758.122915528236,
+      "direction": "U",
+      "confidence": 0.936,
+      "beat": 336.5,
+      "bar": 84,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 212.5554648526077,
+      "grid_idx": 672,
+      "strength": 1.6645735502243042,
+      "brightness": 2059.8066457053524,
+      "direction": "D",
+      "confidence": 0.801,
+      "beat": 337.0,
+      "bar": 85,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 212.8805442176871,
+      "grid_idx": 673,
+      "strength": 2.973254680633545,
+      "brightness": 1623.233256585222,
+      "direction": "U",
+      "confidence": 0.551,
+      "beat": 337.5,
+      "bar": 85,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 213.18240362811792,
+      "grid_idx": 674,
+      "strength": 10.001775741577148,
+      "brightness": 3730.082114923726,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 338.0,
+      "bar": 85,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 213.50748299319727,
+      "grid_idx": 675,
+      "strength": 2.584336519241333,
+      "brightness": 1814.5607076186916,
+      "direction": "U",
+      "confidence": 0.616,
+      "beat": 338.5,
+      "bar": 85,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 213.8093424036281,
+      "grid_idx": 676,
+      "strength": 4.356485366821289,
+      "brightness": 1155.4883603468782,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 339.0,
+      "bar": 85,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 214.13442176870748,
+      "grid_idx": 677,
+      "strength": 4.374215602874756,
+      "brightness": 2178.0160755964325,
+      "direction": "U",
+      "confidence": 0.739,
+      "beat": 339.5,
+      "bar": 85,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 214.7613605442177,
+      "grid_idx": 679,
+      "strength": 5.194489479064941,
+      "brightness": 2150.986447409652,
+      "direction": "U",
+      "confidence": 0.73,
+      "beat": 340.5,
+      "bar": 85,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 215.06321995464853,
+      "grid_idx": 680,
+      "strength": 3.1698217391967773,
+      "brightness": 3581.444581521053,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 341.0,
+      "bar": 86,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 215.8294784580499,
+      "grid_idx": 682,
+      "strength": 2.451630115509033,
+      "brightness": 2185.8889056806656,
+      "direction": "D",
+      "confidence": 0.758,
+      "beat": 342.0,
+      "bar": 86,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 216.0152380952381,
+      "grid_idx": 683,
+      "strength": 2.8505043983459473,
+      "brightness": 1883.3544395966837,
+      "direction": "U",
+      "confidence": 0.639,
+      "beat": 342.5,
+      "bar": 86,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 216.36353741496598,
+      "grid_idx": 684,
+      "strength": 1.788974642753601,
+      "brightness": 1862.5726492386639,
+      "direction": "D",
+      "confidence": 0.868,
+      "beat": 343.0,
+      "bar": 86,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 216.61895691609976,
+      "grid_idx": 685,
+      "strength": 2.09767484664917,
+      "brightness": 2628.628286374572,
+      "direction": "U",
+      "confidence": 0.892,
+      "beat": 343.5,
+      "bar": 86,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 216.96725623582768,
+      "grid_idx": 686,
+      "strength": 7.572017669677734,
+      "brightness": 3625.0617093086526,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 344.0,
+      "bar": 86,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 217.29233560090702,
+      "grid_idx": 687,
+      "strength": 1.919736623764038,
+      "brightness": 1787.4545013742427,
+      "direction": "U",
+      "confidence": 0.606,
+      "beat": 344.5,
+      "bar": 86,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 217.59419501133786,
+      "grid_idx": 688,
+      "strength": 2.489057779312134,
+      "brightness": 1226.1174691062258,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 345.0,
+      "bar": 87,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 217.8960544217687,
+      "grid_idx": 689,
+      "strength": 3.8478524684906006,
+      "brightness": 2591.99181157603,
+      "direction": "U",
+      "confidence": 0.879,
+      "beat": 345.5,
+      "bar": 87,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 218.54621315192745,
+      "grid_idx": 691,
+      "strength": 3.652161121368408,
+      "brightness": 2881.3681654629036,
+      "direction": "U",
+      "confidence": 0.977,
+      "beat": 346.5,
+      "bar": 87,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 218.8712925170068,
+      "grid_idx": 692,
+      "strength": 5.5230231285095215,
+      "brightness": 3496.568299362371,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 347.0,
+      "bar": 87,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 219.498231292517,
+      "grid_idx": 694,
+      "strength": 3.5848023891448975,
+      "brightness": 2538.700470136951,
+      "direction": "D",
+      "confidence": 0.639,
+      "beat": 348.0,
+      "bar": 87,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 219.7536507936508,
+      "grid_idx": 695,
+      "strength": 3.4390926361083984,
+      "brightness": 2306.876103499688,
+      "direction": "U",
+      "confidence": 0.783,
+      "beat": 348.5,
+      "bar": 87,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 220.21804988662132,
+      "grid_idx": 696,
+      "strength": 2.3673629760742188,
+      "brightness": 2071.9731711852505,
+      "direction": "D",
+      "confidence": 0.797,
+      "beat": 349.0,
+      "bar": 88,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 220.31092970521541,
+      "grid_idx": 697,
+      "strength": 2.2953176498413086,
+      "brightness": 2113.290637637728,
+      "direction": "U",
+      "confidence": 0.717,
+      "beat": 349.5,
+      "bar": 88,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 220.75210884353743,
+      "grid_idx": 698,
+      "strength": 5.721755504608154,
+      "brightness": 3638.094342651744,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 350.0,
+      "bar": 88,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 221.1004081632653,
+      "grid_idx": 699,
+      "strength": 1.8714263439178467,
+      "brightness": 1727.4080356576499,
+      "direction": "U",
+      "confidence": 0.586,
+      "beat": 350.5,
+      "bar": 88,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 221.40226757369615,
+      "grid_idx": 700,
+      "strength": 4.378271579742432,
+      "brightness": 947.3749808745112,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 351.0,
+      "bar": 88,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 221.68090702947845,
+      "grid_idx": 701,
+      "strength": 2.6792166233062744,
+      "brightness": 3127.35829143173,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 351.5,
+      "bar": 88,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 221.98276643990928,
+      "grid_idx": 702,
+      "strength": 2.1756508350372314,
+      "brightness": 2821.2181202388515,
+      "direction": "D",
+      "confidence": 0.543,
+      "beat": 352.0,
+      "bar": 88,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 222.30784580498866,
+      "grid_idx": 703,
+      "strength": 3.540297508239746,
+      "brightness": 2720.2215579725903,
+      "direction": "U",
+      "confidence": 0.923,
+      "beat": 352.5,
+      "bar": 88,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 222.65614512471655,
+      "grid_idx": 704,
+      "strength": 6.957614898681641,
+      "brightness": 3545.715149567362,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 353.0,
+      "bar": 89,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 222.98122448979592,
+      "grid_idx": 705,
+      "strength": 1.7352665662765503,
+      "brightness": 2581.6631373423334,
+      "direction": "U",
+      "confidence": 0.876,
+      "beat": 353.5,
+      "bar": 89,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 223.2366439909297,
+      "grid_idx": 706,
+      "strength": 2.6967670917510986,
+      "brightness": 2536.0780538938766,
+      "direction": "D",
+      "confidence": 0.64,
+      "beat": 354.0,
+      "bar": 89,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 223.5849433106576,
+      "grid_idx": 707,
+      "strength": 2.4897801876068115,
+      "brightness": 1896.9370277867504,
+      "direction": "U",
+      "confidence": 0.644,
+      "beat": 354.5,
+      "bar": 89,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 224.07256235827666,
+      "grid_idx": 708,
+      "strength": 2.9677486419677734,
+      "brightness": 5104.20522533096,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 355.0,
+      "bar": 89,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 224.25832199546485,
+      "grid_idx": 709,
+      "strength": 2.143700361251831,
+      "brightness": 2057.6223186575876,
+      "direction": "U",
+      "confidence": 0.698,
+      "beat": 355.5,
+      "bar": 89,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 224.53696145124715,
+      "grid_idx": 710,
+      "strength": 3.8096866607666016,
+      "brightness": 3682.6784311311276,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 356.0,
+      "bar": 89,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 224.86204081632653,
+      "grid_idx": 711,
+      "strength": 2.706557035446167,
+      "brightness": 2094.27722684794,
+      "direction": "U",
+      "confidence": 0.71,
+      "beat": 356.5,
+      "bar": 89,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 225.16390022675736,
+      "grid_idx": 712,
+      "strength": 2.375476360321045,
+      "brightness": 1875.420512905291,
+      "direction": "D",
+      "confidence": 0.864,
+      "beat": 357.0,
+      "bar": 90,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 225.48897959183674,
+      "grid_idx": 713,
+      "strength": 2.6162970066070557,
+      "brightness": 2580.703637616283,
+      "direction": "U",
+      "confidence": 0.875,
+      "beat": 357.5,
+      "bar": 90,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 226.11591836734695,
+      "grid_idx": 715,
+      "strength": 4.147891044616699,
+      "brightness": 3051.3265435299236,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 358.5,
+      "bar": 90,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 226.4409977324263,
+      "grid_idx": 716,
+      "strength": 5.414267539978027,
+      "brightness": 3528.351455803906,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 359.0,
+      "bar": 90,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 227.09115646258505,
+      "grid_idx": 718,
+      "strength": 2.3844985961914062,
+      "brightness": 3404.6234411418063,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 360.0,
+      "bar": 90,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 227.39301587301588,
+      "grid_idx": 719,
+      "strength": 3.7075092792510986,
+      "brightness": 2614.6348663529357,
+      "direction": "U",
+      "confidence": 0.887,
+      "beat": 360.5,
+      "bar": 90,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 227.71809523809523,
+      "grid_idx": 720,
+      "strength": 1.4712400436401367,
+      "brightness": 1681.9922581055869,
+      "direction": "D",
+      "confidence": 0.929,
+      "beat": 361.0,
+      "bar": 91,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 228.01995464852607,
+      "grid_idx": 721,
+      "strength": 1.7859456539154053,
+      "brightness": 2334.4671076456602,
+      "direction": "U",
+      "confidence": 0.792,
+      "beat": 361.5,
+      "bar": 91,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 228.34503401360544,
+      "grid_idx": 722,
+      "strength": 9.99606990814209,
+      "brightness": 3589.6981755967827,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 362.0,
+      "bar": 91,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 228.64689342403628,
+      "grid_idx": 723,
+      "strength": 3.203355073928833,
+      "brightness": 2248.813477289959,
+      "direction": "U",
+      "confidence": 0.763,
+      "beat": 362.5,
+      "bar": 91,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 228.97197278911565,
+      "grid_idx": 724,
+      "strength": 5.2372307777404785,
+      "brightness": 1470.088716408062,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 363.0,
+      "bar": 91,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 229.2738321995465,
+      "grid_idx": 725,
+      "strength": 5.684813499450684,
+      "brightness": 2324.992079355712,
+      "direction": "U",
+      "confidence": 0.789,
+      "beat": 363.5,
+      "bar": 91,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 229.62213151927438,
+      "grid_idx": 726,
+      "strength": 1.756625771522522,
+      "brightness": 2529.3017172918835,
+      "direction": "D",
+      "confidence": 0.642,
+      "beat": 364.0,
+      "bar": 91,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 229.87755102040816,
+      "grid_idx": 727,
+      "strength": 2.5617141723632812,
+      "brightness": 2753.465735995218,
+      "direction": "U",
+      "confidence": 0.934,
+      "beat": 364.5,
+      "bar": 91,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 230.22585034013605,
+      "grid_idx": 728,
+      "strength": 7.3049726486206055,
+      "brightness": 3360.2597381750343,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 365.0,
+      "bar": 92,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 230.87600907029477,
+      "grid_idx": 730,
+      "strength": 2.8790881633758545,
+      "brightness": 2053.138109334333,
+      "direction": "D",
+      "confidence": 0.803,
+      "beat": 366.0,
+      "bar": 92,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 231.17786848072564,
+      "grid_idx": 731,
+      "strength": 5.331859588623047,
+      "brightness": 2056.3654903813112,
+      "direction": "U",
+      "confidence": 0.698,
+      "beat": 366.5,
+      "bar": 92,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 231.82802721088436,
+      "grid_idx": 733,
+      "strength": 2.8280301094055176,
+      "brightness": 1411.5177144215552,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 367.5,
+      "bar": 92,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 232.10666666666665,
+      "grid_idx": 734,
+      "strength": 4.4887800216674805,
+      "brightness": 3555.66674297789,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 368.0,
+      "bar": 92,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 232.45496598639457,
+      "grid_idx": 735,
+      "strength": 2.427560567855835,
+      "brightness": 1920.1968195517554,
+      "direction": "U",
+      "confidence": 0.651,
+      "beat": 368.5,
+      "bar": 92,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 232.7568253968254,
+      "grid_idx": 736,
+      "strength": 5.326435565948486,
+      "brightness": 1239.6088144359214,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 369.0,
+      "bar": 93,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 233.05868480725624,
+      "grid_idx": 737,
+      "strength": 3.607102394104004,
+      "brightness": 2076.6498616855893,
+      "direction": "U",
+      "confidence": 0.704,
+      "beat": 369.5,
+      "bar": 93,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 233.40698412698413,
+      "grid_idx": 738,
+      "strength": 2.5957508087158203,
+      "brightness": 2177.5224012302783,
+      "direction": "D",
+      "confidence": 0.761,
+      "beat": 370.0,
+      "bar": 93,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 233.70884353741496,
+      "grid_idx": 739,
+      "strength": 1.773941159248352,
+      "brightness": 2747.204031153256,
+      "direction": "U",
+      "confidence": 0.932,
+      "beat": 370.5,
+      "bar": 93,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 234.0107029478458,
+      "grid_idx": 740,
+      "strength": 3.2660720348358154,
+      "brightness": 3571.817558702123,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 371.0,
+      "bar": 93,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 234.33578231292518,
+      "grid_idx": 741,
+      "strength": 1.7416179180145264,
+      "brightness": 2300.2707419574567,
+      "direction": "U",
+      "confidence": 0.78,
+      "beat": 371.5,
+      "bar": 93,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 234.66086167800452,
+      "grid_idx": 742,
+      "strength": 5.010499477386475,
+      "brightness": 2015.888779430459,
+      "direction": "D",
+      "confidence": 0.816,
+      "beat": 372.0,
+      "bar": 93,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 234.9627210884354,
+      "grid_idx": 743,
+      "strength": 4.88968563079834,
+      "brightness": 2130.8184003042484,
+      "direction": "U",
+      "confidence": 0.723,
+      "beat": 372.5,
+      "bar": 93,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 235.28780045351473,
+      "grid_idx": 744,
+      "strength": 1.952125906944275,
+      "brightness": 2975.0461966155067,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 373.0,
+      "bar": 94,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 235.6128798185941,
+      "grid_idx": 745,
+      "strength": 2.284947633743286,
+      "brightness": 2720.934350703889,
+      "direction": "U",
+      "confidence": 0.923,
+      "beat": 373.5,
+      "bar": 94,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 235.91473922902495,
+      "grid_idx": 746,
+      "strength": 5.796077728271484,
+      "brightness": 3459.738884028892,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 374.0,
+      "bar": 94,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 236.23981859410432,
+      "grid_idx": 747,
+      "strength": 2.501309871673584,
+      "brightness": 4220.487611361742,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 374.5,
+      "bar": 94,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 236.54167800453516,
+      "grid_idx": 748,
+      "strength": 4.407186508178711,
+      "brightness": 1214.622745519889,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 375.0,
+      "bar": 94,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 236.8667573696145,
+      "grid_idx": 749,
+      "strength": 7.420500755310059,
+      "brightness": 1655.10724527152,
+      "direction": "U",
+      "confidence": 0.561,
+      "beat": 375.5,
+      "bar": 94,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 237.19183673469388,
+      "grid_idx": 750,
+      "strength": 1.714271068572998,
+      "brightness": 1779.4431040107727,
+      "direction": "D",
+      "confidence": 0.896,
+      "beat": 376.0,
+      "bar": 94,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 237.49369614512472,
+      "grid_idx": 751,
+      "strength": 2.220318555831909,
+      "brightness": 3147.58519926464,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 376.5,
+      "bar": 94,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 237.8187755102041,
+      "grid_idx": 752,
+      "strength": 9.524102210998535,
+      "brightness": 3764.944848521083,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 377.0,
+      "bar": 95,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 238.14385487528344,
+      "grid_idx": 753,
+      "strength": 1.627690315246582,
+      "brightness": 1965.1250009189732,
+      "direction": "U",
+      "confidence": 0.667,
+      "beat": 377.5,
+      "bar": 95,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 238.39927437641722,
+      "grid_idx": 754,
+      "strength": 4.112604141235352,
+      "brightness": 2349.7660062984996,
+      "direction": "D",
+      "confidence": 0.703,
+      "beat": 378.0,
+      "bar": 95,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 238.70113378684806,
+      "grid_idx": 755,
+      "strength": 5.333542823791504,
+      "brightness": 2101.2043424493095,
+      "direction": "U",
+      "confidence": 0.713,
+      "beat": 378.5,
+      "bar": 95,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 239.46739229024942,
+      "grid_idx": 757,
+      "strength": 2.2554125785827637,
+      "brightness": 1559.8762661278222,
+      "direction": "U",
+      "confidence": 0.529,
+      "beat": 379.5,
+      "bar": 95,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 239.67637188208616,
+      "grid_idx": 758,
+      "strength": 4.354811191558838,
+      "brightness": 3017.854386225008,
+      "direction": "D",
+      "confidence": 0.5,
+      "beat": 380.0,
+      "bar": 95,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 240.04789115646258,
+      "grid_idx": 759,
+      "strength": 2.325002908706665,
+      "brightness": 3094.0183122208286,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 380.5,
+      "bar": 95,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 240.6748299319728,
+      "grid_idx": 761,
+      "strength": 2.9912772178649902,
+      "brightness": 2275.6190919128862,
+      "direction": "U",
+      "confidence": 0.772,
+      "beat": 381.5,
+      "bar": 96,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 241.301768707483,
+      "grid_idx": 763,
+      "strength": 2.3334929943084717,
+      "brightness": 1795.8796216027793,
+      "direction": "U",
+      "confidence": 0.609,
+      "beat": 382.5,
+      "bar": 96,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 241.6732879818594,
+      "grid_idx": 764,
+      "strength": 4.205220699310303,
+      "brightness": 2670.0313120443516,
+      "direction": "D",
+      "confidence": 0.594,
+      "beat": 383.0,
+      "bar": 96,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 242.0215873015873,
+      "grid_idx": 765,
+      "strength": 3.373798131942749,
+      "brightness": 3033.493458513621,
+      "direction": "U",
+      "confidence": 1.0,
+      "beat": 383.5,
+      "bar": 96,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 242.53242630385486,
+      "grid_idx": 767,
+      "strength": 5.002098083496094,
+      "brightness": 2618.9110886791823,
+      "direction": "U",
+      "confidence": 0.888,
+      "beat": 384.5,
+      "bar": 96,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 243.29868480725622,
+      "grid_idx": 769,
+      "strength": 2.0550782680511475,
+      "brightness": 2134.1642833788314,
+      "direction": "U",
+      "confidence": 0.724,
+      "beat": 385.5,
+      "bar": 97,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 243.50766439909296,
+      "grid_idx": 770,
+      "strength": 4.993729591369629,
+      "brightness": 1834.4164220901391,
+      "direction": "D",
+      "confidence": 0.878,
+      "beat": 386.0,
+      "bar": 97,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 243.85596371882087,
+      "grid_idx": 771,
+      "strength": 2.0267333984375,
+      "brightness": 1043.2236599087291,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 386.5,
+      "bar": 97,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 244.13460317460317,
+      "grid_idx": 772,
+      "strength": 2.1522531509399414,
+      "brightness": 1242.5876083334408,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 387.0,
+      "bar": 97,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 244.39002267573696,
+      "grid_idx": 773,
+      "strength": 4.98386812210083,
+      "brightness": 2065.625649791228,
+      "direction": "U",
+      "confidence": 0.701,
+      "beat": 387.5,
+      "bar": 97,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 245.3884807256236,
+      "grid_idx": 776,
+      "strength": 2.3905885219573975,
+      "brightness": 2288.4605420191365,
+      "direction": "D",
+      "confidence": 0.724,
+      "beat": 389.0,
+      "bar": 98,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 246.01541950113378,
+      "grid_idx": 778,
+      "strength": 8.08203411102295,
+      "brightness": 1165.3548272932178,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 390.0,
+      "bar": 98,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 246.22439909297051,
+      "grid_idx": 779,
+      "strength": 7.053757190704346,
+      "brightness": 2251.1272627109875,
+      "direction": "U",
+      "confidence": 0.764,
+      "beat": 390.5,
+      "bar": 98,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 246.61913832199548,
+      "grid_idx": 780,
+      "strength": 5.291065216064453,
+      "brightness": 1047.518868111196,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 391.0,
+      "bar": 98,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 246.92099773242631,
+      "grid_idx": 781,
+      "strength": 2.8714592456817627,
+      "brightness": 1174.7205782164383,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 391.5,
+      "bar": 98,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 247.2692970521542,
+      "grid_idx": 782,
+      "strength": 1.7981927394866943,
+      "brightness": 1187.3665083294852,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 392.0,
+      "bar": 98,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 247.59437641723355,
+      "grid_idx": 783,
+      "strength": 2.7420830726623535,
+      "brightness": 1398.8215066828336,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 392.5,
+      "bar": 98,
+      "beat_in_bar": 4.5
+    },
+    {
+      "time": 247.87301587301587,
+      "grid_idx": 784,
+      "strength": 2.417099714279175,
+      "brightness": 1407.6653901742973,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 393.0,
+      "bar": 99,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 248.5231746031746,
+      "grid_idx": 786,
+      "strength": 2.220980405807495,
+      "brightness": 1113.9105074557344,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 394.0,
+      "bar": 99,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 248.84825396825397,
+      "grid_idx": 787,
+      "strength": 3.194988250732422,
+      "brightness": 1244.1786186433594,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 394.5,
+      "bar": 99,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 249.0572335600907,
+      "grid_idx": 788,
+      "strength": 3.8138065338134766,
+      "brightness": 1462.3741723192143,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 395.0,
+      "bar": 99,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 249.47519274376418,
+      "grid_idx": 789,
+      "strength": 2.3384664058685303,
+      "brightness": 1202.9878009643287,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 395.5,
+      "bar": 99,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 249.77705215419502,
+      "grid_idx": 790,
+      "strength": 2.305781126022339,
+      "brightness": 1126.0736371995674,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 396.0,
+      "bar": 99,
+      "beat_in_bar": 4.0
+    },
+    {
+      "time": 250.42721088435374,
+      "grid_idx": 792,
+      "strength": 2.504713296890259,
+      "brightness": 1135.849963043213,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 397.0,
+      "bar": 100,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 250.70585034013607,
+      "grid_idx": 793,
+      "strength": 2.247379779815674,
+      "brightness": 1355.8505433209668,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 397.5,
+      "bar": 100,
+      "beat_in_bar": 1.5
+    },
+    {
+      "time": 251.3792290249433,
+      "grid_idx": 795,
+      "strength": 1.9042201042175293,
+      "brightness": 1219.3594065506861,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 398.5,
+      "bar": 100,
+      "beat_in_bar": 2.5
+    },
+    {
+      "time": 251.70430839002267,
+      "grid_idx": 796,
+      "strength": 1.9713038206100464,
+      "brightness": 1124.5089291996471,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 399.0,
+      "bar": 100,
+      "beat_in_bar": 3.0
+    },
+    {
+      "time": 251.93650793650792,
+      "grid_idx": 797,
+      "strength": 2.1336984634399414,
+      "brightness": 1457.0905776837656,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 399.5,
+      "bar": 100,
+      "beat_in_bar": 3.5
+    },
+    {
+      "time": 253.0510657596372,
+      "grid_idx": 800,
+      "strength": 3.7745816707611084,
+      "brightness": 1313.3982101030936,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 401.0,
+      "bar": 101,
+      "beat_in_bar": 1.0
+    },
+    {
+      "time": 253.70122448979592,
+      "grid_idx": 802,
+      "strength": 2.6255030632019043,
+      "brightness": 1189.4186509302006,
+      "direction": "D",
+      "confidence": 1.0,
+      "beat": 402.0,
+      "bar": 101,
+      "beat_in_bar": 2.0
+    },
+    {
+      "time": 254.16562358276644,
+      "grid_idx": 803,
+      "strength": 2.347590446472168,
+      "brightness": 1186.7380563121783,
+      "direction": "U",
+      "confidence": 0.5,
+      "beat": 402.5,
+      "bar": 101,
+      "beat_in_bar": 2.5
+    }
+  ],
+  "bars": {
+    "1": {
+      "pattern": "D",
+      "positions": [
+        3.0
+      ]
+    },
+    "2": {
+      "pattern": "D U D U U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "3": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "4": {
+      "pattern": "D D U D U D U",
+      "positions": [
+        1.0,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "5": {
+      "pattern": "D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5
+      ]
+    },
+    "6": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "7": {
+      "pattern": "D U D U D U",
+      "positions": [
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "8": {
+      "pattern": "D U D U D U U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.5
+      ]
+    },
+    "9": {
+      "pattern": "D D U U",
+      "positions": [
+        2.0,
+        3.0,
+        3.5,
+        4.5
+      ]
+    },
+    "10": {
+      "pattern": "D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        4.0,
+        4.5
+      ]
+    },
+    "11": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "12": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "13": {
+      "pattern": "D U D U D",
+      "positions": [
+        1.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ]
+    },
+    "14": {
+      "pattern": "D U D D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        4.5
+      ]
+    },
+    "15": {
+      "pattern": "U D U D U D U",
+      "positions": [
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "16": {
+      "pattern": "D U D U U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "17": {
+      "pattern": "D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        4.0,
+        4.5
+      ]
+    },
+    "18": {
+      "pattern": "D U U D D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.5,
+        3.0,
+        4.0,
+        4.5
+      ]
+    },
+    "19": {
+      "pattern": "D U D U D U",
+      "positions": [
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "20": {
+      "pattern": "D U D U U D",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.5,
+        4.0
+      ]
+    },
+    "21": {
+      "pattern": "D U U D U U",
+      "positions": [
+        1.0,
+        1.5,
+        2.5,
+        3.0,
+        3.5,
+        4.5
+      ]
+    },
+    "22": {
+      "pattern": "U D U D U U",
+      "positions": [
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.5
+      ]
+    },
+    "23": {
+      "pattern": "D U D U D D",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        4.0
+      ]
+    },
+    "24": {
+      "pattern": "D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "25": {
+      "pattern": "D U D U",
+      "positions": [
+        2.0,
+        2.5,
+        3.0,
+        3.5
+      ]
+    },
+    "26": {
+      "pattern": "D U D U D",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        4.0
+      ]
+    },
+    "27": {
+      "pattern": "U D U D D U",
+      "positions": [
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        4.0,
+        4.5
+      ]
+    },
+    "28": {
+      "pattern": "D D U U",
+      "positions": [
+        2.0,
+        3.0,
+        3.5,
+        4.5
+      ]
+    },
+    "29": {
+      "pattern": "D D U D U D",
+      "positions": [
+        1.0,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ]
+    },
+    "30": {
+      "pattern": "U D U D D U",
+      "positions": [
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        4.0,
+        4.5
+      ]
+    },
+    "31": {
+      "pattern": "D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "32": {
+      "pattern": "D D U D U D U",
+      "positions": [
+        1.0,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "33": {
+      "pattern": "D U U D D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.5,
+        3.0,
+        4.0,
+        4.5
+      ]
+    },
+    "34": {
+      "pattern": "U D U D U U",
+      "positions": [
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.5
+      ]
+    },
+    "35": {
+      "pattern": "D D U D U D",
+      "positions": [
+        1.0,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ]
+    },
+    "36": {
+      "pattern": "U D U D U D U",
+      "positions": [
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "37": {
+      "pattern": "D U",
+      "positions": [
+        2.0,
+        3.5
+      ]
+    },
+    "38": {
+      "pattern": "D D U D U D U",
+      "positions": [
+        1.0,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "39": {
+      "pattern": "D U D U D D",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        4.0
+      ]
+    },
+    "40": {
+      "pattern": "U D D U",
+      "positions": [
+        1.5,
+        2.0,
+        3.0,
+        3.5
+      ]
+    },
+    "41": {
+      "pattern": "D U D U U D",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.5,
+        4.0
+      ]
+    },
+    "42": {
+      "pattern": "D U U D U D",
+      "positions": [
+        1.0,
+        1.5,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ]
+    },
+    "43": {
+      "pattern": "D D U D U U",
+      "positions": [
+        1.0,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.5
+      ]
+    },
+    "44": {
+      "pattern": "D D U U D",
+      "positions": [
+        1.0,
+        2.0,
+        2.5,
+        3.5,
+        4.0
+      ]
+    },
+    "45": {
+      "pattern": "D U D U D U D",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ]
+    },
+    "46": {
+      "pattern": "D D U D",
+      "positions": [
+        2.0,
+        3.0,
+        3.5,
+        4.0
+      ]
+    },
+    "47": {
+      "pattern": "D U D U D D",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        4.0
+      ]
+    },
+    "48": {
+      "pattern": "D U U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "49": {
+      "pattern": "U D U D U D U",
+      "positions": [
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "50": {
+      "pattern": "D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        4.0,
+        4.5
+      ]
+    },
+    "51": {
+      "pattern": "D U D D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "52": {
+      "pattern": "D U U U",
+      "positions": [
+        2.0,
+        2.5,
+        3.5,
+        4.5
+      ]
+    },
+    "53": {
+      "pattern": "D U D U U D",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.5,
+        4.0
+      ]
+    },
+    "54": {
+      "pattern": "D U D U D D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        4.0,
+        4.5
+      ]
+    },
+    "55": {
+      "pattern": "U D D U D U",
+      "positions": [
+        1.5,
+        2.0,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "56": {
+      "pattern": "D U D U U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "57": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "58": {
+      "pattern": "D U D D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "59": {
+      "pattern": "D U D U D U D",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ]
+    },
+    "60": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "61": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "62": {
+      "pattern": "D U D U U D",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.5,
+        4.0
+      ]
+    },
+    "63": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "64": {
+      "pattern": "D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5
+      ]
+    },
+    "65": {
+      "pattern": "D U D U U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "66": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "67": {
+      "pattern": "D U D U D U U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.5
+      ]
+    },
+    "68": {
+      "pattern": "D D U D U D U",
+      "positions": [
+        1.0,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "69": {
+      "pattern": "D U D U D D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        4.0,
+        4.5
+      ]
+    },
+    "70": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "71": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "72": {
+      "pattern": "D U U D D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.5,
+        3.0,
+        4.0,
+        4.5
+      ]
+    },
+    "73": {
+      "pattern": "U D U D U U",
+      "positions": [
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.5
+      ]
+    },
+    "74": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "75": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "76": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "77": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "78": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "79": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "80": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "81": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "82": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "83": {
+      "pattern": "D U D U U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "84": {
+      "pattern": "D U D U D D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        4.0,
+        4.5
+      ]
+    },
+    "85": {
+      "pattern": "D U D U D U U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.5
+      ]
+    },
+    "86": {
+      "pattern": "D D U D U D U",
+      "positions": [
+        1.0,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "87": {
+      "pattern": "D U U D D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.5,
+        3.0,
+        4.0,
+        4.5
+      ]
+    },
+    "88": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "89": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "90": {
+      "pattern": "D U U D D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.5,
+        3.0,
+        4.0,
+        4.5
+      ]
+    },
+    "91": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "92": {
+      "pattern": "D D U U D U",
+      "positions": [
+        1.0,
+        2.0,
+        2.5,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "93": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "94": {
+      "pattern": "D U D U D U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "95": {
+      "pattern": "D U D U U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "96": {
+      "pattern": "U U D U U",
+      "positions": [
+        1.5,
+        2.5,
+        3.0,
+        3.5,
+        4.5
+      ]
+    },
+    "97": {
+      "pattern": "U D U D U",
+      "positions": [
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5
+      ]
+    },
+    "98": {
+      "pattern": "D D U D U D U",
+      "positions": [
+        1.0,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5
+      ]
+    },
+    "99": {
+      "pattern": "D D U D U D",
+      "positions": [
+        1.0,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ]
+    },
+    "100": {
+      "pattern": "D U U D U",
+      "positions": [
+        1.0,
+        1.5,
+        2.5,
+        3.0,
+        3.5
+      ]
+    },
+    "101": {
+      "pattern": "D D U",
+      "positions": [
+        1.0,
+        2.0,
+        2.5
+      ]
+    }
+  }
+}

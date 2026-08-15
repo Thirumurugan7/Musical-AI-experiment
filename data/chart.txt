@@ -1,0 +1,15 @@
+tempo ~117 BPM   |   4/4   |   16.5s   |   40 strums
+====================================================
+
+| C            |  D · D U · U D ·
+| G            |  D · D U · U D ·
+| Am           |  D · D U · U D ·
+| F            |  D · D U · U D ·
+| F C          |  D · D U · U D ·
+| G            |  D · D U · U D ·
+| Am           |  D · D U · U D ·
+| F            |  D · D U · U D ·
+
+  count:        1 & 2 & 3 & 4 &
+  D = downstroke   U = upstroke   · = no strum
+  mean stroke-direction confidence: 0.73
