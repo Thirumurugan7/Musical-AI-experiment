@@ -42,22 +42,77 @@ def slot_strengths(env, env_times, beats, beat_pos, subdiv):
     return bars, bpb
 
 
-def classify(bars, accent_ratio=1.30, rest_ratio=0.30, ghost_ratio=0.60):
+def noise_floor(bars, pct=10, mult=1.8):
+    """
+    Absolute quiet level for the whole track, from its quietest slots.
+
+    Kept separate from the per-section reference on purpose. A floor derived
+    from the track's *median* would scale with the loud parts and silence any
+    quiet section outright; a floor derived from its quietest slots only ever
+    rejects material that is genuinely near-silent — a failed stem, a gap.
+    """
+    allv = np.concatenate([np.asarray(b["strength"], dtype=float) for b in bars])
+    return float(np.percentile(allv, pct)) * mult if allv.size else 0.0
+
+
+def thresholds(bars, rest_ratio=0.32, floor_pct=10, floor_mult=1.8):
+    """
+    Track-wide reference level and rest threshold.
+
+    Shared by classify() and canonical() so a slot means the same thing in the
+    per-bar rows and in the summary pattern. Deriving it once, from the whole
+    track, is the entire point — see classify() for what per-bar thresholds did.
+    """
+    allv = np.concatenate([np.asarray(b["strength"], dtype=float) for b in bars])
+    pos = allv[allv > 0]
+    ref = float(np.median(pos)) if pos.size else 1.0
+    noise = float(np.percentile(allv, floor_pct)) if allv.size else 0.0
+    return ref, max(noise * floor_mult, ref * rest_ratio)
+
+
+def _mark(v, ref, rest_at, accent_ratio=1.30, ghost_ratio=0.75):
+    if v < rest_at:
+        return " "
+    if v >= ref * accent_ratio:
+        return "A"
+    if v >= ref * ghost_ratio:
+        return "x"
+    return "."
+
+
+def classify(bars, accent_ratio=1.30, rest_ratio=0.45, ghost_ratio=0.75,
+             floor_pct=15, floor_mult=2.0):
     """
     Per slot: 'A' accented hit, 'x' normal hit, '.' ghost/light, ' ' rest.
-    Thresholds are relative to each bar's own median, so the classification
-    survives level changes between verse and chorus.
+
+    Thresholds are global to the track, plus an absolute noise floor.
+
+    The previous version compared each slot against *its own bar's* median.
+    That threshold was computed from the twelve values being thresholded, so
+    roughly half of any bar sat above it by construction and almost nothing
+    ever fell below 0.30x of it. The result: ~98 % of slots marked struck for
+    any input whatsoever — including a stem attenuated to -40 dB, and audio
+    with the guitar removed entirely.
+
+    A track-wide reference fixes the real failure, which was that a bar with
+    no strumming in it could not be recognised as such: its own quiet slots
+    still straddled its own quiet median. The noise floor, taken from the
+    quietest slots on the track, catches near-silent input outright.
     """
+    allv = np.concatenate([np.asarray(b["strength"], dtype=float) for b in bars])
+    pos = allv[allv > 0]
+    ref = float(np.median(pos)) if pos.size else 1.0
+    noise = float(np.percentile(allv, floor_pct)) if allv.size else 0.0
+    rest_at = max(noise * floor_mult, ref * rest_ratio)
+
     for b in bars:
-        s = np.array(b["strength"])
-        med = np.median(s[s > 0]) if (s > 0).any() else 1.0
         marks = []
-        for v in s:
-            if v < med * rest_ratio:
+        for v in b["strength"]:
+            if v < rest_at:
                 marks.append(" ")
-            elif v >= med * accent_ratio:
+            elif v >= ref * accent_ratio:
                 marks.append("A")
-            elif v >= med * ghost_ratio:
+            elif v >= ref * ghost_ratio:
                 marks.append("x")
             else:
                 marks.append(".")
@@ -65,22 +120,62 @@ def classify(bars, accent_ratio=1.30, rest_ratio=0.30, ghost_ratio=0.60):
     return bars
 
 
-def canonical(bars, n_slots):
-    """The song's representative bar: median strength per slot position."""
+def classify_span(bars, ref, rest_at):
+    """Mark one section's bars against that section's own level."""
+    for b in bars:
+        b["marks"] = [_mark(v, ref, rest_at) for v in b["strength"]]
+    return bars
+
+
+def canonical(bars, n_slots, ref=None, rest_at=None):
+    """
+    The song's representative bar: median strength per slot position.
+
+    Classified against the same track-wide thresholds as the individual bars,
+    so a rest in the summary pattern means what a rest means everywhere else.
+    Taking the median across bars first is what makes this usable at all — it
+    averages away the per-bar noise, leaving the pattern that actually recurs.
+    """
     M = np.array([b["strength"] for b in bars])
     med = np.median(M, axis=0)
-    base = np.median(med[med > 0]) if (med > 0).any() else 1.0
-    marks = []
-    for v in med:
-        if v < base * 0.30:
-            marks.append(" ")
-        elif v >= base * 1.30:
-            marks.append("A")
-        elif v >= base * 0.60:
-            marks.append("x")
+    if ref is None or rest_at is None:
+        ref, rest_at = thresholds(bars)
+    return med, [_mark(v, ref, rest_at) for v in med]
+
+
+def sections(bars, shapes, min_bars=4):
+    """
+    Split the song where the chord cycle changes, so each part gets its own
+    pattern instead of one average smeared over verse and chorus alike.
+
+    Finds the cycle length that best explains the chord sequence, then cuts
+    where that cycle stops holding. Falls back to a single section when no
+    cycle is evident — better one honest pattern than invented structure.
+    """
+    n = len(shapes)
+    if n < min_bars * 2:
+        return [(0, n)]
+
+    best_len, best_score = None, 0.0
+    for L in range(2, min(9, n // 2 + 1)):
+        hits = sum(1 for i in range(n - L) if shapes[i] == shapes[i + L])
+        score = hits / (n - L)
+        if score > best_score:
+            best_len, best_score = L, score
+    if not best_len or best_score < 0.5:
+        return [(0, n)]
+
+    cuts, i = [0], best_len
+    while i < n - 1:
+        if shapes[i] != shapes[i - best_len] and \
+           shapes[min(i + 1, n - 1)] != shapes[min(i + 1 - best_len, n - 1)]:
+            if i - cuts[-1] >= min_bars:
+                cuts.append(i)
+            i += best_len
         else:
-            marks.append(".")
-    return med, marks
+            i += 1
+    cuts.append(n)
+    return [(a, b) for a, b in zip(cuts, cuts[1:]) if b - a >= min_bars]
 
 
 def directions(marks, subdiv, stroke_rate_hz):

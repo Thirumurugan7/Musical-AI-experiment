@@ -29,37 +29,100 @@ def load_lab(p):
 
 
 def dominant(chords, t0, t1):
+    """
+    The chord a bar is in.
+
+    'N' (no chord) wins on overlap far too often: the model emits it wherever
+    the texture is thin, which on a sparse intro can be most of a bar even
+    though a chord is plainly being played. So a real chord beats N whenever
+    one sounds at all during the bar; N is returned only when nothing else does.
+    """
     acc = collections.Counter()
     for s, e, c in chords:
         ov = min(e, t1) - max(s, t0)
         if ov > 0:
             acc[c] += ov
-    return acc.most_common(1)[0][0] if acc else "N"
+    if not acc:
+        return "N"
+    real = {c: v for c, v in acc.items() if c not in ("N", "X")}
+    if real:
+        return max(real, key=real.get)
+    return acc.most_common(1)[0][0]
 
 
-def detect_subdiv(beats, env, env_times):
-    """Compound (3) or simple (2)? Test which grid the onsets prefer."""
+def fill_no_chord(labels):
+    """
+    Carry a chord across bars the model refused to label.
+
+    A bar with no chord at all is nearly always the model under-committing on a
+    sparse passage, not silence — the intro riff of a song is still harmonic.
+    Carry the previous chord forward; for leading bars, borrow the first real
+    chord that follows.
+    """
+    out = list(labels)
+    last = None
+    for i, c in enumerate(out):
+        if c not in ("N", "X"):
+            last = c
+        elif last is not None:
+            out[i] = last
+    nxt = None
+    for i in range(len(out) - 1, -1, -1):
+        if out[i] not in ("N", "X"):
+            nxt = out[i]
+        elif nxt is not None:
+            out[i] = nxt
+    return out
+
+
+def detect_subdiv(beats, env, env_times, res=12):
+    """
+    Compound (3) or simple (2 / 4)? Compare where energy sits *inside* a beat.
+
+    The previous version scored each candidate grid with an "occupancy" figure
+    and took the first to clear 0.75. Every candidate cleared it — 0.896 / 0.956
+    / 0.980 on one track — so the loop order chose the metre, not the audio, and
+    the answer was 3 for every song ever passed in.
+
+    This samples each beat at a 12-point lattice, which contains both the binary
+    positions (6) and the ternary ones (4, 8), and asks which set of offbeats
+    actually carries energy. Because every number is a comparison between
+    positions within the same beat, a scale change cannot alter the outcome —
+    which is what went wrong before.
+    """
     bt = beats[:, 0]
-    best, scores = 2, {}
-    for sd in (2, 3, 4):
-        vals = []
-        for i in range(len(bt) - 1):
-            t0, t1 = bt[i], bt[i + 1]
-            for s in range(sd):
-                t = t0 + (t1 - t0) * s / sd
-                w = (env_times >= t - 0.04) & (env_times < t + 0.08)
-                vals.append(float(env[w].max()) if w.any() else 0.0)
-        v = np.array(vals).reshape(-1, sd)
-        # a real subdivision is one where the *offbeats* also carry energy
-        occupancy = float((v > np.median(v[v > 0]) * 0.35).mean())
-        contrast = float(v[:, 0].mean() / (v[:, 1:].mean() + 1e-9))
-        scores[sd] = {"occupancy": round(occupancy, 3),
-                      "beat_contrast": round(contrast, 3)}
-    # prefer the finest grid whose slots are mostly occupied
-    for sd in (3, 4, 2):
-        if scores[sd]["occupancy"] >= 0.75:
-            best = sd
-            break
+    rows = []
+    for i in range(len(bt) - 1):
+        t0, t1 = bt[i], bt[i + 1]
+        if not (0.2 < t1 - t0 < 2.5):
+            continue
+        row = []
+        for k in range(res):
+            t = t0 + (t1 - t0) * k / res
+            w = (env_times >= t - 0.03) & (env_times < t + 0.06)
+            row.append(float(env[w].max()) if w.any() else 0.0)
+        rows.append(row)
+    if not rows:
+        return 2, {"error": "no usable beats"}
+
+    m = np.array(rows).mean(axis=0)
+    base = float(m.mean()) or 1e-9
+    on = float(m[0]) / base
+    binary = float(m[res // 2]) / base                              # the "&"
+    ternary = float(m[res // 3] + m[2 * res // 3]) / 2 / base       # triplets
+    quarter = float(m[res // 4] + m[3 * res // 4]) / 2 / base       # 16ths
+
+    scores = {"on_beat": round(on, 3), "binary_offbeat": round(binary, 3),
+              "ternary_offbeat": round(ternary, 3),
+              "sixteenth_offbeat": round(quarter, 3)}
+
+    if ternary > binary * 1.05:
+        best = 3
+    elif quarter > binary * 0.85:
+        best = 4
+    else:
+        best = 2
+    scores["chosen"] = best
     return best, scores
 
 
@@ -71,25 +134,52 @@ def transcribe(wav, lab, title=None, stem=None):
            rhythm reflects the guitar rather than the whole arrangement
     """
     chords = load_lab(lab)
+
+    # The mix drives metre and beats: it has the drums, and a stem that failed
+    # to separate carries no metrical information at all. Only the strum grid
+    # reads the stem.
+    y_mix, sr = librosa.load(wav, sr=22050, mono=True)
+    env_mix = librosa.onset.onset_strength(y=y_mix, sr=sr)
+    et_mix = librosa.times_like(env_mix, sr=sr)
+
     onset_src = stem or wav
-    y, sr = librosa.load(onset_src, sr=22050, mono=True)
-    env = librosa.onset.onset_strength(y=y, sr=sr)
-    et = librosa.times_like(env, sr=sr)
+    stem_warning = None
+    if stem:
+        y, _ = librosa.load(stem, sr=22050, mono=True)
+        mix_rms = float(np.sqrt(np.mean(y_mix ** 2))) or 1e-9
+        stem_rms = float(np.sqrt(np.mean(y ** 2)))
+        rel_db = 20 * np.log10(max(stem_rms, 1e-12) / mix_rms)
+        if rel_db < -25:
+            # separation produced nothing: htdemucs_6s returns a near-empty
+            # stem when it fails to recognise the instrument at all, and the
+            # residue still has enough structure to fool a self-normalised
+            # threshold. Refuse it rather than transcribing noise.
+            stem_warning = (f"stem is {rel_db:.0f} dB below the mix — "
+                            f"separation failed; falling back to the full mix")
+            onset_src = wav
+            env, et = env_mix, et_mix
+        else:
+            env = librosa.onset.onset_strength(y=y, sr=sr)
+            et = librosa.times_like(env, sr=sr)
+    else:
+        env, et = env_mix, et_mix
 
     act = RNNDownBeatProcessor()(wav)
     beats = DBNDownBeatTrackingProcessor(beats_per_bar=[4], fps=100)(act)
     bt, bpos = beats[:, 0], beats[:, 1].astype(int)
 
-    subdiv, subdiv_scores = detect_subdiv(beats, env, et)
+    subdiv, subdiv_scores = detect_subdiv(beats, env_mix, et_mix)
     bars_raw, bpb = rhythm_mod.slot_strengths(env, et, beats, bpos, subdiv)
     if not bars_raw:
         raise RuntimeError("no complete bars found")
-    bars_raw = rhythm_mod.classify(bars_raw)
-    med, canon_marks = rhythm_mod.canonical(bars_raw, bpb * subdiv)
+    # thresholds are set per section further down, once the chord cycle tells
+    # us where the sections are; a single track-wide level cannot serve both a
+    # quiet verse and a loud chorus. The noise floor stays global so a dead
+    # stem is still recognised as dead.
+    ref, rest_at = rhythm_mod.thresholds(bars_raw)
 
     beat_period = float(np.median(np.diff(bt)))
     stroke_rate = subdiv / beat_period
-    canon_dirs, dir_rule = rhythm_mod.directions(canon_marks, subdiv, stroke_rate)
 
     # capo
     weighted = [(c, e - s) for s, e, c in chords if c != "N"]
@@ -110,17 +200,55 @@ def transcribe(wav, lab, title=None, stem=None):
             return "N.C."
         return capo_mod.render(p[0], p[1], None, sounding_flats)
 
-    # bars
-    bar_list = []
+    bar_labels = []
     for i, b in enumerate(bars_raw):
         t0 = b["start"]
         t1 = bars_raw[i + 1]["start"] if i + 1 < len(bars_raw) else t0 + beat_period * bpb
-        lab_c = dominant(chords, t0, t1)
+        bar_labels.append(dominant(chords, t0, t1))
+    n_unlabelled = sum(1 for c in bar_labels if c in ("N", "X"))
+    bar_labels = fill_no_chord(bar_labels)
+
+    shapes_seq = [shape(c) for c in bar_labels]
+    spans = rhythm_mod.sections(bars_raw, shapes_seq)
+
+    # classify each section against its own level, with the global noise floor
+    global_floor = rhythm_mod.noise_floor(bars_raw)
+    for a, b in spans:
+        s_ref, s_rest = rhythm_mod.thresholds(bars_raw[a:b])
+        rhythm_mod.classify_span(bars_raw[a:b], s_ref,
+                                 max(s_rest, global_floor))
+
+    med, canon_marks = rhythm_mod.canonical(bars_raw, bpb * subdiv, ref, rest_at)
+    canon_dirs, dir_rule = rhythm_mod.directions(canon_marks, subdiv, stroke_rate)
+
+    bar_list = []
+    for i, b in enumerate(bars_raw):
+        t0 = b["start"]
+        lab_c = bar_labels[i]
         dirs, _ = rhythm_mod.directions(b["marks"], subdiv, stroke_rate)
         bar_list.append({
             "bar": i + 1, "start": round(t0, 3),
             "shape": shape(lab_c), "sounding": sound(lab_c),
             "pattern": rhythm_mod.render_pattern(b["marks"], dirs, subdiv, bpb),
+        })
+
+    # one repeating pattern per section, which is how charts are actually read
+    section_list = []
+    for a, b in spans:
+        s_ref, s_rest = rhythm_mod.thresholds(bars_raw[a:b])
+        _, marks = rhythm_mod.canonical(bars_raw[a:b], bpb * subdiv,
+                                        s_ref, max(s_rest, global_floor))
+        dirs, _ = rhythm_mod.directions(marks, subdiv, stroke_rate)
+        cycle = []
+        for sh in shapes_seq[a:b]:
+            if not cycle or cycle[-1] != sh:
+                cycle.append(sh)
+        section_list.append({
+            "from_bar": a + 1, "to_bar": b,
+            "start": bar_list[a]["start"],
+            "chords": cycle[:8],
+            "pattern": rhythm_mod.render_pattern(marks, dirs, subdiv, bpb),
+            "occupancy": round(sum(1 for m in marks if m != " ") / len(marks), 3),
         })
 
     uniq_shapes, uniq_sound, seen = [], [], set()
@@ -138,7 +266,8 @@ def transcribe(wav, lab, title=None, stem=None):
 
     return {
         "title": title or wav,
-        "onset_source": "isolated stem" if stem else "full mix",
+        "onset_source": ("isolated stem" if onset_src != wav else "full mix"),
+        "stem_warning": stem_warning,
         "onset_source_file": onset_src,
         "grid_occupancy": round(occupancy, 3),
         "sounding_key": sounding,
@@ -158,7 +287,9 @@ def transcribe(wav, lab, title=None, stem=None):
             canon_marks, canon_dirs, subdiv, bpb),
         "canonical_strength": [round(float(v), 3) for v in med],
         "count_line": rhythm_mod.count_line(subdiv, bpb),
+        "sections": section_list,
         "n_bars": len(bar_list),
+        "bars_unlabelled_before_fill": n_unlabelled,
         "bars": bar_list,
     }
 
