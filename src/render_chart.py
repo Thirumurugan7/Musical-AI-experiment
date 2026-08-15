@@ -276,6 +276,22 @@ def render(d, lyrics_path=None):
             L.append("   " + line)
         L.append("")
 
+    simp = d.get("simplification")
+    if simp and simp.get("folded"):
+        L.append("SIMPLIFIED FOR PLAYING")
+        L.append("")
+        L.append(f"   kept the {len(simp['core'])} chords covering "
+                 f"{simp.get('core_coverage', 0):.0%} of the song and folded "
+                 f"{simp.get('bars_changed', 0)} bars into them:")
+        L.append("")
+        for k, v in simp["folded"].items():
+            L.append(f"     {k:<12} -> {v['to']:<12} {v['bars']} bar"
+                     f"{'s' if v['bars'] > 1 else ''}")
+        L.append("")
+        L.append("   rare chords are usually detection errors, not harmony —")
+        L.append("   run with --no-simplify to see every chord detected")
+        L.append("")
+
     L.append("HOW MUCH OF THIS IS MEASURED")
     L.append("")
     L.append("   measured   chords, key, capo, tempo, metre, accent placement")

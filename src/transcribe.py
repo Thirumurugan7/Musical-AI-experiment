@@ -17,6 +17,7 @@ from madmom.features.downbeats import (RNNDownBeatProcessor,
 
 import capo as capo_mod
 import rhythm as rhythm_mod
+import simplify as simplify_mod
 
 
 def load_lab(p):
@@ -126,7 +127,7 @@ def detect_subdiv(beats, env, env_times, res=12):
     return best, scores
 
 
-def transcribe(wav, lab, title=None, stem=None):
+def transcribe(wav, lab, title=None, stem=None, simplify=True):
     """
     wav  : the full mix — used for beat/downbeat tracking, which is more
            reliable with drums present
@@ -208,6 +209,13 @@ def transcribe(wav, lab, title=None, stem=None):
     n_unlabelled = sum(1 for c in bar_labels if c in ("N", "X"))
     bar_labels = fill_no_chord(bar_labels)
 
+    # A chart is a simplification on purpose: a few easy shapes, looping.
+    # Rare chords are far more often detection errors than real harmony.
+    simplification = None
+    if simplify:
+        bar_labels, simplification = simplify_mod.reduce_chords(
+            bar_labels, capo_mod.parse)
+
     shapes_seq = [shape(c) for c in bar_labels]
     spans = rhythm_mod.sections(bars_raw, shapes_seq)
 
@@ -251,10 +259,14 @@ def transcribe(wav, lab, title=None, stem=None):
             "occupancy": round(sum(1 for m in marks if m != " ") / len(marks), 3),
         })
 
+    if simplify:
+        section_list = simplify_mod.collapse_sections(section_list)
+
     uniq_shapes, uniq_sound, seen = [], [], set()
-    for label, _ in sorted(weighted, key=lambda x: -x[1]):
+    bar_order = [c for c, _ in collections.Counter(bar_labels).most_common()]
+    for label in bar_order:
         s = shape(label)
-        if s not in seen:
+        if s not in seen and s != "N.C.":
             seen.add(s)
             uniq_shapes.append(s)
             uniq_sound.append(sound(label))
@@ -288,6 +300,7 @@ def transcribe(wav, lab, title=None, stem=None):
         "canonical_strength": [round(float(v), 3) for v in med],
         "count_line": rhythm_mod.count_line(subdiv, bpb),
         "sections": section_list,
+        "simplification": simplification,
         "n_bars": len(bar_list),
         "bars_unlabelled_before_fill": n_unlabelled,
         "bars": bar_list,
@@ -334,6 +347,8 @@ if __name__ == "__main__":
     ap.add_argument("lab", help=".lab chord file from Chord-CNN-LSTM")
     ap.add_argument("-o", "--out", help="write full analysis as JSON")
     ap.add_argument("-t", "--title", help="title for the chart header")
+    ap.add_argument("--no-simplify", action="store_true",
+                    help="keep every detected chord and section pattern")
     ap.add_argument("-s", "--stem",
                     help="isolated guitar track; onsets are read from this "
                          "instead of the full mix")
@@ -341,7 +356,8 @@ if __name__ == "__main__":
                     help="how many bars to print (default 32)")
     a = ap.parse_args()
 
-    res = transcribe(a.audio, a.lab, title=a.title, stem=a.stem)
+    res = transcribe(a.audio, a.lab, title=a.title, stem=a.stem,
+                     simplify=not a.no_simplify)
     print(render(res, max_bars=a.bars))
     print(f"\n  onsets read from: {res['onset_source']}"
           f"   grid occupancy: {res['grid_occupancy']:.0%}")
