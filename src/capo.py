@@ -110,114 +110,97 @@ def choose_capo(weighted_chords, max_capo=7):
     return out
 
 
-# diatonic triad quality at each scale degree of a major key
+# diatonic triad quality at each scale degree
 MAJOR_DEGREES = {0: "maj", 2: "min", 4: "min", 5: "maj",
                  7: "maj", 9: "min", 11: "dim"}
+# natural minor, with the major V of harmonic minor allowed at degree 7 —
+# it is far more common in practice than the diatonic minor v
+MINOR_DEGREES = {0: "min", 2: "dim", 3: "maj", 5: "min",
+                 7: "min", 8: "maj", 10: "maj"}
+MINOR_ALT = {7: "maj"}          # V major, borrowed from harmonic minor
 
 
 def sounding_key(weighted_chords, order=None):
     """
     The key the recording sounds in.
 
-    This used to return whichever root was held longest, which is wrong often
-    enough to matter: the IV chord frequently occupies more of a pop song than
-    the I. Across a five-song benchmark it named D for A, E for B and F for C —
-    every error a fourth above the true tonic.
+    Scores all twenty-four keys — twelve major, twelve minor — on two things:
+    how well the song's chords fit that key's diatonic triads, and whether the
+    music actually *arrives* on its tonic.
 
-    Instead, score all twelve major keys by how well the song's chords fit their
-    diatonic triads, then decide between the winning key and its relative minor
-    using the chords the song opens and closes on. Those two positions carry
-    more tonal weight than duration anywhere else: "Wonderwall" spends little
-    time on F#m but begins and ends there, and every chart calls it F# minor.
+    Two earlier versions were wrong in instructive ways. The first returned
+    whichever root was held longest, which in pop is usually the IV. The
+    second scored only the twelve major keys and flipped to the relative minor
+    at the end — so cadences were only ever counted into a major tonic, and a
+    minor-key song's defining motion, V to i, was invisible. Hotel California
+    came back E minor because D-to-G looked like a perfect cadence in G, while
+    the F#7-to-Bm that actually defines the song counted for nothing.
 
-    `order` is the chord labels in playing order, used only for that decision.
+    Scale membership alone can never separate a key from its IV or V, which
+    share six of seven notes. Arrival is what distinguishes them.
+
+    `order` is the chord labels in playing order.
     """
     if not weighted_chords:
         return None, False
 
     total_dur = sum(d for _, d in weighted_chords) or 1.0
 
-    # chord roots in playing order, for cadence counting
     seq = []
     for label in (order or []):
         p = parse(label)
         if p and (not seq or seq[-1] != p):
             seq.append(p)
 
-    def fit(tonic):
+    def score(tonic, is_minor):
+        degrees = MINOR_DEGREES if is_minor else MAJOR_DEGREES
         s = 0.0
         for label, dur in weighted_chords:
             p = parse(label)
             if not p:
                 continue
             deg = (p[0] - tonic) % 12
-            want = MAJOR_DEGREES.get(deg)
-            is_min = p[1].startswith("min")
+            want = degrees.get(deg)
+            alt = MINOR_ALT.get(deg) if is_minor else None
+            chord_min = p[1].startswith("min")
             if want is None:
-                s -= dur * 0.5                      # chromatic to this key
-            elif want == "dim" or (want == "min") == is_min:
-                s += dur                            # fits, quality and all
+                s -= dur * 0.5
+            elif (want == "dim"
+                  or (want == "min") == chord_min
+                  or (alt is not None and (alt == "min") == chord_min)):
+                s += dur
             else:
-                s += dur * 0.25                     # right root, wrong quality
+                s += dur * 0.25
         s /= total_dur
 
-        # Scale membership alone cannot separate a key from its IV or its V —
-        # they share six of seven notes, which is why an earlier version called
-        # Creep C instead of G and Sweet Home Alabama G instead of D. What marks
-        # a tonic is arrival: the chord a dominant resolves to, and the chord a
-        # song opens and closes on.
         if seq:
-            dom = (tonic + 7) % 12
-            sub = (tonic + 5) % 12
+            dom = (tonic + 7) % 12          # V  — the strongest arrival
+            sub = (tonic + 5) % 12          # IV / iv
+            sub7 = (tonic + 10) % 12        # bVII, common into a minor tonic
+            arrivals = (dom, sub) + ((sub7,) if is_minor else ())
             cad = sum(1 for a, b in zip(seq, seq[1:])
-                      if b[0] == tonic and a[0] in (dom, sub))
+                      if b[0] == tonic and b[1].startswith("min") == is_minor
+                      and a[0] in arrivals)
             s += 0.55 * cad / max(len(seq) - 1, 1)
-            if seq[0][0] == tonic:
+            # a song's first and last chords carry more tonal weight than
+            # duration does anywhere else
+            if seq[0][0] == tonic and seq[0][1].startswith("min") == is_minor:
                 s += 0.22
-            if seq[-1][0] == tonic:
-                s += 0.28
+            if seq[-1][0] == tonic and seq[-1][1].startswith("min") == is_minor:
+                s += 0.30
         return s
 
-    scale = max(range(12), key=fit)
+    best = max(((t, m) for t in range(12) for m in (False, True)),
+               key=lambda c: score(*c))
+    tonic, is_minor = best
 
-    # the tonic is either that major key or its relative minor; the chords the
-    # song starts and ends on decide which
-    minor = (scale + 9) % 12
-    edge = 0.0
-    if order:
-        firsts = [c for c in order[:2] if parse(c)]
-        lasts = [c for c in order[-2:] if parse(c)]
-        for label in firsts + lasts:
-            p = parse(label)
-            if p[0] == minor and p[1].startswith("min"):
-                edge += 1
-            elif p[0] == scale:
-                edge -= 1
+    # A major key and its relative minor share every note, so the two scores sit
+    # close together and small accidents flip them. Prefer the major reading
+    # unless the minor is clearly ahead — published charts do the same.
+    rel = ((tonic + 3) % 12, False) if is_minor else ((tonic + 9) % 12, True)
+    if is_minor and score(*rel) > score(tonic, True) - 0.04:
+        tonic, is_minor = rel
 
-    total = {}
-    for label, dur in weighted_chords:
-        p = parse(label)
-        if p:
-            total[(p[0], p[1].startswith("min"))] = \
-                total.get((p[0], p[1].startswith("min")), 0) + dur
-    maj_w = total.get((scale, False), 0)
-    min_w = total.get((minor, True), 0)
-
-    is_minor = edge > 0 or (edge == 0 and min_w > maj_w * 1.3)
-
-    # A song that finishes on the major tonic or its dominant is in the major
-    # key, whatever the durations say. Hallelujah spends more time on Am than
-    # on C and is detected opening on Am, but it closes on G — the V that
-    # resolves to C — and every published chart calls it C major.
-    if order:
-        for label in reversed(order):
-            p = parse(label)
-            if not p:
-                continue
-            if p[0] in (scale, (scale + 7) % 12) and not p[1].startswith("min"):
-                is_minor = False
-            break
-    tonic = minor if is_minor else scale
     use_flats = tonic in FLAT_KEYS
     name = spell(tonic, use_flats) + ("m" if is_minor else "")
     return name, use_flats
