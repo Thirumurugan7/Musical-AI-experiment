@@ -771,7 +771,7 @@
       "title": "Can't Help Falling in Love",
       "key": "D",
       "capo": 0,
-      "metre": "4/4",
+      "metre": "12/8",
       "chords": [
         "D",
         "A",
@@ -782,7 +782,7 @@
       ],
       "ug_rank": 4,
       "verified": true,
-      "note": "key D (MuseScore original-key edition, Tunebat); chords D A F#m Bm G Em (UG, Chordify)"
+      "note": "key D (MuseScore original-key edition, Tunebat); chords D A F#m Bm G Em (UG, Chordify); metre 12/8 \u2014 compound, triplet subdivision (multiple sources); my original 4/4 row was wrong"
     },
     {
       "id": "stairway",
@@ -839,7 +839,7 @@
       ],
       "ug_rank": 24,
       "verified": true,
-      "note": "key D major, modulates up to E for the final chorus (Tunebat, UG)"
+      "note": "key D major, modulates up to E for the final chorus (Tunebat, UG); audio is Taylor's Version, a faithful re-recording in the same key, not the 2008 original"
     },
     {
       "id": "heysoulsister",
