@@ -40,8 +40,21 @@ def parse(ch):
 
 
 def same_key(a, b):
-    pa, pb = parse(a), parse(b)
+    """Exact match on the detector's first choice."""
+    pa, pb = parse(a.split(" or ")[0]), parse(b)
     return pa is not None and pa == pb
+
+
+def key_offered(a, b):
+    """
+    Match if the reference is among the candidates the detector offered.
+
+    When two keys score within a hair of each other the detector says so
+    ("C or Em") instead of guessing. That is a weaker claim than a single
+    answer, so it is scored separately rather than folded into one number.
+    """
+    pb = parse(b)
+    return any(parse(x) == pb for x in a.split(" or ") if parse(x))
 
 
 def compound(m):
@@ -61,10 +74,13 @@ def main():
     print(f"{'SONG':30} {'KEY':>14}  {'METRE':>12}  CHORD-F1  CAPO")
     print("-" * 96)
 
-    k_ok = m_ok = 0
+    k_ok = m_ok = k_any = amb = 0
     f1s = []
     for s, g in rows:
         kg = same_key(g["sounding_key"], s["key"])
+        ka = key_offered(g["sounding_key"], s["key"])
+        k_any += ka
+        amb += (" or " in g["sounding_key"])
         mg = compound(g["metre"]) == compound(s["metre"])
         R = {parse(c) for c in s["chords"]} - {None}
         O = {parse(c) for c in g["chords_sounding"]} - {None}
@@ -85,7 +101,9 @@ def main():
     print("-" * 96)
     print(f"songs scored          {len(rows)}"
           + (f"   (missing: {', '.join(missing)})" if missing else ""))
-    print(f"key correct           {k_ok}/{n}  = {k_ok/n:.1%}")
+    print(f"key, first choice     {k_ok}/{n}  = {k_ok/n:.1%}")
+    print(f"key, among candidates  {k_any}/{n}  = {k_any/n:.1%}")
+    print(f"flagged ambiguous     {amb}/{n}")
     print(f"metre correct         {m_ok}/{n}  = {m_ok/n:.1%}")
     print(f"mean chord F1         {sum(f1s)/n:.3f}")
     exact = sum(1 for f in f1s if f >= 0.999)

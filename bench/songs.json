@@ -764,7 +764,101 @@
         "A"
       ],
       "verified": false
+    },
+    {
+      "id": "canthelp",
+      "artist": "Elvis Presley",
+      "title": "Can't Help Falling in Love",
+      "key": "D",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "D",
+        "A",
+        "F#m",
+        "Bm",
+        "G",
+        "Em"
+      ],
+      "ug_rank": 4,
+      "verified": true,
+      "note": "key D (MuseScore original-key edition, Tunebat); chords D A F#m Bm G Em (UG, Chordify)"
+    },
+    {
+      "id": "stairway",
+      "artist": "Led Zeppelin",
+      "title": "Stairway to Heaven",
+      "key": "Am",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "Am",
+        "C",
+        "D",
+        "F",
+        "G",
+        "Em"
+      ],
+      "ug_rank": 6,
+      "verified": true,
+      "note": "key A minor (GetSongKEY, Hooktheory, Wikipedia)"
+    },
+    {
+      "id": "wheniwasyourman",
+      "artist": "Bruno Mars",
+      "title": "When I Was Your Man",
+      "key": "C",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "C",
+        "Am",
+        "Dm",
+        "G",
+        "F"
+      ],
+      "ug_rank": 11,
+      "verified": true,
+      "note": "key C major (Tunebat, Hooktheory); Am-C-Dm-G-G7-C verse, F-G-C chorus"
+    },
+    {
+      "id": "lovestory",
+      "artist": "Taylor Swift",
+      "title": "Love Story",
+      "key": "D",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "D",
+        "A",
+        "Bm",
+        "G",
+        "E",
+        "B",
+        "C#m"
+      ],
+      "ug_rank": 24,
+      "verified": true,
+      "note": "key D major, modulates up to E for the final chorus (Tunebat, UG)"
+    },
+    {
+      "id": "heysoulsister",
+      "artist": "Train",
+      "title": "Hey, Soul Sister",
+      "key": "E",
+      "capo": 0,
+      "metre": "4/4",
+      "chords": [
+        "E",
+        "B",
+        "C#m",
+        "A"
+      ],
+      "ug_rank": 21,
+      "verified": true,
+      "note": "key E major, chords E B C#m A (UG, Hooktheory, GuitarTuna)"
     }
   ],
-  "_capo_note": "Different sites publish different capos for the same song and all can be correct \u2014 capo 5 with G shapes and capo 0 with C shapes are the same music. `capo` here is one commonly published choice and is NOT scored. Only the sounding chords are."
+  "_capo_note": "Different sites publish different capos for the same song and all can be correct \u2014 capo 5 with G shapes and capo 0 with C shapes are the same music. `capo` here is one commonly published choice and is NOT scored. Only the sounding chords are.",
+  "_topchart": "Songs carrying `ug_rank` come from Ultimate Guitar's own Top-100-by-hits list. Their keys and chords were fetched from published sources during this session rather than written from memory \u2014 the memory-written rows were wrong nine times in twelve, always in the same direction."
 }

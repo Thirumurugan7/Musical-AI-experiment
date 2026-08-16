@@ -120,7 +120,7 @@ MINOR_DEGREES = {0: "min", 2: "dim", 3: "maj", 5: "min",
 MINOR_ALT = {7: "maj"}          # V major, borrowed from harmonic minor
 
 
-def sounding_key(weighted_chords, order=None):
+def sounding_key(weighted_chords, order=None, bass=None, margin=0.06):
     """
     The key the recording sounds in.
 
@@ -188,11 +188,22 @@ def sounding_key(weighted_chords, order=None):
                 s += 0.22
             if seq[-1][0] == tonic and seq[-1][1].startswith("min") == is_minor:
                 s += 0.30
+
+        # The chord list cannot break a tie between a key and its relative
+        # minor — they contain the same seven notes and the same triads, which
+        # is why Zombie's Em C G D scores 1.259 for C against 1.231 for Em. The
+        # bass register can: players put the tonic in the bass, especially at
+        # phrase ends. This is evidence the chord symbols do not carry.
+        if bass is not None and len(bass) == 12:
+            tot_b = sum(bass) or 1.0
+            s += 0.9 * (bass[tonic] / tot_b - 1.0 / 12.0)
         return s
 
-    best = max(((t, m) for t in range(12) for m in (False, True)),
-               key=lambda c: score(*c))
-    tonic, is_minor = best
+    ranked = sorted(((score(t, m), t, m)
+                     for t in range(12) for m in (False, True)), reverse=True)
+    top, second = ranked[0], ranked[1]
+    tonic, is_minor = top[1], top[2]
+    ambiguous = (top[0] - second[0]) < margin
 
     # A major key and its relative minor share every note, so the two scores sit
     # close together and small accidents flip them. Prefer the major reading
@@ -203,4 +214,10 @@ def sounding_key(weighted_chords, order=None):
 
     use_flats = tonic in FLAT_KEYS
     name = spell(tonic, use_flats) + ("m" if is_minor else "")
+    if ambiguous:
+        # Winning by a hair is not knowing. Songs this detector gets right it
+        # wins by 0.5-0.6; the ones it gets wrong it "wins" by 0.01-0.03. Say
+        # so rather than pick a side and be wrong half the time.
+        alt = spell(second[1], second[1] in FLAT_KEYS) + ("m" if second[2] else "")
+        name = f"{name} or {alt}"
     return name, use_flats

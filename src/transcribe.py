@@ -15,6 +15,9 @@ import librosa
 from madmom.features.downbeats import (RNNDownBeatProcessor,
                                        DBNDownBeatTrackingProcessor)
 
+import os
+USE_BASS = os.environ.get('CHORDSTRUM_BASS', '0') == '1'
+
 import capo as capo_mod
 import rhythm as rhythm_mod
 import simplify as simplify_mod
@@ -169,6 +172,32 @@ def detect_subdiv(beats, env, env_times, res=12):
     return best, scores
 
 
+def bass_profile(y, sr, fmin=41.2, fmax=196.0):
+    """
+    Pitch-class weight of the bass register.
+
+    Players put the tonic in the bass. That is evidence the chord symbols do
+    not contain: a key and its relative minor hold the same seven notes and the
+    same triads, so no amount of chord analysis separates them — but the bass
+    lands on one of the two far more often. Restricted to roughly E1 to G3,
+    which is where a bass guitar and the low strings live.
+    """
+    try:
+        C = np.abs(librosa.cqt(y=y, sr=sr, fmin=fmin,
+                               n_bins=int(np.ceil(12 * np.log2(fmax / fmin))),
+                               bins_per_octave=12))
+    except Exception:
+        return None
+    if C.size == 0:
+        return None
+    # emphasise frames where the bass actually sounds, not sustained bleed
+    w = C / (C.max() + 1e-9)
+    pcs = np.zeros(12)
+    for b in range(C.shape[0]):
+        pcs[b % 12] += float(w[b].sum())
+    return pcs.tolist()
+
+
 def transcribe(wav, lab, title=None, stem=None, simplify=True):
     """
     wav  : the full mix — used for beat/downbeat tracking, which is more
@@ -236,8 +265,11 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
     weighted = [(c, e - s) for s, e, c in chords if c != "N"]
     ranked = capo_mod.choose_capo(weighted)
     best = ranked[0]
+    bass_pcs = bass_profile(y_mix, sr) if USE_BASS else None
     sounding, sounding_flats = capo_mod.sounding_key(
-        weighted, order=[c for _, _, c in chords if c not in ('N', 'X')])
+        weighted,
+        order=[c for _, _, c in chords if c not in ('N', 'X')],
+        bass=bass_pcs)
 
     def shape(label):
         p = capo_mod.parse(label)
