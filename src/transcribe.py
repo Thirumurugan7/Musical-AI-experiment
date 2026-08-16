@@ -261,6 +261,19 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
     beat_period = float(np.median(np.diff(bt)))
     stroke_rate = subdiv / beat_period
 
+    # Beat trackers lock onto whichever pulse is strongest, which is often the
+    # eighth rather than the quarter — Wonderwall came back 176.5 BPM for a
+    # song every player counts at 88. The octave is genuinely ambiguous (song
+    # databases list Wonderwall at 175 too), but a chart should print the
+    # tempo a player counts. Fold into 55-155, which spans nearly all popular
+    # music while leaving a real 150 BPM song alone.
+    raw_bpm = 60.0 / beat_period
+    bpm = raw_bpm
+    while bpm > 155.0:
+        bpm /= 2.0
+    while bpm < 55.0:
+        bpm *= 2.0
+
     # capo
     weighted = [(c, e - s) for s, e, c in chords if c != "N"]
     ranked = capo_mod.choose_capo(weighted)
@@ -375,7 +388,8 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
         "capo": best["capo"],
         "shape_key": best["key_shape"],
         "capo_ranking": ranked[:4],
-        "tempo_bpm": round(60.0 / beat_period, 1),
+        "tempo_bpm": round(bpm, 1),
+        "tempo_bpm_tracked": round(raw_bpm, 1),
         "beats_per_bar": bpb,
         "subdiv": subdiv,
         "metre": f"{bpb*subdiv}/8" if subdiv == 3 else f"{bpb}/4",
