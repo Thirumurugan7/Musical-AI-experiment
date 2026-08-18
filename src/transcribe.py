@@ -307,6 +307,12 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
         env, et = env_mix, et_mix
 
     act = RNNDownBeatProcessor()(wav)
+    # [4] only, and this was tested rather than assumed. Allowing [3, 4] so the
+    # tracker could find non-four metres did not rescue the 6/8 case (still 3 of
+    # 8 bars) and broke a 12/8 one outright: it was re-read as 3/4 at 94 BPM
+    # instead of 12/8 at 63, taking subdivision, metre and tempo with it.
+    # Compound metre is better served by keeping four beats and letting
+    # detect_subdiv find the threes inside them.
     beats = DBNDownBeatTrackingProcessor(beats_per_bar=[4], fps=100)(act)
 
     # Align the grid to where notes actually land before anything samples it.

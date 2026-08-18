@@ -35,9 +35,17 @@ def slot_strengths(env, env_times, beats, beat_pos, subdiv, onset_times=None):
             continue
     bpb = bpb or 4
 
+    # The final downbeat has no successor, so a naive pass over consecutive
+    # pairs silently drops the last bar of every song — one bar in eight on the
+    # synthetic suite, which capped stroke recall at 0.875 before anything else
+    # got a chance to. Give it a synthetic end at the median bar length.
+    spans = list(zip(downs, downs[1:]))
+    if downs and len(bt) > downs[-1] + bpb:
+        spans.append((downs[-1], downs[-1] + bpb))
+
     bars = []
-    for a, b in zip(downs, downs[1:]):
-        if b - a != bpb:
+    for a, b in spans:
+        if b - a != bpb or a + bpb >= len(bt):
             continue
         vals, times, hits = [], [], []
         for k in range(bpb):
