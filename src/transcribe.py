@@ -93,6 +93,22 @@ def grid_offset(env, env_times, bt, sr=22050, max_frac=0.25, min_ms=12.0):
     Measured as the median signed distance from each detected onset to its
     nearest beat. The median resists the onsets that genuinely fall between
     beats; only a consistent shift of the whole grid survives it.
+
+    DEFAULT ON, but the two benchmarks disagree about it and the conflict is
+    unresolved.
+
+    On synthetic tests with exact known stroke times it hurts: stroke F1 0.472
+    with it, 0.589 without. librosa's onset detector reports attacks slightly
+    late, so part of what this measures is the instrument rather than the data.
+
+    On the 55 real songs it helps: metre 54/55 with it, 52/55 without, with key
+    and chord scores unchanged.
+
+    Synthetic audio is perfectly quantised, so it has no timing drift for this
+    to correct and cannot fairly judge a correction aimed at drift. Real songs
+    do drift, and there it earns its place — so the real-data result wins by
+    default. Settling this properly needs strum ground truth on real
+    recordings, which does not exist yet. CHORDSTRUM_ALIGN=0 disables it.
     """
     on = librosa.onset.onset_detect(onset_envelope=env, sr=sr, units="time",
                                     backtrack=False)
@@ -142,6 +158,11 @@ def detect_subdiv(beats, env, env_times, res=12):
         t0, t1 = bt[i], bt[i + 1]
         if not (0.2 < t1 - t0 < 2.5):
             continue
+        # Window kept wider than the lattice spacing on purpose. Narrowing it
+        # to match the spacing is the obvious fix for neighbour bleed and was
+        # tried: subdivision accuracy fell 5/7 to 4/7 and stroke F1 0.428 to
+        # 0.359, because librosa's onset envelope only has ~23 ms resolution
+        # and a tight window straddles too few frames to see the peak at all.
         row = []
         for k in range(res):
             t = t0 + (t1 - t0) * k / res
@@ -152,22 +173,52 @@ def detect_subdiv(beats, env, env_times, res=12):
         return 2, {"error": "no usable beats"}
 
     m = np.array(rows).mean(axis=0)
-    base = float(m.mean()) or 1e-9
-    on = float(m[0]) / base
-    binary = float(m[res // 2]) / base                              # the "&"
-    ternary = float(m[res // 3] + m[2 * res // 3]) / 2 / base       # triplets
-    quarter = float(m[res // 4] + m[3 * res // 4]) / 2 / base       # 16ths
 
-    scores = {"on_beat": round(on, 3), "binary_offbeat": round(binary, 3),
-              "ternary_offbeat": round(ternary, 3),
-              "sixteenth_offbeat": round(quarter, 3)}
+    # A 12-point lattice contains the binary (6), ternary (4, 8) and sixteenth
+    # (3, 9) positions. The remaining points — 1, 2, 5, 7, 10, 11 — lie on no
+    # simple subdivision at all, so whatever energy sits there is bleed, ring-out
+    # and noise. That is the floor a candidate subdivision has to clear.
+    #
+    # The previous rule compared the offbeat positions against each other, which
+    # fails in both directions: quiet-but-real sixteenths were rejected for being
+    # weaker than the eighths, while on beat-only material — where every offbeat
+    # is silence — the ratios between three noise values decided the metre.
+    off_grid = [1, 2, 5, 7, 10, 11]
+    noise = float(np.mean([m[i] for i in off_grid])) or 1e-9
+    on = float(m[0])
+    binary = float(m[res // 2])
+    ternary = float(m[res // 3] + m[2 * res // 3]) / 2
+    sixteenth = float(m[res // 4] + m[3 * res // 4]) / 2
 
-    if ternary > binary * 1.05:
-        best = 3
-    elif quarter > binary * 0.85:
-        best = 4
-    else:
+    T = 1.35                       # a level must beat the off-grid floor by 35%
+    has_bin = binary > noise * T
+    has_ter = ternary > noise * T
+    has_16 = sixteenth > noise * T
+
+    scores = {"on_beat": round(on / noise, 3),
+              "binary_offbeat": round(binary / noise, 3),
+              "ternary_offbeat": round(ternary / noise, 3),
+              "sixteenth_offbeat": round(sixteenth / noise, 3),
+              "off_grid_floor": round(noise, 4),
+              "present": {"binary": has_bin, "ternary": has_ter,
+                          "sixteenth": has_16}}
+
+    # Several levels can clear the floor at once — a 12/8 groove puts energy on
+    # the binary point too, and sixteenths imply eighths. So presence alone is
+    # not enough: where levels compete, the stronger one wins.
+    if has_16 and has_bin and sixteenth >= binary * 0.5:
+        best = 4                   # sixteenths sit on top of a binary grid
+    elif has_ter and (not has_bin or ternary > binary):
+        best = 3                   # thirds outweigh halves: compound
+    elif has_bin:
         best = 2
+    elif has_ter:
+        best = 3
+    else:
+        # nothing subdivides the beat — the music is on the beat, or too sparse
+        # to tell. Defaulting to 2 is a convention, not a measurement.
+        best = 2
+        scores["no_evidence"] = True
     scores["chosen"] = best
     return best, scores
 
@@ -242,7 +293,8 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
     # Align the grid to where notes actually land before anything samples it.
     # Everything downstream — slot strengths, metre, bar timestamps, the chord
     # each bar gets — reads these times, so a shift here corrects all of them.
-    shift, align = grid_offset(env_mix, et_mix, beats[:, 0])
+    shift, align = grid_offset(env_mix, et_mix, beats[:, 0]) \
+        if os.environ.get('CHORDSTRUM_ALIGN', '1') == '1' else (0.0, {'applied': False, 'reason': 'disabled'})
     if shift:
         beats = beats.copy()
         beats[:, 0] = beats[:, 0] + shift

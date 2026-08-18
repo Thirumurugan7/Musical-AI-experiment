@@ -35,7 +35,10 @@ def slot_strengths(env, env_times, beats, beat_pos, subdiv):
             t0, t1 = bt[a + k], bt[a + k + 1]
             for s in range(subdiv):
                 t = t0 + (t1 - t0) * s / subdiv
-                w = (env_times >= t - 0.04) & (env_times < t + 0.08)
+                # symmetric: the old [-40,+80] ms window biased every
+                # reading 20 ms late, which showed up as a systematic
+                # +40 ms stroke offset on synthetic tests
+                w = (env_times >= t - 0.05) & (env_times < t + 0.05)
                 vals.append(float(env[w].max()) if w.any() else 0.0)
                 times.append(float(t))
         bars.append({"start": float(bt[a]), "strength": vals, "times": times})
