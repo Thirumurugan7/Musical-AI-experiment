@@ -14,8 +14,17 @@ labelled as such rather than pretended to be a measurement.
 import numpy as np
 
 
-def slot_strengths(env, env_times, beats, beat_pos, subdiv):
-    """Onset strength at every subdivision, grouped into bars."""
+def slot_strengths(env, env_times, beats, beat_pos, subdiv, onset_times=None):
+    """
+    Onset strength at every subdivision, grouped into bars.
+
+    When `onset_times` is given, each slot also records whether a detected
+    attack actually lands in it. That distinction is the whole game: sampling
+    the envelope asks "is there energy here", and a ringing chord answers yes
+    everywhere, which is why sustain was being read as strumming. Peak-picked
+    onsets ask "is there an attack here", which is the question a strum chart
+    is actually asking.
+    """
     bt = beats[:, 0] if beats.ndim > 1 else beats
     downs = [i for i in range(len(beat_pos)) if beat_pos[i] == 1]
     bpb = None
@@ -30,19 +39,33 @@ def slot_strengths(env, env_times, beats, beat_pos, subdiv):
     for a, b in zip(downs, downs[1:]):
         if b - a != bpb:
             continue
-        vals, times = [], []
+        vals, times, hits = [], [], []
         for k in range(bpb):
             t0, t1 = bt[a + k], bt[a + k + 1]
+            slot_dur = (t1 - t0) / subdiv
             for s in range(subdiv):
                 t = t0 + (t1 - t0) * s / subdiv
+                if onset_times is not None:
+                    tol = min(0.5 * slot_dur, 0.09)
+                    hits.append(bool(_near(onset_times, t, tol)))
                 # symmetric: the old [-40,+80] ms window biased every
                 # reading 20 ms late, which showed up as a systematic
                 # +40 ms stroke offset on synthetic tests
                 w = (env_times >= t - 0.05) & (env_times < t + 0.05)
                 vals.append(float(env[w].max()) if w.any() else 0.0)
                 times.append(float(t))
-        bars.append({"start": float(bt[a]), "strength": vals, "times": times})
+        bar = {"start": float(bt[a]), "strength": vals, "times": times}
+        if onset_times is not None:
+            bar["hit"] = hits
+        bars.append(bar)
     return bars, bpb
+
+
+def _near(sorted_times, t, tol):
+    """Is any detected onset within tol of t? (sorted_times must be sorted)"""
+    import bisect
+    i = bisect.bisect_left(sorted_times, t - tol)
+    return i < len(sorted_times) and sorted_times[i] <= t + tol
 
 
 def noise_floor(bars, pct=10, mult=1.25):
@@ -143,10 +166,32 @@ def classify(bars, accent_ratio=1.30, rest_ratio=0.45, ghost_ratio=0.75,
 
 
 def classify_span(bars, ref, rest_at):
-    """Mark one section's bars against that section's own level."""
+    """
+    Mark one section's bars.
+
+    Where onset evidence exists it decides struck-versus-rest outright, and the
+    envelope level only chooses among accent, normal and ghost. Level alone
+    cannot tell a struck slot from the tail of the previous one; an attack can.
+    """
     for b in bars:
-        b["marks"] = [_mark(v, ref, rest_at) for v in b["strength"]]
+        hits = b.get("hit")
+        if hits is None:
+            b["marks"] = [_mark(v, ref, rest_at) for v in b["strength"]]
+        else:
+            b["marks"] = [
+                (_mark_hit(v, ref) if h else " ")
+                for v, h in zip(b["strength"], hits)
+            ]
     return bars
+
+
+def _mark_hit(v, ref, accent_ratio=1.30, ghost_ratio=0.70):
+    """Loudness class for a slot already known to carry an attack."""
+    if v >= ref * accent_ratio:
+        return "A"
+    if v >= ref * ghost_ratio:
+        return "x"
+    return "."
 
 
 def canonical(bars, n_slots, ref=None, rest_at=None):

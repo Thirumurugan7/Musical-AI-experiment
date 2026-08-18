@@ -94,22 +94,37 @@ def grid_offset(env, env_times, bt, sr=22050, max_frac=0.25, min_ms=12.0):
     nearest beat. The median resists the onsets that genuinely fall between
     beats; only a consistent shift of the whole grid survives it.
 
-    DEFAULT ON, but the two benchmarks disagree about it and the conflict is
-    unresolved.
+    DEFAULT OFF, and the reasoning behind that is worth keeping.
 
-    On synthetic tests with exact known stroke times it hurts: stroke F1 0.472
-    with it, 0.589 without. librosa's onset detector reports attacks slightly
-    late, so part of what this measures is the instrument rather than the data.
+    For most of this work the two benchmarks disagreed about this function:
+    turning it off cost real-song metre (55/55 -> 52/55) while gaining a lot of
+    synthetic stroke accuracy. That looked like a genuine trade-off between
+    real and synthetic evidence, and it was documented here twice as one.
 
-    On the 55 real songs it helps: metre 54/55 with it, 52/55 without, with key
-    and chord scores unchanged.
+    It was not. It was a symptom. detect_subdiv used to sample the onset
+    envelope on a lattice, which is fragile enough that nudging the grid
+    underneath it changed the answer — so this correction was propping up a
+    weak method rather than fixing anything. Once detect_subdiv started working
+    from onset phases with a phase-invariant test, metre held at 55/55 with the
+    correction off, and the "trade-off" disappeared:
 
-    Synthetic audio is perfectly quantised, so it has no timing drift for this
-    to correct and cannot fairly judge a correction aimed at drift. Real songs
-    do drift, and there it earns its place — so the real-data result wins by
-    default. Settling this properly needs strum ground truth on real
-    recordings, which does not exist yet. CHORDSTRUM_ALIGN=0 disables it.
+        alignment on   metre 55/55, chord F1 0.922, synthetic stroke F1 0.514
+        alignment off  metre 55/55, chord F1 0.920, synthetic stroke F1 0.774
+
+    Same metre, chord F1 inside noise, and a quarter of stroke accuracy back.
+    Set CHORDSTRUM_ALIGN=1 to re-enable for a source that genuinely needs it.
     """
+    # backtrack=False on purpose, and it is not an oversight.
+    #
+    # This function aligns the grid that detect_subdiv uses, and detect_subdiv
+    # samples the onset ENVELOPE, whose peaks lag the physical attack. Aligning
+    # to peaks is therefore right *for this consumer*. Stroke detection is the
+    # other consumer and wants the opposite — it matches attacks, so it uses
+    # backtrack=True where the onsets are computed in transcribe().
+    #
+    # Measured: backtracking here costs real-song metre 55/55 -> 52/55 and
+    # chord F1 0.920 -> 0.914, buying 0.059 of synthetic stroke F1. The two
+    # signals want different definitions of "onset" and get them separately.
     on = librosa.onset.onset_detect(onset_envelope=env, sr=sr, units="time",
                                     backtrack=False)
     if len(on) < 12 or len(bt) < 4:
@@ -137,32 +152,85 @@ def grid_offset(env, env_times, bt, sr=22050, max_frac=0.25, min_ms=12.0):
     return shift, info
 
 
-def detect_subdiv(beats, env, env_times, res=12):
+def detect_subdiv(beats, env, env_times, res=12, onset_times=None):
     """
-    Compound (3) or simple (2 / 4)? Compare where energy sits *inside* a beat.
+    How many subdivisions per beat: 2, 3 or 4?
 
-    The previous version scored each candidate grid with an "occupancy" figure
-    and took the first to clear 0.75. Every candidate cleared it — 0.896 / 0.956
-    / 0.980 on one track — so the loop order chose the metre, not the audio, and
-    the answer was 3 for every song ever passed in.
+    Two earlier versions sampled the onset envelope on a lattice and compared
+    positions against each other, then against an off-grid floor. Both were
+    fragile for the same reason: the envelope is continuous, so a ringing chord
+    puts energy at every lattice point, and the answer came down to how the
+    sampling window and the lattice spacing happened to interact. Threshold
+    nudging moved the answer around without converging — 4/7 to 5/7 to 4/7
+    across three attempts on the synthetic suite.
 
-    This samples each beat at a 12-point lattice, which contains both the binary
-    positions (6) and the ternary ones (4, 8), and asks which set of offbeats
-    actually carries energy. Because every number is a comparison between
-    positions within the same beat, a scale change cannot alter the outcome —
-    which is what went wrong before.
+    This works from discrete onsets instead. Each detected attack gets a phase
+    within its beat, and a candidate subdivision is judged on how tightly the
+    attacks cluster on its grid positions relative to what uniformly scattered
+    onsets would give. That last part is what makes the comparison fair: a
+    finer grid has more positions and would always capture more onsets by
+    chance, so the score is concentration over chance, not raw hit rate.
+
+    Falls back to the envelope method when no onsets are supplied.
     """
     bt = beats[:, 0]
+    if onset_times is not None and len(onset_times) >= 8 and len(bt) >= 4:
+        period = float(np.median(np.diff(bt)))
+        phases = []
+        for t in onset_times:
+            i = int(np.searchsorted(bt, t) - 1)
+            if 0 <= i < len(bt) - 1:
+                span = bt[i + 1] - bt[i]
+                if 0.5 * period < span < 1.5 * period:
+                    ph = (t - bt[i]) / span
+                    if 0.0 <= ph < 1.0:
+                        phases.append(ph)
+        if len(phases) >= 8:
+            ph = np.array(phases)
+            tol = 0.07                     # +/-7% of a beat around each position
+
+            def concentration(d, offset):
+                near = np.zeros(len(ph), dtype=bool)
+                for k in range(d):
+                    c = (k / d + offset) % 1.0
+                    near |= (np.abs(ph - c) < tol) | \
+                            (np.abs(ph - c - 1.0) < tol) | \
+                            (np.abs(ph - c + 1.0) < tol)
+                return float(near.mean()) / min(1.0, d * 2 * tol)
+
+            # The grid's absolute phase is not the question — its spacing is.
+            # Beat trackers land tens of milliseconds off the attacks, which at
+            # 95 BPM is ~6% of a beat, right at the tolerance edge; sixteenths
+            # that were dead on the grid scored 0.277 purely from that shift.
+            # Give each candidate its own best offset so they compete on
+            # spacing alone.
+            scores, offsets = {}, {}
+            for d in (2, 3, 4):
+                best_off, best_c = 0.0, -1.0
+                for o in np.arange(0.0, 1.0 / d, 0.01):
+                    c = concentration(d, o)
+                    if c > best_c:
+                        best_off, best_c = float(o), c
+                scores[d] = best_c
+                offsets[d] = round(best_off, 3)
+            best = max(scores, key=lambda k: scores[k])
+            ev = {"method": "onset-phase", "n_onsets": len(ph),
+                  "concentration": {str(k): round(v, 3) for k, v in scores.items()},
+                  "best_phase": {str(k): v for k, v in offsets.items()}}
+            # a finer grid must clearly beat a coarser one, not edge it
+            if best == 4 and scores[4] < scores[2] * 1.10:
+                best = 2
+            if best == 3 and scores[3] < scores[2] * 1.05:
+                best = 2
+            ev["chosen"] = best
+            return best, ev
+
+    # ---- fallback: envelope lattice --------------------------------------
     rows = []
     for i in range(len(bt) - 1):
         t0, t1 = bt[i], bt[i + 1]
         if not (0.2 < t1 - t0 < 2.5):
             continue
-        # Window kept wider than the lattice spacing on purpose. Narrowing it
-        # to match the spacing is the obvious fix for neighbour bleed and was
-        # tried: subdivision accuracy fell 5/7 to 4/7 and stroke F1 0.428 to
-        # 0.359, because librosa's onset envelope only has ~23 ms resolution
-        # and a tight window straddles too few frames to see the peak at all.
         row = []
         for k in range(res):
             t = t0 + (t1 - t0) * k / res
@@ -173,80 +241,31 @@ def detect_subdiv(beats, env, env_times, res=12):
         return 2, {"error": "no usable beats"}
 
     m = np.array(rows).mean(axis=0)
-
-    # A 12-point lattice contains the binary (6), ternary (4, 8) and sixteenth
-    # (3, 9) positions. The remaining points — 1, 2, 5, 7, 10, 11 — lie on no
-    # simple subdivision at all, so whatever energy sits there is bleed, ring-out
-    # and noise. That is the floor a candidate subdivision has to clear.
-    #
-    # The previous rule compared the offbeat positions against each other, which
-    # fails in both directions: quiet-but-real sixteenths were rejected for being
-    # weaker than the eighths, while on beat-only material — where every offbeat
-    # is silence — the ratios between three noise values decided the metre.
     off_grid = [1, 2, 5, 7, 10, 11]
     noise = float(np.mean([m[i] for i in off_grid])) or 1e-9
-    on = float(m[0])
     binary = float(m[res // 2])
     ternary = float(m[res // 3] + m[2 * res // 3]) / 2
     sixteenth = float(m[res // 4] + m[3 * res // 4]) / 2
-
-    T = 1.35                       # a level must beat the off-grid floor by 35%
-    has_bin = binary > noise * T
-    has_ter = ternary > noise * T
+    T = 1.35
+    has_bin, has_ter = binary > noise * T, ternary > noise * T
     has_16 = sixteenth > noise * T
-
-    scores = {"on_beat": round(on / noise, 3),
+    scores = {"method": "envelope-lattice",
               "binary_offbeat": round(binary / noise, 3),
               "ternary_offbeat": round(ternary / noise, 3),
-              "sixteenth_offbeat": round(sixteenth / noise, 3),
-              "off_grid_floor": round(noise, 4),
-              "present": {"binary": has_bin, "ternary": has_ter,
-                          "sixteenth": has_16}}
-
-    # Several levels can clear the floor at once — a 12/8 groove puts energy on
-    # the binary point too, and sixteenths imply eighths. So presence alone is
-    # not enough: where levels compete, the stronger one wins.
+              "sixteenth_offbeat": round(sixteenth / noise, 3)}
     if has_16 and has_bin and sixteenth >= binary * 0.5:
-        best = 4                   # sixteenths sit on top of a binary grid
+        best = 4
     elif has_ter and (not has_bin or ternary > binary):
-        best = 3                   # thirds outweigh halves: compound
+        best = 3
     elif has_bin:
         best = 2
     elif has_ter:
         best = 3
     else:
-        # nothing subdivides the beat — the music is on the beat, or too sparse
-        # to tell. Defaulting to 2 is a convention, not a measurement.
         best = 2
         scores["no_evidence"] = True
     scores["chosen"] = best
     return best, scores
-
-
-def bass_profile(y, sr, fmin=41.2, fmax=196.0):
-    """
-    Pitch-class weight of the bass register.
-
-    Players put the tonic in the bass. That is evidence the chord symbols do
-    not contain: a key and its relative minor hold the same seven notes and the
-    same triads, so no amount of chord analysis separates them — but the bass
-    lands on one of the two far more often. Restricted to roughly E1 to G3,
-    which is where a bass guitar and the low strings live.
-    """
-    try:
-        C = np.abs(librosa.cqt(y=y, sr=sr, fmin=fmin,
-                               n_bins=int(np.ceil(12 * np.log2(fmax / fmin))),
-                               bins_per_octave=12))
-    except Exception:
-        return None
-    if C.size == 0:
-        return None
-    # emphasise frames where the bass actually sounds, not sustained bleed
-    w = C / (C.max() + 1e-9)
-    pcs = np.zeros(12)
-    for b in range(C.shape[0]):
-        pcs[b % 12] += float(w[b].sum())
-    return pcs.tolist()
 
 
 def transcribe(wav, lab, title=None, stem=None, simplify=True):
@@ -294,14 +313,28 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
     # Everything downstream — slot strengths, metre, bar timestamps, the chord
     # each bar gets — reads these times, so a shift here corrects all of them.
     shift, align = grid_offset(env_mix, et_mix, beats[:, 0]) \
-        if os.environ.get('CHORDSTRUM_ALIGN', '1') == '1' else (0.0, {'applied': False, 'reason': 'disabled'})
+        if os.environ.get('CHORDSTRUM_ALIGN', '0') == '1' else (0.0, {'applied': False, 'reason': 'disabled'})
     if shift:
         beats = beats.copy()
         beats[:, 0] = beats[:, 0] + shift
     bt, bpos = beats[:, 0], beats[:, 1].astype(int)
 
-    subdiv, subdiv_scores = detect_subdiv(beats, env_mix, et_mix)
-    bars_raw, bpb = rhythm_mod.slot_strengths(env, et, beats, bpos, subdiv)
+    # discrete attacks, from the same signal the slots are sampled from.
+    # delta is how far above the local mean a peak must rise to count. Lowering
+    # it looked like the obvious way to recover the missed quiet strokes, and it
+    # does nothing: swept 0.07 / 0.05 / 0.03 / 0.015, recall sat at exactly
+    # 0.388 (or 0.498 unaligned) at every setting while precision fell. The
+    # missed strokes are not being rejected by this threshold — they never
+    # reach it. Recall is capped by subdivision instead: a stroke cannot be
+    # matched to a slot the grid does not have. Left at librosa's default.
+    onset_delta = float(os.environ.get("CHORDSTRUM_ONSET_DELTA", "0.07"))
+    onset_times = sorted(librosa.onset.onset_detect(
+        onset_envelope=env, sr=sr, units="time", backtrack=True,
+        delta=onset_delta).tolist())
+    subdiv, subdiv_scores = detect_subdiv(beats, env_mix, et_mix,
+                                          onset_times=onset_times)
+    bars_raw, bpb = rhythm_mod.slot_strengths(env, et, beats, bpos, subdiv,
+                                              onset_times=onset_times)
     if not bars_raw:
         raise RuntimeError("no complete bars found")
     # thresholds are set per section further down, once the chord cycle tells
@@ -447,6 +480,7 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
         "metre": f"{bpb*subdiv}/8" if subdiv == 3 else f"{bpb}/4",
         "subdiv_evidence": subdiv_scores,
         "grid_alignment": align,
+        "onsets_detected": len(onset_times),
         "stroke_rate_hz": round(stroke_rate, 2),
         "direction_rule": dir_rule,
         "chords_shapes": uniq_shapes[:8],
