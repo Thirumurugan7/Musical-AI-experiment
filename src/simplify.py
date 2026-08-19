@@ -72,7 +72,8 @@ def substitute(label, core, parse):
     return best
 
 
-def reduce_chords(bar_labels, parse, keep_share=0.92, max_core=7, min_share=0.035):
+def reduce_chords(bar_labels, parse, keep_share=0.92, max_core=7,
+                  min_share=0.035, key_pcs=None):
     """
     Pick the core vocabulary and map everything else onto it.
 
@@ -105,6 +106,25 @@ def reduce_chords(bar_labels, parse, keep_share=0.92, max_core=7, min_share=0.03
         share = n / total
         if core and len(core) >= max_core:
             break
+        # A chord outside the key needs far stronger evidence than one inside
+        # it. Riptide's spurious B holds 7% of bars — over the ordinary bar, but
+        # B major is not in D-flat at all, and a chord foreign to the key that
+        # never dominates is an artefact rather than a borrowing. Ranking by
+        # longest run was tried first and is wrong: in a song that changes chord
+        # every bar every chord has a run of one, which left Perfect with a
+        # single chord.
+        if core and key_pcs is not None and share < min_share * 3:
+            pq = parse(label)
+            if pq:
+                want = key_pcs.get(pq[0] % 12)
+                is_min = pq[1].startswith("min")
+                # root alone is not enough: C is in the D-flat scale, but the
+                # chord built on it is diminished, not C major. Riptide's
+                # spurious B (sounding C major) passed a root-only test for
+                # exactly that reason.
+                ok = (want == "min") if is_min else (want == "maj")
+                if not ok:
+                    continue
         if core and covered >= keep_share and share < min_share:
             break
         if core and share < min_share:

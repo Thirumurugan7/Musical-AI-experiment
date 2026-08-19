@@ -21,6 +21,7 @@ USE_BASS = os.environ.get('CHORDSTRUM_BASS', '0') == '1'
 import capo as capo_mod
 import rhythm as rhythm_mod
 import simplify as simplify_mod
+import patterns as patterns_mod
 
 
 def load_lab(p):
@@ -413,8 +414,17 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
     # Rare chords are far more often detection errors than real harmony.
     simplification = None
     if simplify:
+        # pitch classes of the detected key, so foreign chords can be held to a
+        # higher bar than diatonic ones
+        kp = capo_mod.parse((sounding or "C").split(" or ")[0].rstrip("m") + ":maj")
+        key_pcs = None
+        if kp:
+            src = (capo_mod.MINOR_DEGREES
+                   if (sounding or "").split(" or ")[0].endswith("m")
+                   else capo_mod.MAJOR_DEGREES)
+            key_pcs = {(kp[0] + d) % 12: q for d, q in src.items()}
         bar_labels, simplification = simplify_mod.reduce_chords(
-            bar_labels, capo_mod.parse)
+            bar_labels, capo_mod.parse, key_pcs=key_pcs)
 
     shapes_seq = [shape(c) for c in bar_labels]
     spans = rhythm_mod.sections(bars_raw, shapes_seq)
@@ -433,7 +443,29 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
         rhythm_mod.classify_span(stray, ref, max(rest_at, global_floor))
 
     med, canon_marks = rhythm_mod.canonical(bars_raw, bpb * subdiv, ref, rest_at)
+
+    # Match the song-wide profile against real strumming figures. Per-slot
+    # thresholding gives a grid with holes; players play learned patterns.
+    pattern_match = None
+    if os.environ.get("CHORDSTRUM_PATTERNS", "1") == "1":
+        m = patterns_mod.best_match(list(med), subdiv, bpb)
+        if m:
+            name, toks, score = m
+            pattern_match = {"name": name, "score": round(float(score), 3)}
+            canon_marks = [{"D": "A", "d": "x", "u": "x",
+                            ".": ".", " ": " "}[t] for t in toks]
+            pattern_match["directions"] = "".join(toks)
     canon_dirs, dir_rule = rhythm_mod.directions(canon_marks, subdiv, stroke_rate)
+    if pattern_match:
+        # Take direction from the matched figure, not from the metre rule. The
+        # rule alternates mechanically; a real pattern's ups and downs are part
+        # of what makes it that pattern, and overriding them turns a matched
+        # "D DU D DU" back into undifferentiated alternation.
+        canon_dirs = ["U" if t == "u" else "D"
+                      for t in pattern_match["directions"]]
+        dir_rule = (f"matched pattern '{pattern_match['name']}' "
+                    f"(fit {pattern_match['score']}) — direction from the "
+                    f"figure, not derived from metre")
 
     bar_list = []
     for i, b in enumerate(bars_raw):
@@ -507,6 +539,7 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
         "canonical_pattern": rhythm_mod.render_pattern(
             canon_marks, canon_dirs, subdiv, bpb),
         "canonical_strength": [round(float(v), 3) for v in med],
+        "pattern_match": pattern_match,
         "count_line": rhythm_mod.count_line(subdiv, bpb),
         "sections": section_list,
         "simplification": simplification,
