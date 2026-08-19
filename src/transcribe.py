@@ -325,6 +325,24 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
         beats[:, 0] = beats[:, 0] + shift
     bt, bpos = beats[:, 0], beats[:, 1].astype(int)
 
+    # Beat trackers lock to whichever pulse is strongest, often the eighth
+    # rather than the quarter: Wonderwall comes back at 176 BPM for a song
+    # every player counts at 88. Fold the grid here, before anything consumes
+    # it, so the bars the chart shows are the bars it counted. Folding only the
+    # displayed number produced a chart claiming 88 BPM over 197 bars of a
+    # 277-second song, where 4/4 at 88 gives 101.
+    raw_beat_period = float(np.median(np.diff(bt))) if len(bt) > 1 else 0.5
+    fold = 1
+    while 60.0 / (raw_beat_period * fold) > 155.0:
+        fold *= 2
+    if fold > 1 and len(bt) > 4 * fold:
+        bt = bt[::fold]
+        bpos = np.array([(i % 4) + 1 for i in range(len(bt))])
+        beats = np.stack([bt, bpos], axis=1)
+    beat_period = float(np.median(np.diff(bt))) if len(bt) > 1 else raw_beat_period
+    while 60.0 / beat_period < 55.0:
+        beat_period /= 2.0
+
     # discrete attacks, from the same signal the slots are sampled from.
     # delta is how far above the local mean a peak must rise to count. Lowering
     # it looked like the obvious way to recover the missed quiet strokes, and it
@@ -349,7 +367,6 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
     # stem is still recognised as dead.
     ref, rest_at = rhythm_mod.thresholds(bars_raw)
 
-    beat_period = float(np.median(np.diff(bt)))
     stroke_rate = subdiv / beat_period
 
     # Beat trackers lock onto whichever pulse is strongest, which is often the
@@ -358,12 +375,8 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
     # databases list Wonderwall at 175 too), but a chart should print the
     # tempo a player counts. Fold into 55-155, which spans nearly all popular
     # music while leaving a real 150 BPM song alone.
-    raw_bpm = 60.0 / beat_period
-    bpm = raw_bpm
-    while bpm > 155.0:
-        bpm /= 2.0
-    while bpm < 55.0:
-        bpm *= 2.0
+    raw_bpm = 60.0 / raw_beat_period
+    bpm = 60.0 / beat_period
 
     # capo
     weighted = [(c, e - s) for s, e, c in chords if c != "N"]

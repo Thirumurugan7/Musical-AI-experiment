@@ -78,6 +78,7 @@ def main():
     print("-" * 80)
     TP = FP = FN = 0
     sub_ok = met_ok = tem_ok = n = 0
+    COV = [0.0, 0.0]        # covered seconds, total seconds
 
     for tf in cases:
         t = json.load(open(tf))
@@ -94,6 +95,17 @@ def main():
                 or {g["metre"], t["metre"]} == {"6/8", "12/8"})
         tm_ok = abs(g["tempo_bpm"] - t["bpm"]) <= max(2.0, t["bpm"] * 0.03)
         sub_ok += s_ok; met_ok += m_ok; tem_ok += tm_ok
+
+        # Coverage in seconds, not bars. six_eight reads as 12/8 — two 6/8
+        # bars per bar — so 3 found against 8 in truth looked like 38% when it
+        # is really 75%. Same music, different barring.
+        bars = g["bars"]
+        if bars:
+            last = bars[-1]["start"] + (bars[-1]["start"] - bars[-2]["start"]
+                                        if len(bars) > 1 else 0.0)
+            COV[0] += max(0.0, last - bars[0]["start"])
+        beat = 60.0 / t["bpm"]
+        COV[1] += len(t["bars"]) * t["beats_per_bar"] * beat
 
         gt, dt = truth_times(t), detected_times(g)
         tp, fp, fn = match(dt, gt)
@@ -121,6 +133,9 @@ def main():
     F = 2 * P * R / (P + R) if P + R else 0.0
     print("-" * 80)
     print(f"cases                {n}")
+    print(f"bar coverage         {COV[0]/max(COV[1],1e-9):.1%}   "
+          f"(of truth duration; bar COUNTS are not comparable when the two "
+          f"sides bar the music differently)")
     print(f"subdivision correct  {sub_ok}/{n}")
     print(f"metre correct        {met_ok}/{n}   (6/8 and 12/8 treated as equivalent)")
     print(f"tempo correct        {tem_ok}/{n}")

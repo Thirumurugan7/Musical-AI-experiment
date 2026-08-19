@@ -12,6 +12,10 @@ plus a stroke direction that is *derived from metre and stroke rate* and
 labelled as such rather than pretended to be a measurement.
 """
 import numpy as np
+import os
+
+# what share of the track's positive envelope rises count as strokes
+FLUX_KEEP_PCT = float(os.environ.get('CHORDSTRUM_FLUX_PCT', '25'))
 
 
 def slot_strengths(env, env_times, beats, beat_pos, subdiv, onset_times=None):
@@ -19,11 +23,22 @@ def slot_strengths(env, env_times, beats, beat_pos, subdiv, onset_times=None):
     Onset strength at every subdivision, grouped into bars.
 
     When `onset_times` is given, each slot also records whether a detected
-    attack actually lands in it. That distinction is the whole game: sampling
-    the envelope asks "is there energy here", and a ringing chord answers yes
-    everywhere, which is why sustain was being read as strumming. Peak-picked
-    onsets ask "is there an attack here", which is the question a strum chart
-    is actually asking.
+    attack lands in it. That distinction is the whole game: sampling the
+    envelope asks "is there energy here", and a ringing chord answers yes
+    everywhere, which is why sustain was read as strumming. Peak-picked onsets
+    ask "is there an attack here", which is what a strum chart is asking.
+
+    Bars are built by construction rather than by filtering. The previous
+    version walked consecutive downbeats and dropped any span that was not
+    exactly `bpb` beats long — which is most often the first and last spans,
+    since a tracker needs beats to lock on and the final downbeat has no
+    successor. That silently discarded ~11 % of every song, and an unclosed
+    bar takes all of its strokes with it, capping stroke recall before
+    detection ran at all.
+
+    Now: spans within a sane fraction of the median bar are kept and sampled
+    over their own duration (which preserves tempo drift), and the leading and
+    trailing remainders are reconstructed at the median length.
     """
     bt = beats[:, 0] if beats.ndim > 1 else beats
     downs = [i for i in range(len(beat_pos)) if beat_pos[i] == 1]
@@ -34,38 +49,89 @@ def slot_strengths(env, env_times, beats, beat_pos, subdiv, onset_times=None):
         elif b - a != bpb:
             continue
     bpb = bpb or 4
+    n_slots = bpb * subdiv
 
-    # The final downbeat has no successor, so a naive pass over consecutive
-    # pairs silently drops the last bar of every song — one bar in eight on the
-    # synthetic suite, which capped stroke recall at 0.875 before anything else
-    # got a chance to. Give it a synthetic end at the median bar length.
-    spans = list(zip(downs, downs[1:]))
-    if downs and len(bt) > downs[-1] + bpb:
-        spans.append((downs[-1], downs[-1] + bpb))
+    if len(bt) < 2:
+        return [], bpb
+
+    # candidate spans in TIME, so a span that is not exactly bpb beats can
+    # still be used instead of thrown away
+    spans = []
+    for a, b in zip(downs, downs[1:]):
+        spans.append((float(bt[a]), float(bt[b])))
+    if not spans:
+        # no downbeats at all: fall back to fixed groups of bpb beats
+        for i in range(0, len(bt) - bpb, bpb):
+            spans.append((float(bt[i]), float(bt[i + bpb])))
+    if not spans:
+        return [], bpb
+
+    durs = sorted(t1 - t0 for t0, t1 in spans)
+    med = durs[len(durs) // 2]
+    spans = [(t0, t1) for t0, t1 in spans if 0.75 * med <= t1 - t0 <= 1.35 * med]
+    if not spans:
+        return [], bpb
+
+    # reconstruct the ends, which the old filter always dropped
+    first, last = spans[0][0], spans[-1][1]
+    while first - med >= float(env_times[0]):
+        spans.insert(0, (first - med, first))
+        first -= med
+    while last + med <= float(env_times[-1]):
+        spans.append((last, last + med))
+        last += med
 
     bars = []
-    for a, b in spans:
-        if b - a != bpb or a + bpb >= len(bt):
-            continue
-        vals, times, hits = [], [], []
-        for k in range(bpb):
-            t0, t1 = bt[a + k], bt[a + k + 1]
-            slot_dur = (t1 - t0) / subdiv
-            for s in range(subdiv):
-                t = t0 + (t1 - t0) * s / subdiv
-                if onset_times is not None:
-                    tol = min(0.5 * slot_dur, 0.09)
-                    hits.append(bool(_near(onset_times, t, tol)))
-                # symmetric: the old [-40,+80] ms window biased every
-                # reading 20 ms late, which showed up as a systematic
-                # +40 ms stroke offset on synthetic tests
-                w = (env_times >= t - 0.05) & (env_times < t + 0.05)
-                vals.append(float(env[w].max()) if w.any() else 0.0)
-                times.append(float(t))
-        bar = {"start": float(bt[a]), "strength": vals, "times": times}
+    for t0, t1 in spans:
+        step = (t1 - t0) / n_slots
+
+        # Per-bar phase refinement was tried here and rejected: recall 0.677
+        # -> 0.662. Nudging each bar toward its own detected onsets moves the
+        # grid away from where the strokes actually are, because the detected
+        # onsets carry their own lag. It is the same trap as the global grid
+        # alignment, one level down — optimising toward the measurement rather
+        # than toward the music.
+
+        vals, times, hits, rises = [], [], [], []
+        for k in range(n_slots):
+            t = t0 + k * step
+            w = (env_times >= t - 0.04) & (env_times < t + 0.08)
+            peak = float(env[w].max()) if w.any() else 0.0
+            if onset_times is not None:
+                # A general peak-picker only finds ISOLATED events. In
+                # continuous strumming the envelope never falls back to
+                # baseline between strokes, so adjacent strokes do not form
+                # separate peaks and roughly a third are never reported —
+                # 518 onsets found where a guitar played about 816.
+                #
+                # We know where a stroke should be, which the general detector
+                # does not. So also ask whether the envelope RISES into this
+                # slot: a stroke adds energy even when it fails to become a
+                # local maximum. A slot counts as struck on either evidence.
+                back = (env_times >= t - 0.11) & (env_times < t - 0.03)
+                base = float(np.percentile(env[back], 40)) if back.any() else 0.0
+                rise = peak - base
+                hits.append(bool(_near(onset_times, t, min(0.5 * step, 0.09))))
+                rises.append(rise)
+            vals.append(peak)
+            times.append(float(t))
+        bar = {"start": float(t0), "strength": vals, "times": times}
         if onset_times is not None:
             bar["hit"] = hits
+            bar["rise"] = rises
         bars.append(bar)
+
+    # Second pass for the strokes the peak-picker cannot see. A rise counts as
+    # a stroke only if it is large relative to the rises this track produces,
+    # so the bar is set by the music rather than by an absolute constant.
+    if onset_times is not None and bars:
+        allr = np.concatenate([np.asarray(b["rise"], dtype=float) for b in bars])
+        pos = allr[allr > 0]
+        if pos.size:
+            cut = float(np.percentile(pos, 100.0 - FLUX_KEEP_PCT))
+            for b in bars:
+                b["hit"] = [h or (r >= cut)
+                            for h, r in zip(b["hit"], b["rise"])]
     return bars, bpb
 
 
