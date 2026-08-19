@@ -17,8 +17,15 @@ import os
 import sys
 
 WORK = os.path.dirname(os.path.abspath(__file__)) + "/../work/strumtests"
-TOL = 0.060          # +/-60 ms, a little wider than the 50 ms onset standard,
-                     # because a strum is a sweep rather than a point event
+# +/-50 ms, the mir_eval onset standard. This was 60 ms, on the reasoning that
+# a strum is a sweep rather than a point event and so deserves a wider window.
+# That reasoning is not supported: Murgul et al., "Joint Transcription of
+# Acoustic Guitar Strumming Directions and Chords" (ISMIR 2025, arXiv:2508.07973)
+# score strumming events specifically -- sweeps and all -- at 50 ms. And it buys
+# us nothing anyway: sweeping the tolerance over our own cases gives the same
+# 0.810 F1 at 50, 60, 80 and 100 ms. The score is flat above 50 ms, so the wider
+# window was only ever costing us comparability with published numbers.
+TOL = 0.050
 
 
 def detected_times(g):
