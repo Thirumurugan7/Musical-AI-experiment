@@ -1,0 +1,115 @@
+# Track separation: what is actually available, and what it is worth
+
+## The finding that decides everything else
+
+Across the two largest open catalogues — `audio-separator`'s registry (166
+models) and ZFTurbo's `Music-Source-Separation-Training` — **exactly one open
+model emits a guitar stem: `htdemucs_6s`.** The one we already use.
+
+No RoFormer, no SCNet, no MDX23C variant produces guitar. They are two-stem
+(vocals / instrumental) or four-stem (vocals / drums / bass / other). Nobody
+publishes a guitar SDR for `htdemucs_6s` either, its authors included; the
+column is literally `guitar: ---`. The ensemble survey (arXiv:2410.20773) names
+the gap outright: further work is needed on "niche stem separations such as
+guitar and piano".
+
+So the guitar stem cannot be upgraded by swapping models. There is nothing to
+swap to.
+
+`htdemucs_6s` also paid for its two extra stems with quality everywhere else:
+
+| model | vocals | drums | bass | guitar |
+|---|---|---|---|---|
+| htdemucs_ft | 10.8 | 10.0 | 12.0 | — |
+| htdemucs_6s | 9.6 | 8.5 | 10.1 | unmeasured |
+
+For contrast, the best RoFormer instrumental models score 16.1–16.5 SDR. The
+modern architectures are dramatically better — at a task that does not give us
+a guitar.
+
+## How reliable is the guitar head?
+
+Level of each stem relative to the mix, nine songs:
+
+| song | guitar | other | verdict |
+|---|---|---|---|
+| hallelujah | −5.1 | −35.0 | guitar dominant |
+| hohey | −6.4 | −19.7 | guitar dominant |
+| wagonwheel | −6.9 | −8.6 | guitar dominant |
+| wonderwall | −7.5 | −21.5 | guitar dominant |
+| canthelp | −9.4 | −19.3 | guitar dominant |
+| fastcar | −9.4 | −37.9 | guitar dominant |
+| letitbe | −9.6 | −10.5 | guitar dominant |
+| imyours | −12.1 | −15.5 | guitar dominant |
+| **riptide** | **−31.5** | −14.5 | **failed** |
+
+Eight of nine are fine. This corrects an impression formed from a sample of
+two: the guitar head is not generally unstable.
+
+Riptide is the exception and it is a bad one — 31.5 dB below the mix, past the
+−25 dB bar `transcribe.py` uses to declare separation failed, in a song that is
+almost nothing but strummed guitar. The guitar was filed under `other`, 17 dB
+louder. Riptide being this project's running example is how the wrong
+impression formed in the first place.
+
+Fixed: when the guitar stem fails the −25 dB test, try the sibling `other`
+before falling back to the full mix. See `src/transcribe.py`.
+
+## Two-stage separation: tried, no benefit found
+
+Premise: `htdemucs_6s` cannot be replaced, but it can be given a cleaner input.
+Strip the vocals first with a RoFormer (instrumental SDR ~16, far past demucs),
+then run `htdemucs_6s` on the residue.
+
+Measured on a 30 s excerpt of Wonderwall, vocal content in the resulting guitar
+stem, against the RoFormer's own vocal output as reference:
+
+| guitar stem | env_corr | spec_proj | rms dB |
+|---|---|---|---|
+| direct `htdemucs_6s` | −0.400 | 0.083 | −31.7 |
+| two-stage | −0.228 | 0.126 | −31.5 |
+| *(demucs vocals stem, as a control)* | *0.930* | *0.846* | *−23.2* |
+
+The control confirms the metric works: two independently trained models agree
+0.930 on what the vocal is. But both guitar stems already sit near 0.1 — there
+was essentially no vocal in the guitar stem for stage 1 to remove. The premise
+does not hold, at least here, and two-stage costs an extra ~4x-realtime pass.
+
+Caveat: one excerpt of one song, and the reference vocal comes from the same
+model used in stage 1, so residual correlation reflects spectral overlap rather
+than true leakage. This is suggestive, not settled.
+
+## Why none of this is a ranking
+
+There is no isolated-guitar reference for any real song in this repo, and
+`bench/songs.json` carries no strum annotations. So SDR cannot be computed and
+strum accuracy cannot be scored on real audio. `bench/sep_diag.py` therefore
+reports leak detectors, not quality scores:
+
+- `rel_db` — level against the mix; catches the Riptide failure
+- `perc_frac` — energy in the percussive HPSS component; drum bleed is the
+  failure that matters most, since a leaked snare is indistinguishable from a
+  strum to the grid
+- `onset_pk` — peak-to-median of the onset envelope; clean guitar has sharp
+  isolated attacks
+- `centroid`, `hf_frac` — is this stem even in the right frequency range
+
+To actually rank separators for guitar we need labelled guitar stems.
+**MoisesDB** (240 tracks, 45 artists, guitar as a labelled category, built for
+exactly the beyond-4-stems case) is the dataset for it:
+zenodo.org/records/10265363.
+
+## Practical notes for running this on the Mac
+
+- `audio-separator` (`nomadkaraoke/python-audio-separator`) is the right tool
+  for trying many models: one CLI, 166 pretrained models, MPS + CoreML both
+  detected automatically on Apple Silicon.
+- Its `[cpu]` extra does not install `audioread`; add it manually.
+- It calls `librosa.get_duration(filename=...)`, removed in librosa 1.0. One
+  call site in `separator/common_separator.py`; patched in `work/.sep-venv`
+  (original kept as `.orig`). Without it every run completes inference and then
+  dies at the write step.
+- `melband_roformer_inst_v2.ckpt` is 1.57 GB and runs at roughly 4x realtime on
+  an M-series Air with 16 GB. A whole-song pass held the process in
+  uninterruptible I/O wait; chunking or excerpts are the safer route.
+- Model weights live in `work/.sep-models`, not `/tmp`, so they survive.
