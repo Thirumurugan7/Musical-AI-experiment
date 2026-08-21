@@ -269,6 +269,28 @@ def detect_subdiv(beats, env, env_times, res=12, onset_times=None):
     return best, scores
 
 
+
+def _sibling_stem(stem_path, name):
+    """
+    A stem of a different instrument sitting next to `stem_path`.
+
+    Demucs writes every source of a song into one directory, so when the
+    guitar stem is unusable its `other` sibling is already on disk. Returns
+    None if there is no such file, which is the normal case for a stem the
+    user assembled by hand.
+    """
+    if not stem_path:
+        return None
+    d = os.path.dirname(os.path.abspath(stem_path))
+    base = os.path.basename(stem_path)
+    ext = os.path.splitext(base)[1]
+    for cand in (name + ext, name + ".wav", name + ".mp3"):
+        p = os.path.join(d, cand)
+        if os.path.isfile(p) and os.path.abspath(p) != os.path.abspath(stem_path):
+            return p
+    return None
+
+
 def transcribe(wav, lab, title=None, stem=None, simplify=True):
     """
     wav  : the full mix — used for beat/downbeat tracking, which is more
@@ -297,11 +319,36 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
             # stem when it fails to recognise the instrument at all, and the
             # residue still has enough structure to fool a self-normalised
             # threshold. Refuse it rather than transcribing noise.
+            #
+            # But the guitar has not vanished, it has been filed elsewhere.
+            # Measured over nine songs, htdemucs_6s puts the guitar in the
+            # guitar stem on eight of them; on Riptide -- a song that is almost
+            # nothing but strummed guitar -- the guitar stem comes back at
+            # -31.5 dB while `other` sits at -14.5 dB, seventeen decibels
+            # louder. Falling straight back to the full mix throws away a
+            # usable guitar track and hands the strum grid a signal dominated
+            # by drums. So try the sibling `other` first, and take it only if
+            # it clears the same bar the guitar stem just failed.
+            alt = _sibling_stem(stem, "other")
+            if alt is not None:
+                y_alt, _ = librosa.load(alt, sr=22050, mono=True)
+                alt_db = 20 * np.log10(
+                    max(float(np.sqrt(np.mean(y_alt ** 2))), 1e-12) / mix_rms)
+                if alt_db >= -25:
+                    stem_warning = (
+                        f"guitar stem is {rel_db:.0f} dB below the mix — "
+                        f"separation put the guitar elsewhere; using `other` "
+                        f"at {alt_db:.0f} dB instead")
+                    onset_src = alt
+                    y = y_alt
+                    env = librosa.onset.onset_strength(y=y, sr=sr)
+                    et = librosa.times_like(env, sr=sr)
+        if onset_src == stem and rel_db < -25:
             stem_warning = (f"stem is {rel_db:.0f} dB below the mix — "
                             f"separation failed; falling back to the full mix")
             onset_src = wav
             env, et = env_mix, et_mix
-        else:
+        elif rel_db >= -25:
             env = librosa.onset.onset_strength(y=y, sr=sr)
             et = librosa.times_like(env, sr=sr)
     else:
