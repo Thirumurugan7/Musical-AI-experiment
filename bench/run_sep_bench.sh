@@ -15,6 +15,7 @@ DM=$ROOT/work/.demucs-venv/bin/python
 SEP=$ROOT/work/.sep-venv/bin/audio-separator
 SCRATCH=$ROOT/work/septests/_scratch
 WITH_ROFORMER=${WITH_ROFORMER:-0}
+WITH_FT=${WITH_FT:-0}
 
 ls "$T"/*.mix.wav >/dev/null 2>&1 || {
   echo "no test mixtures — run bench/make_sep_tests.py first"; exit 1; }
@@ -44,8 +45,13 @@ for mix in "$T"/*.mix.wav; do
     && echo "    demucs6_guitar" || echo "    FAIL demucs6_guitar"
   demucs_variant htdemucs_6s other  demucs6_other  "$mix" "$case" \
     && echo "    demucs6_other"  || echo "    FAIL demucs6_other"
-  demucs_variant htdemucs_ft  other  demucsft_other "$mix" "$case" \
-    && echo "    demucsft_other" || echo "    FAIL demucsft_other"
+  # htdemucs_ft is an ensemble of four models: four checkpoints to fetch and
+  # four forward passes per case. On a slow link that alone took longer than
+  # every other variant combined, so it is opt-in.
+  if [ "$WITH_FT" = 1 ]; then
+    demucs_variant htdemucs_ft  other  demucsft_other "$mix" "$case" \
+      && echo "    demucsft_other" || echo "    FAIL demucsft_other"
+  fi
 
   if [ "$WITH_ROFORMER" = 1 ]; then
     if [ ! -f "$T/$case.twostage_guitar.wav" ]; then
