@@ -91,7 +91,12 @@ def main():
     rng = random.Random(0)
     by_style = {}
     for c in comps:
-        style = os.path.basename(c).split("_")[1].split("-")[0]
+        # strip the take number: "Rock1" and "Rock3" are the same style, and
+        # keeping them apart made alphabetical spreading stop at Jazz, so the
+        # two styles that are actually strummed -- Rock and Singer-Songwriter
+        # -- never made it into the set at all.
+        tok = os.path.basename(c).split("_")[1].split("-")[0]
+        style = "".join(ch for ch in tok if not ch.isdigit())
         by_style.setdefault(style, []).append(c)
     picked = []
     while len(picked) < n_cases and any(by_style.values()):
