@@ -79,7 +79,49 @@ Caveat: one excerpt of one song, and the reference vocal comes from the same
 model used in stage 1, so residual correlation reflects spectral overlap rather
 than true leakage. This is suggestive, not settled.
 
-## Why none of this is a ranking
+## Measured, at last
+
+20 mixtures: 10 GuitarSet comping excerpts across all five styles and five
+players, each at 0 dB and -6 dB guitar-to-accompaniment, with drums, bass and
+vocals from real recordings.
+
+| variant | n | SDR | SI-SDR | SIR | SAR |
+|---|---|---|---|---|---|
+| htdemucs_6s `guitar` | 20 | **13.36** | **12.83** | 25.97 | 13.77 |
+| the mix, untouched | 20 | — | -2.99 | — | — |
+| htdemucs_6s `other` | 20 | -22.01 | -30.06 | -0.83 | -15.50 |
+
+The guitar head is worth **+15.8 dB of SI-SDR over doing nothing**, and SDR
+sits within half a decibel of SI-SDR with SIR near 26, so it is genuinely
+isolating the guitar rather than filtering the mix into its shape. That is the
+first number this project has ever had for the stem it depends on.
+
+`other` is 27 dB worse than doing nothing. That is expected -- when the guitar
+head works, `other` is by construction everything the guitar is not -- but it
+is worth stating plainly, because we ship a fallback that reaches for it.
+
+## The fallback shipped in 43ce40d is still untested
+
+It fires only when the guitar stem comes back below -25 dB. Across all 20
+mixtures the guitar stem ranged from -2.9 dB to -8.6 dB. It never fired:
+
+  guitar head fell below -25 dB on 0/20 cases
+
+So this benchmark says nothing about whether `other` beats the full mix in the
+one situation the fallback exists for. The table above is not evidence for it,
+and reading it as such would be backwards -- it measures `other` precisely when
+the guitar head is healthy, which is when the fallback does not run.
+
+What the change rests on remains a level argument: on Riptide the guitar stem
+is -31.5 dB and `other` is -14.5 dB, and a song that is almost entirely
+strummed guitar must have that guitar somewhere. Reasonable, unmeasured.
+
+The way to close it is to make the guitar head fail on a case where we still
+hold the ground truth -- burying the guitar far enough under the accompaniment
+that separation gives up -- and then compare `other` against the full mix
+there. Until that runs, the fallback is a judgement call, not a result.
+
+## Why the leak detectors are still not a ranking
 
 There is no isolated-guitar reference for any real song in this repo, and
 `bench/songs.json` carries no strum annotations. So SDR cannot be computed and
