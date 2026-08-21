@@ -49,7 +49,12 @@ ACCOMP_STEMS = ("drums", "bass", "vocals")
 
 # guitar level relative to the accompaniment, in dB. -6 is a guitar sitting
 # under a band; 0 is a guitar-led arrangement.
-RATIOS = (0.0, -6.0)
+# -18 dB is there to make the guitar head fail. Across 20 mixtures at 0 and
+# -6 dB it never did -- the guitar stem never dropped below -25 dB -- which
+# left the `other` fallback in transcribe.py untested, since it only runs when
+# separation gives up. Burying the guitar far enough under the accompaniment
+# reaches that condition while we still hold the ground truth.
+RATIOS = (0.0, -6.0, -18.0)
 
 
 def rms(x):

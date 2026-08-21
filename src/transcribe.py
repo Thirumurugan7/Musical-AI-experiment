@@ -329,12 +329,26 @@ def transcribe(wav, lab, title=None, stem=None, simplify=True):
             # usable guitar track and hands the strum grid a signal dominated
             # by drums. So try the sibling `other` first, and take it only if
             # it clears the same bar the guitar stem just failed.
+            # `other` is only reached on positive evidence that the guitar was
+            # misfiled, never merely because the guitar stem is quiet. Measured
+            # on 30 constructed mixtures with known ground truth, a quiet stem
+            # is not a failed one: with the guitar buried 18 dB under the
+            # accompaniment htdemucs_6s returns it at -19 dB and still scores
+            # 6.2 dB SDR, 23.7 dB better than the untouched mix. Level alone
+            # cannot tell a failure from a guitar that is simply low in the mix.
+            #
+            # What distinguishes Riptide is not that its guitar stem is quiet
+            # but that `other` is seventeen decibels louder -- the guitar went
+            # somewhere, and it went there. Absent that gap, prefer the full
+            # mix: the same 30 mixtures put `other` at -30.1 dB SI-SDR against
+            # -3.0 for doing nothing, so substituting it on a false alarm costs
+            # far more than the fallback can win.
             alt = _sibling_stem(stem, "other")
             if alt is not None:
                 y_alt, _ = librosa.load(alt, sr=22050, mono=True)
                 alt_db = 20 * np.log10(
                     max(float(np.sqrt(np.mean(y_alt ** 2))), 1e-12) / mix_rms)
-                if alt_db >= -25:
+                if alt_db >= -25 and alt_db - rel_db >= 8.0:
                     stem_warning = (
                         f"guitar stem is {rel_db:.0f} dB below the mix — "
                         f"separation put the guitar elsewhere; using `other` "

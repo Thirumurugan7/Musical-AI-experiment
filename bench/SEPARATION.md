@@ -116,10 +116,39 @@ What the change rests on remains a level argument: on Riptide the guitar stem
 is -31.5 dB and `other` is -14.5 dB, and a song that is almost entirely
 strummed guitar must have that guitar somewhere. Reasonable, unmeasured.
 
-The way to close it is to make the guitar head fail on a case where we still
-hold the ground truth -- burying the guitar far enough under the accompaniment
-that separation gives up -- and then compare `other` against the full mix
-there. Until that runs, the fallback is a judgement call, not a result.
+That test was then run, by burying the guitar 18 dB under the accompaniment.
+It did not work, and failing to force the failure taught us more than forcing
+it would have:
+
+| guitar level in mix | guitar stem SDR | SI-SDR | mix control SI-SDR |
+|---|---|---|---|
+| 0 dB | 14.51 | 14.01 | 0.01 |
+| -6 dB | 12.20 | 11.64 | -5.98 |
+| -18 dB | 6.22 | 5.71 | -17.96 |
+
+At -18 dB the guitar stem comes back at about -19 dB -- still above the -25 dB
+bar -- and separation is *working*, 23.7 dB better than the untouched mix. The
+head does not go silent when the guitar is quiet; it returns a proportionally
+quiet guitar, correctly separated. Across all 30 mixtures the guitar head never
+once fell below -25 dB.
+
+So the -25 dB check does not detect what it claims to. It conflates "separation
+failed" with "the guitar is low in this mix", and those need opposite responses:
+the first wants a different stem, the second wants the stem it already has.
+Riptide's failure is a misclassification, and misclassification cannot be
+manufactured by turning the guitar down.
+
+What actually distinguishes Riptide is the *gap*: its `other` stem is seventeen
+decibels louder than its guitar stem. The guitar went somewhere, and that is
+where it went. So the fallback now requires that gap -- `other` at least 8 dB
+above the guitar stem -- rather than firing on a quiet stem alone. Riptide
+still triggers it; a quiet but correctly separated guitar no longer can. Given
+`other` measures -30.1 dB SI-SDR against -3.0 for doing nothing, a false alarm
+costs far more than the fallback can win, so the guard is deliberately strict.
+
+The firing case is still unvalidated. Nothing here shows `other` beats the full
+mix on a genuinely misclassified song, because we have no such song with ground
+truth. It remains a judgement call, now a narrower one.
 
 ## Why the leak detectors are still not a ranking
 
