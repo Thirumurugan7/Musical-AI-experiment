@@ -68,6 +68,29 @@ def style_of(name):
     return "".join(c for c in tok if not c.isdigit())
 
 
+def true_tempo(name):
+    """
+    The tempo the excerpt was actually played at.
+
+    GuitarSet carries it twice -- as a jams `tempo` annotation and in the
+    filename, which encodes style-take-tempo-key. Prefer the annotation and
+    fall back to the filename. Nothing in this repo has ever scored tempo
+    against a real recording; PRIOR_ART.md notes it was silently wrong twice
+    for exactly that reason.
+    """
+    try:
+        d = json.load(open(f"{ANNO}/{name}.jams"))
+        for a in d["annotations"]:
+            if a["namespace"] == "tempo" and a["data"]:
+                return float(a["data"][0]["value"])
+    except Exception:
+        pass
+    try:
+        return float(name.split("_")[1].split("-")[1])
+    except Exception:
+        return None
+
+
 def main():
     limit = int(sys.argv[1]) if len(sys.argv) > 1 else 20
     only = sys.argv[2] if len(sys.argv) > 2 else None
@@ -79,11 +102,12 @@ def main():
     names = names[:limit]
 
     per_style = {}
+    tempo_rows = []
     TP = FP = FN = 0
     done = failed = 0
-    print(f"{'excerpt':28} {'style':6} {'truth':>6} {'found':>6} "
-          f"{'P':>5} {'R':>5} {'F1':>5}")
-    print("-" * 70)
+    print(f"{'excerpt':26} {'style':5} {'bpm':>5} {'got':>6} {'sub':>4} "
+          f"{'truth':>6} {'found':>6} {'P':>5} {'R':>5} {'F1':>5}")
+    print("-" * 88)
     for name in names:
         g = transcribe(name)
         if g is None:
@@ -101,15 +125,33 @@ def main():
         st = style_of(name)
         b = per_style.setdefault(st, [0, 0, 0])
         b[0] += tp; b[1] += fp; b[2] += fn
-        print(f"{name[:28]:28} {st:6} {len(truth):6d} {len(det):6d} "
-              f"{p:5.2f} {r:5.2f} {f1:5.2f}")
 
-    print("-" * 70)
+        bt = true_tempo(name)
+        got = g.get("tempo_bpm")
+        ok = bt is not None and got is not None and abs(got - bt) <= max(2.0, bt * 0.03)
+        tempo_rows.append((name, bt, got, ok, r))
+        print(f"{name[:26]:26} {st:5} {bt if bt else 0:5.0f} "
+              f"{got if got else 0:6.1f}{'' if ok else '!'} "
+              f"{g.get('subdiv', 0):3d} "
+              f"{len(truth):6d} {len(det):6d} {p:5.2f} {r:5.2f} {f1:5.2f}")
+
+    print("-" * 88)
     for st in sorted(per_style):
         tp, fp, fn = per_style[st]
         p = tp / max(tp + fp, 1); r = tp / max(tp + fn, 1)
         print(f"  {st:20} P {p:.3f}  R {r:.3f}  "
               f"F1 {2*p*r/(p+r) if p+r else 0:.3f}")
+    if tempo_rows:
+        good = [t for t in tempo_rows if t[3]]
+        bad = [t for t in tempo_rows if not t[3]]
+        print(f"\ntempo correct        {len(good)}/{len(tempo_rows)} "
+              f"(within 3%, marked ! when wrong)")
+        if good and bad:
+            print(f"  recall when tempo right {np.mean([t[4] for t in good]):.3f}")
+            print(f"  recall when tempo wrong {np.mean([t[4] for t in bad]):.3f}")
+            print("  a wrong tempo is a wrong grid, so strokes land outside the")
+            print("  50 ms window even where the stroke itself was found")
+
     P = TP / max(TP + FP, 1); R = TP / max(TP + FN, 1)
     print(f"\nexcerpts scored      {done}  ({failed} failed)")
     print(f"stroke precision     {P:.3f}   ({FP} claimed with nothing there)")

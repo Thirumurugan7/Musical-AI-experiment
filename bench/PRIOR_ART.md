@@ -182,3 +182,88 @@ Recall is 0.681 with precision 1.000, and the tolerance sweep is flat above
 
 Both are detection failures, not timing failures. Neither is helped by anything
 in the timing work above, and neither is helped by tuning the tolerance.
+
+---
+
+# Follow-up: the circle is broken
+
+The last section of this file said the strum numbers here are circular, and
+named GuitarSet as the way out. That has now been done. Three things changed.
+
+## Our synthetic strums are five times too wide
+
+`bench/make_strum_tests.py` renders a down-stroke as six strings 18 ms apart:
+a 90 ms sweep. Measured over 12,619 real strums from 180 GuitarSet comping
+recordings by six players, the sweep from first onset to last is:
+
+  p50 16.8 ms   p75 28.2 ms   p90 40.7 ms   p95 50.6 ms   p99 64.5 ms
+
+Real strums are 16.8 ms wide at the median. Ours are wider than the 99th
+percentile of real playing. Real players also hit 3.14 strings per strum on
+average, not six.
+
+This lands directly on the +20 ms lateness recorded above. That section called
+the bias "real, unfixed and not correctable by any means we currently have",
+and reasoned that the energy centre of a sweep necessarily sits after its
+start. The reasoning holds. The sweep was ours, and it was wrong, so the size
+of the bias was an artefact of the generator rather than a property of guitars.
+
+The generator has not been changed yet: doing so invalidates the 0.810 baseline
+and every synthetic number in this file, and that deserves its own measurement
+rather than being folded into unrelated work.
+
+## The extraction validates itself on style
+
+Strums are not annotated in GuitarSet. They are recovered by clustering
+per-string note onsets, with direction from the order the strings fire in
+(index 0 is the lowest string, verified against median pitch). That method
+could easily be measuring nothing. It is not:
+
+| style | strums | strings/strum | sweep p50 | % down |
+|---|---|---|---|---|
+| Rock | 3368 | 3.39 | 20.3 ms | 72% |
+| Funk | 3000 | 3.14 | 16.3 ms | 65% |
+| Singer-Songwriter | 2538 | 2.80 | 17.2 ms | 58% |
+| Jazz | 1873 | 3.21 | 17.0 ms | 59% |
+| Bossa Nova | 1840 | 3.08 | 11.0 ms | 41% |
+
+Rock comes out down-stroke dominant with the widest sweeps. Bossa nova comes
+out at 41% down -- indistinguishable from a coin flip -- with the tightest
+clusters. That is what should happen: bossa comping is fingerpicked, and
+fingerpicking has no sweep direction to find. A method that reported a
+confident direction there would be measuring its own bias.
+
+## On real playing we score 0.555, not 0.810
+
+Four Rock excerpts, isolated guitar, 50 ms:
+
+  stroke precision 0.914   recall 0.398   F1 0.555
+
+against 1.000 / 0.681 / 0.810 on our own synthetic set. The shape is the same
+-- we claim little and miss a lot -- but recall is far worse on real playing.
+
+Two causes, both visible per excerpt:
+
+| excerpt | true BPM | detected | subdiv | truth strokes/beat | recall |
+|---|---|---|---|---|---|
+| Rock1-130-A | 130 | 85.7 | 2 | 2.48 | 0.24 |
+| Rock1-90-C# | 90 | 90.2 | 2 | 3.02 | 0.48 |
+| Rock2-142-D | 142 | 95.2 | 2 | 2.20 | 0.36 |
+| Rock2-85-F | 85 | 84.5 | 2 | 2.86 | 0.46 |
+
+**Tempo is wrong on half of them**, both times at roughly two thirds of the
+true value. The correlation with recall is exact: the two excerpts whose tempo
+is right score 0.48 and 0.46, the two whose tempo is wrong score 0.24 and 0.36.
+A wrong tempo is a wrong grid, so stroke times miss the 50 ms window even where
+the stroke was found. This is the third time tempo has been silently wrong in
+this project, and the reason is always the same one recorded above: a quantity
+no benchmark scores can be silently wrong. GuitarSet carries true tempo in both
+the annotation and the filename, so that excuse is now gone.
+
+**Subdivision is 2 on every excerpt** while the players are placing 2.2 to 3.0
+strokes per beat. A stroke with no slot to live in cannot be reported at any
+threshold. This is the `simple_16ths` failure from the synthetic set, except
+here it is the common case rather than one case in seven.
+
+Neither cause is a threshold, and neither is helped by anything in the timing
+work recorded earlier in this file.
