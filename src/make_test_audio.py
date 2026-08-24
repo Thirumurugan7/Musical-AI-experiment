@@ -1,6 +1,17 @@
 """Generate a synthetic guitar-like strummed progression with KNOWN ground truth.
 Purpose: smoke-test the chord recognition pipeline. NOT a substitute for real audio."""
+import os
+import sys
+
 import numpy as np, soundfile as sf
+
+# Output directory. Defaults to work/ beside the repo; override with an
+# argument or CHORDSTRUM_OUT. The two paths here were absolute sandbox paths
+# from the machine this was first written on, so it could not run anywhere else.
+OUT = (sys.argv[1] if len(sys.argv) > 1
+       else os.environ.get("CHORDSTRUM_OUT")
+       or os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "work"))
+os.makedirs(OUT, exist_ok=True)
 
 SR = 44100
 BPM = 120
@@ -65,11 +76,11 @@ for bar, name in enumerate(PROGRESSION):
 audio = audio[: int(pos * SR) + SR // 2]
 audio /= (np.max(np.abs(audio)) + 1e-9)
 audio *= 0.89
-sf.write("/home/claude/work/test_progression.wav", audio.astype(np.float32), SR)
+sf.write(os.path.join(OUT, "test_progression.wav"), audio.astype(np.float32), SR)
 
-with open("/home/claude/work/ground_truth.lab", "w") as f:
+with open(os.path.join(OUT, "ground_truth.lab"), "w") as f:
     for s, e, c in truth:
         f.write(f"{s:.3f}\t{e:.3f}\t{c}\n")
 
-print(f"wrote {len(audio)/SR:.2f}s @ {SR}Hz")
+print(f"wrote {len(audio)/SR:.2f}s @ {SR}Hz to {OUT}")
 print("ground truth:", " ".join(c for _, _, c in truth))
