@@ -16,3 +16,14 @@ work/
 bench/audio/
 work/strumtests/
 work/refs/
+
+# secrets. .venv/ above is the virtualenv and does not cover these: nothing in
+# this file matched .env at all, so a dotenv dropped at the repo root would
+# have been staged without complaint.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
